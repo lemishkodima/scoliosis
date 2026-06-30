@@ -333,6 +333,37 @@
   }
 }
 
+@keyframes openLineLock {
+  from {
+    opacity: 0.72;
+    transform: translateY(8px) scale(0.992);
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes mobileCtaPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 18px 44px rgba(23, 50, 92, 0.2),
+      0 0 0 0 rgba(81, 91, 171, 0.36);
+    transform: translateZ(0) scale(1);
+  }
+
+  52% {
+    box-shadow:
+      0 20px 54px rgba(23, 50, 92, 0.26),
+      0 0 0 14px rgba(81, 91, 171, 0);
+    transform: translateZ(0) scale(1.035);
+  }
+}
+
 @keyframes introPanelReveal {
   from {
     opacity: 0;

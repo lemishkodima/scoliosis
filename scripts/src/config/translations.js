@@ -67,8 +67,6 @@ export const translations = {
     "audience.itemStudy": "Навчаєте або навчаєтесь",
     "audience.itemGrowth": "Прагнете професійного розвитку",
     "audience.imageAlt": "Лікар аналізує рентгенівський знімок хребта при сколіозі",
-    "audience.panelKicker": "Membership opens",
-    "audience.panelText": "knowledge, visibility, community",
     "gallery.kicker": "Практика і доказовість",
     "gallery.title": "Від оцінки постави до персоналізованої терапії",
     "gallery.text":
@@ -180,8 +178,6 @@ export const translations = {
     "audience.itemStudy": "You teach or study",
     "audience.itemGrowth": "You seek professional development",
     "audience.imageAlt": "A doctor reviewing a scoliosis spine X-ray",
-    "audience.panelKicker": "Membership opens",
-    "audience.panelText": "knowledge, visibility, community",
     "gallery.kicker": "Practice and evidence",
     "gallery.title": "From posture assessment to personalized therapy",
     "gallery.text":
@@ -285,8 +281,6 @@ Object.assign(translations, {
     "audience.itemStudy": "Uczysz lub studiujesz",
     "audience.itemGrowth": "Szukasz rozwoju zawodowego",
     "audience.imageAlt": "Lekarz analizuje zdjęcie rentgenowskie kręgosłupa ze skoliozą",
-    "audience.panelKicker": "Członkostwo otwiera",
-    "audience.panelText": "wiedzę, widoczność, społeczność",
     "gallery.kicker": "Praktyka i dowody",
     "gallery.title": "Od oceny postawy do terapii personalizowanej",
     "gallery.text":
@@ -386,8 +380,6 @@ Object.assign(translations, {
     "audience.itemStudy": "Sie lehren oder lernen",
     "audience.itemGrowth": "Sie streben berufliche Entwicklung an",
     "audience.imageAlt": "Ein Arzt analysiert ein Röntgenbild der Wirbelsäule mit Skoliose",
-    "audience.panelKicker": "Mitgliedschaft eröffnet",
-    "audience.panelText": "Wissen, Sichtbarkeit, Gemeinschaft",
     "gallery.kicker": "Praxis und Evidenz",
     "gallery.title": "Von der Haltungsanalyse zur personalisierten Therapie",
     "gallery.text":
@@ -487,8 +479,6 @@ Object.assign(translations, {
     "audience.itemStudy": "Vous enseignez ou étudiez",
     "audience.itemGrowth": "Vous recherchez un développement professionnel",
     "audience.imageAlt": "Un médecin analyse une radiographie de scoliose",
-    "audience.panelKicker": "L'adhésion ouvre",
-    "audience.panelText": "savoir, visibilité, communauté",
     "gallery.kicker": "Pratique et preuves",
     "gallery.title": "De l'évaluation posturale à la thérapie personnalisée",
     "gallery.text":
@@ -588,8 +578,6 @@ Object.assign(translations, {
     "audience.itemStudy": "Enseñas o estudias",
     "audience.itemGrowth": "Buscas desarrollo profesional",
     "audience.imageAlt": "Un médico analiza una radiografía de columna con escoliosis",
-    "audience.panelKicker": "La membresía abre",
-    "audience.panelText": "conocimiento, visibilidad, comunidad",
     "gallery.kicker": "Práctica y evidencia",
     "gallery.title": "De la evaluación postural a la terapia personalizada",
     "gallery.text":

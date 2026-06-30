@@ -30,6 +30,52 @@
 - Логотипи зменшені до 12-44 KB.
 - Сайт більше не має активних посилань на PNG-зображення.
 
+### Етап 0.1. Mobile Interaction Polish
+
+Статус: done
+
+Задачі:
+- [x] Вирівняти логотип по центру в мобільному header.
+- [x] Додати швидку scramble-анімацію для фраз `Більше знань...`.
+- [x] Зробити мобільну кнопку `Подати заявку` круглою fixed CTA у правому нижньому куті.
+- [x] Перебудувати `Три прості кроки` у карту з route-line і checkpoint-маркерами.
+- [x] Продовжити штрихований фон через усю сторінку на мобільному.
+
+Результат:
+- Мобільний header тепер центрує знак бренду.
+- CTA на мобільному залишається доступним поверх сторінки і має pulse-анімацію.
+- Open-lines текст збирається швидким перебором символів при вході у viewport.
+- Steps-блок виглядає як маршрутна карта з чекпоінтами.
+
+### Етап 0.2. Scroll Depth And Parallax
+
+Статус: done
+
+Задачі:
+- [x] Додати desktop smooth-scroll для wheel-прокрутки.
+- [x] Розширити depth-background модуль для керування parallax-шарами.
+- [x] Додати parallax на логотипний seal, benefit-картки, mission/audience media і gallery cards.
+- [x] Зберегти reduced-motion і mobile-friendly поведінку без зайвого паралаксу на телефоні.
+
+Результат:
+- Desktop scroll став плавнішим через `requestAnimationFrame`.
+- Parallax працює через CSS-змінні `--parallax-y` і `--parallax-rotate`, не перебиваючи reveal-анімації.
+- На мобільному parallax-змінні обнулені, щоб не створювати ривки й зайве навантаження.
+
+### Етап 0.3. Mobile Hero Visibility
+
+Статус: done
+
+Задачі:
+- [x] Збільшити видиму висоту hero-video на мобільному.
+- [x] Прибрати власний фон, рамку, blur і shadow у hero CTA-блоку.
+- [x] Оновити cache-bust версію CSS/JS.
+
+Результат:
+- На viewport `430x932` hero-video має висоту `482px` замість попередніх `340px`.
+- CTA, lead і stats у hero більше не сидять у власній картці, а накладаються прямо поверх cinematic-сцени.
+- Browser QA: `.hero-dock` має прозорий фон, `0px` border, `none` shadow і `none` backdrop-filter.
+
 ### Етап 1. Loader + Hero + First Overlay
 
 Статус: done
