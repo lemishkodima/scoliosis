@@ -103,7 +103,7 @@ function initOpenLinesScramble({ prefersReducedMotion }) {
 export function initRevealCards({ prefersReducedMotion = false } = {}) {
   const cards = qsa(".reveal-card");
   const revealItems = qsa(
-    ".section-heading, .mission-media, .mission-copy, .audience-copy, .audience-panel, .gallery-copy, .gallery-card, .opens, .step-list li, .apply-copy, .membership-form",
+    ".section-heading, .mission-media, .mission-copy, .audience-copy, .gallery-copy, .gallery-card, .opens, .step-list li, .apply-copy, .membership-form",
   );
   revealItems.forEach((item, index) => {
     item.classList.add("scroll-reveal");

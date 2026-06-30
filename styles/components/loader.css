@@ -238,4 +238,77 @@
   .loader-brand-line {
     justify-content: center;
   }
+
+  .page-loader.is-revealing .loader-core {
+    animation: loaderCoreGatherMobile 820ms cubic-bezier(0.74, 0, 0.16, 1) both;
+  }
+
+  .page-loader.is-revealing .loader-brand-line span {
+    animation: loaderLetterIntoLogoMobile 640ms calc(var(--i) * 6ms) cubic-bezier(0.74, 0, 0.16, 1) both;
+  }
+
+  .page-loader.is-revealing .loader-brand-name {
+    animation: loaderBrandIntoLogoMobile 760ms cubic-bezier(0.74, 0, 0.16, 1) both;
+  }
+
+  .page-loader.is-revealing .loader-logo-orbit {
+    animation: loaderLogoHoldCenterMobile 820ms cubic-bezier(0.74, 0, 0.16, 1) both;
+  }
+}
+
+@keyframes loaderCoreGatherMobile {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0) scale(0.94);
+  }
+}
+
+@keyframes loaderLogoHoldCenterMobile {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  62% {
+    transform: translateY(0) scale(1.04);
+  }
+
+  100% {
+    transform: translateY(0) scale(0.92);
+  }
+}
+
+@keyframes loaderBrandIntoLogoMobile {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(clamp(-92px, -18vw, -68px)) scale(0.16);
+    clip-path: inset(0 40% 0 40%);
+  }
+}
+
+@keyframes loaderLetterIntoLogoMobile {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(clamp(-88px, -17vw, -64px)) rotateX(-38deg) scale(0.18);
+  }
 }

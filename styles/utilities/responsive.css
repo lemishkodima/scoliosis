@@ -166,10 +166,14 @@
   }
 
   .header-cta {
+    display: none;
+  }
+
+  .mobile-floating-cta {
     position: fixed;
     right: max(14px, env(safe-area-inset-right));
-    bottom: max(16px, env(safe-area-inset-bottom));
-    z-index: 42;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    z-index: 90;
     display: grid;
     place-items: center;
     width: 74px;
@@ -178,6 +182,12 @@
     padding: 8px;
     border-radius: 999px;
     font-size: 0.68rem;
+    font-weight: 850;
+    color: var(--white);
+    background: var(--blue);
+    box-shadow:
+      0 16px 42px rgba(23, 50, 92, 0.22),
+      0 0 0 7px rgba(81, 91, 171, 0.13);
     line-height: 1.06;
     text-align: center;
     white-space: normal;

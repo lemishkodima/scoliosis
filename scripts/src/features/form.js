@@ -70,7 +70,7 @@ export function initMembershipForm() {
     submitCount += 1;
     statusNode.textContent = t("form.success");
     submitButton.disabled = false;
-    submitButton.textContent = t("cta.long");
+    submitButton.textContent = t("cta.short");
     form.reset();
   });
 
