@@ -6,6 +6,7 @@
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.86);
   box-shadow: var(--shadow);
+  scroll-margin-top: 104px;
 }
 
 .form-row {
