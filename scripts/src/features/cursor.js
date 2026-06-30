@@ -30,6 +30,14 @@ export function initCursor({ prefersReducedMotion }) {
     (event) => {
       targetX = event.clientX;
       targetY = event.clientY;
+
+      const isInteractive = Boolean(event.target.closest("a, button, input, textarea, select, label"));
+      const isText = Boolean(
+        event.target.closest(
+          "h1, h2, h3, p, li, dt, dd, address, .section-kicker, .brand-title, .hero-lead, .open-lines",
+        ),
+      );
+      cursor.classList.toggle("is-reading", isText && !isInteractive);
     },
     { passive: true },
   );

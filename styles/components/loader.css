@@ -6,7 +6,8 @@
   place-items: center;
   overflow: hidden;
   color: var(--navy);
-  background: #f2f4ff;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.92), rgba(242, 244, 255, 0.86) 38%, #eef2fb 100%);
   transition:
     opacity 720ms cubic-bezier(0.2, 0.78, 0.24, 1),
     visibility 720ms cubic-bezier(0.2, 0.78, 0.24, 1),
@@ -47,18 +48,19 @@
 .loader-blocks span {
   min-width: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(231, 235, 249, 0.92)),
-    linear-gradient(90deg, rgba(23, 50, 92, 0.08), transparent 16%, transparent 84%, rgba(23, 50, 92, 0.06));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(231, 235, 249, 0.93)),
+    linear-gradient(90deg, rgba(23, 50, 92, 0.12), transparent 18%, transparent 82%, rgba(23, 50, 92, 0.08));
   box-shadow:
-    inset 1px 0 0 rgba(23, 50, 92, 0.07),
-    0 0 0 1px rgba(255, 255, 255, 0.36);
+    inset 1px 0 0 rgba(23, 50, 92, 0.09),
+    inset -1px 0 0 rgba(255, 255, 255, 0.72),
+    0 22px 70px rgba(23, 50, 92, 0.08);
   transform: scaleY(1);
   transform-origin: top;
   will-change: transform, opacity;
 }
 
 .page-loader.is-revealing .loader-blocks span {
-  animation: loaderBlockOpen 1280ms 320ms cubic-bezier(0.74, 0, 0.16, 1) both;
+  animation: loaderBlockOpen 1040ms 220ms cubic-bezier(0.74, 0, 0.16, 1) both;
 }
 
 .loader-blocks span:nth-child(even) {
@@ -112,7 +114,7 @@
   gap: clamp(18px, 3vw, 34px);
   opacity: 0;
   transform: translateY(18px) scale(0.88);
-  animation: loaderCoreReveal 960ms 620ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
+  animation: loaderCoreReveal 840ms 360ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
   text-align: left;
 }
 
@@ -186,7 +188,7 @@
   opacity: 0;
   transform: translateY(112%) rotateX(64deg) scale(0.92);
   transform-origin: 50% 80%;
-  animation: loaderLetterReveal 760ms calc(940ms + (var(--i) * 34ms)) cubic-bezier(0.2, 0.78, 0.24, 1) both;
+  animation: loaderLetterReveal 640ms calc(640ms + (var(--i) * 24ms)) cubic-bezier(0.2, 0.78, 0.24, 1) both;
   will-change: transform, opacity, filter;
 }
 

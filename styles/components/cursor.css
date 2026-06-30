@@ -24,6 +24,10 @@
   height: 7px;
   background: var(--navy);
   box-shadow: 0 0 18px rgba(81, 91, 171, 0.45);
+  transition:
+    opacity 160ms ease,
+    transform 120ms ease,
+    background 160ms ease;
 }
 
 .cursor-ring {
@@ -43,6 +47,24 @@
   height: 58px;
   border-color: rgba(23, 50, 92, 0.32);
   background: rgba(162, 180, 226, 0.16);
+}
+
+.cursor-orb.is-reading .cursor-dot {
+  opacity: 0.28;
+  background: rgba(23, 50, 92, 0.7);
+}
+
+.cursor-orb.is-reading .cursor-ring {
+  width: 24px;
+  height: 24px;
+  border-color: rgba(81, 91, 171, 0.16);
+  background: transparent;
+  opacity: 0.36;
+}
+
+.cursor-orb.is-hovering.is-reading .cursor-dot,
+.cursor-orb.is-hovering.is-reading .cursor-ring {
+  opacity: 1;
 }
 
 .cursor-orb.is-pressed .cursor-ring {

@@ -1,16 +1,36 @@
 .intro {
   position: relative;
   z-index: 18;
-  margin-top: clamp(-128px, -7.4vw, -72px);
-  padding: clamp(42px, 5vw, 68px) clamp(22px, 4vw, 58px) clamp(72px, 7vw, 104px);
+  margin-top: clamp(-188px, -10.5vw, -112px);
+  padding: clamp(50px, 5.6vw, 82px) clamp(22px, 4.6vw, 68px) clamp(78px, 7.4vw, 112px);
   border: 1px solid rgba(23, 50, 92, 0.1);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(242, 245, 253, 0.76)),
-    radial-gradient(circle at 84% 18%, rgba(162, 180, 226, 0.22), transparent 36%);
-  box-shadow: 0 28px 92px rgba(23, 50, 92, 0.12);
-  backdrop-filter: blur(18px) saturate(1.08);
-  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.93), rgba(242, 245, 253, 0.8)),
+    radial-gradient(circle at 86% 10%, rgba(162, 180, 226, 0.24), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent);
+  box-shadow:
+    0 34px 110px rgba(23, 50, 92, 0.16),
+    0 -24px 80px rgba(255, 255, 255, 0.62),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(22px) saturate(1.08);
+  -webkit-backdrop-filter: blur(22px) saturate(1.08);
+  transform: translate3d(0, calc(var(--intro-rise, 0px) * -1), 0);
+  animation: introPanelReveal 900ms 1080ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
+  will-change: transform;
+}
+
+.intro::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, rgba(23, 50, 92, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px);
+  background-size: 25% 100%, 100% 50%;
+  content: "";
+  opacity: 0.34;
+  pointer-events: none;
 }
 
 .intro-grid {
@@ -125,6 +145,50 @@ h2 {
   box-shadow: var(--shadow);
 }
 
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  clip-path: inset(14% 0 14% 0);
+  transition:
+    opacity 760ms calc(var(--reveal-index, 0) * 70ms) cubic-bezier(0.2, 0.78, 0.24, 1),
+    transform 760ms calc(var(--reveal-index, 0) * 70ms) cubic-bezier(0.2, 0.78, 0.24, 1),
+    clip-path 860ms calc(var(--reveal-index, 0) * 70ms) cubic-bezier(0.2, 0.78, 0.24, 1);
+  will-change: transform, opacity, clip-path;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.gallery-card.scroll-reveal,
+.mission-media.scroll-reveal,
+.audience-panel.scroll-reveal {
+  transform: translate3d(0, 28px, 0) scale(0.985);
+  clip-path: inset(0 0 100% 0);
+}
+
+.gallery-card.scroll-reveal.is-visible,
+.mission-media.scroll-reveal.is-visible,
+.audience-panel.scroll-reveal.is-visible {
+  transform: translate3d(0, 0, 0) scale(1);
+  clip-path: inset(0 0 0 0);
+}
+
+.mission-media.scroll-reveal img,
+.audience-panel.scroll-reveal img,
+.gallery-card.scroll-reveal img {
+  transform: scale(1.08);
+  transition: transform 1200ms cubic-bezier(0.2, 0.78, 0.24, 1);
+}
+
+.mission-media.scroll-reveal.is-visible img,
+.audience-panel.scroll-reveal.is-visible img,
+.gallery-card.scroll-reveal.is-visible img {
+  transform: scale(1);
+}
+
 .icon {
   display: grid;
   place-items: center;
@@ -167,7 +231,9 @@ h2 {
 }
 
 .mission-media {
+  position: relative;
   min-height: 520px;
+  overflow: hidden;
 }
 
 .mission-media img {
@@ -175,6 +241,17 @@ h2 {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: saturate(0.86) contrast(1.05) brightness(0.9);
+}
+
+.mission-media::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(23, 50, 92, 0.18), transparent 42%, rgba(23, 50, 92, 0.24)),
+    radial-gradient(circle at 54% 42%, rgba(162, 180, 226, 0.18), transparent 34%);
+  content: "";
+  pointer-events: none;
 }
 
 .mission-copy {
@@ -238,6 +315,9 @@ h2 {
 
 .audience-panel {
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
 }
 
 .audience-panel img {
@@ -245,7 +325,19 @@ h2 {
   aspect-ratio: 4 / 5;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: var(--shadow);
+  object-position: center;
+  filter: saturate(0.88) contrast(1.04) brightness(1.02);
+}
+
+.audience-panel::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 38%, rgba(23, 50, 92, 0.14)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent 22%, transparent 78%, rgba(23, 50, 92, 0.08));
+  content: "";
+  pointer-events: none;
 }
 
 .therapy-gallery {
@@ -287,9 +379,22 @@ h2 {
   transform: translateZ(0);
 }
 
+.gallery-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent 18%, transparent 82%, rgba(23, 50, 92, 0.08)),
+    radial-gradient(circle at 48% 36%, rgba(162, 180, 226, 0.12), transparent 34%);
+  content: "";
+  opacity: 0.78;
+  pointer-events: none;
+}
+
 .gallery-card::after {
   position: absolute;
   inset: 0;
+  z-index: 3;
   background:
     linear-gradient(180deg, transparent 54%, rgba(23, 50, 92, 0.24)),
     radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.26), transparent 34%);
@@ -302,7 +407,16 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(0.9) contrast(1.04) brightness(1.02);
   transition: transform 900ms cubic-bezier(0.2, 0.78, 0.24, 1);
+}
+
+.gallery-card-large img {
+  object-position: center 42%;
+}
+
+.gallery-card-wide img {
+  object-position: center 48%;
 }
 
 .gallery-card:hover img {
@@ -323,6 +437,7 @@ h2 {
   position: absolute;
   right: 20px;
   bottom: 20px;
+  z-index: 2;
   width: min(280px, calc(100% - 40px));
   padding: 18px;
   border-radius: 8px;

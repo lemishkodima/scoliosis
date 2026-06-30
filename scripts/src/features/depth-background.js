@@ -13,11 +13,13 @@ export function initDepthBackground({ prefersReducedMotion }) {
     }
 
     const depthY = Math.min(latestScrollY, 1600);
-    const heroVideoY = Math.max(-110, Math.min(36, latestScrollY * -0.12));
-    const heroStageY = Math.max(-42, Math.min(18, latestScrollY * -0.045));
+    const heroVideoY = Math.max(-140, Math.min(42, latestScrollY * -0.15));
+    const heroStageY = Math.max(-54, Math.min(18, latestScrollY * -0.052));
+    const introRise = Math.max(0, Math.min(34, latestScrollY * 0.04));
     root.style.setProperty("--depth-scroll", `${depthY}px`);
     root.style.setProperty("--hero-video-y", `${heroVideoY}px`);
     root.style.setProperty("--hero-stage-y", `${heroStageY}px`);
+    root.style.setProperty("--intro-rise", `${introRise}px`);
   }
 
   function requestDepthUpdate() {

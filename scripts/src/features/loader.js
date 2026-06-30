@@ -9,7 +9,7 @@ export function initPageLoader({ prefersReducedMotion }) {
   }
 
   const startedAt = window.performance.now();
-  const minimumDuration = prefersReducedMotion ? 220 : 2900;
+  const minimumDuration = prefersReducedMotion ? 160 : 2200;
   let hasHidden = false;
 
   function hideLoader() {
@@ -25,7 +25,7 @@ export function initPageLoader({ prefersReducedMotion }) {
           pageLoader.classList.add("is-hidden");
           window.setTimeout(() => pageLoader.remove(), prefersReducedMotion ? 80 : 520);
         },
-        prefersReducedMotion ? 80 : 1980,
+        prefersReducedMotion ? 80 : 1500,
       );
     }, delay);
   }

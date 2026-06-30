@@ -8,7 +8,7 @@
 - Hero з локальним логотипом і canvas/parallax 3D-like ефектом.
 - Великий header із 3D-like brand object.
 - Перемикач мов UA/EN без перезавантаження сторінки.
-- Прозорий логотип `assets/images/logo-mark-transparent.png`.
+- Прозорий логотип `assets/images/logo-mark-transparent.webp`.
 - Блоки членства, місії, аудиторії, переваг і кроків вступу.
 - Форма заявки з клієнтською валідацією.
 - Demo submit, який готує payload під майбутній endpoint `/api/membership/apply`.

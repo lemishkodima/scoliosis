@@ -17,17 +17,26 @@
   transform: none;
   transition:
     min-height 180ms ease,
-    padding 180ms ease;
+    padding 180ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease,
+    backdrop-filter 220ms ease;
+}
+
+.site-header:not(.is-scrolled) .site-nav,
+.site-header:not(.is-scrolled) .header-actions {
+  opacity: 0.82;
 }
 
 .site-header.is-scrolled {
   min-height: 76px;
   padding-top: 12px;
   padding-bottom: 12px;
-  background: rgba(247, 249, 255, 0.78);
-  box-shadow: 0 14px 48px rgba(23, 50, 92, 0.08);
-  backdrop-filter: blur(18px) saturate(1.12);
-  -webkit-backdrop-filter: blur(18px) saturate(1.12);
+  border-bottom: 1px solid rgba(23, 50, 92, 0.07);
+  background: rgba(247, 249, 255, 0.82);
+  box-shadow: 0 18px 54px rgba(23, 50, 92, 0.1);
+  backdrop-filter: blur(22px) saturate(1.14);
+  -webkit-backdrop-filter: blur(22px) saturate(1.14);
 }
 
 .brand {
@@ -61,7 +70,7 @@
   width: 58px;
   height: 58px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 14px rgba(23, 50, 92, 0.16));
+  filter: drop-shadow(0 10px 14px rgba(23, 50, 92, 0.12));
   transform: none;
   transform-style: preserve-3d;
 }
@@ -93,11 +102,32 @@
 }
 
 .site-nav a {
+  position: relative;
   padding: 10px 0;
 }
 
 .site-nav a:hover {
   color: var(--blue);
+}
+
+.site-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.site-nav a:hover::after {
+  opacity: 0.52;
+  transform: scaleX(1);
 }
 
 .header-actions {
