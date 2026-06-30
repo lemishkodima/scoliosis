@@ -334,14 +334,15 @@ h2 {
 
 .gallery-mosaic {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-auto-rows: 132px;
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: clamp(220px, 17vw, 330px);
+  gap: clamp(14px, 1.4vw, 22px);
 }
 
 .gallery-card {
   position: relative;
-  grid-column: span 3;
+  grid-column: span 1;
+  grid-row: span 1;
   min-height: 0;
   margin: 0;
   overflow: hidden;
@@ -398,13 +399,13 @@ h2 {
 }
 
 .gallery-card-large {
-  grid-column: span 4;
-  grid-row: span 3;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .gallery-card-wide {
-  grid-column: span 2;
-  grid-row: span 2;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .opens {
