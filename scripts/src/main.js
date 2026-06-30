@@ -9,7 +9,7 @@ import { initLanguageSwitcher } from "./features/i18n.js";
 import { initPageLoader } from "./features/loader.js";
 import { initMembershipForm } from "./features/form.js";
 import { initRevealCards } from "./features/reveal.js";
-import { initSmoothScroll } from "./features/smooth-scroll.js";
+import { initLocomotiveScroll } from "./features/locomotive-scroll.js";
 
 const prefersReducedMotion = getMotionPreference();
 
@@ -22,8 +22,8 @@ const systems = {
   heroVideo: initHeroVideoLoopFade({ prefersReducedMotion }),
   language: initLanguageSwitcher(),
   loader: initPageLoader({ prefersReducedMotion }),
+  locomotiveScroll: initLocomotiveScroll({ prefersReducedMotion }),
   reveal: initRevealCards({ prefersReducedMotion }),
-  smoothScroll: initSmoothScroll({ prefersReducedMotion }),
 };
 
 exposeDebugApi(systems);

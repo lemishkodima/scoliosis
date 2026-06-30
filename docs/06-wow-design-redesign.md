@@ -52,13 +52,13 @@
 Статус: done
 
 Задачі:
-- [x] Додати desktop smooth-scroll для wheel-прокрутки.
+- [x] Замінити самописний desktop smooth-scroll на Locomotive Scroll.
 - [x] Розширити depth-background модуль для керування parallax-шарами.
 - [x] Додати parallax на логотипний seal, benefit-картки, mission/audience media і gallery cards.
 - [x] Зберегти reduced-motion і mobile-friendly поведінку без зайвого паралаксу на телефоні.
 
 Результат:
-- Desktop scroll став плавнішим через `requestAnimationFrame`.
+- Desktop scroll працює через Locomotive Scroll `5.0.1`, локально завендорений у `vendor/locomotive-scroll`.
 - Parallax працює через CSS-змінні `--parallax-y` і `--parallax-rotate`, не перебиваючи reveal-анімації.
 - На мобільному parallax-змінні обнулені, щоб не створювати ривки й зайве навантаження.
 
