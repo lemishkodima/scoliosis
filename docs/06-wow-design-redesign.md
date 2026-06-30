@@ -47,20 +47,18 @@
 - Open-lines текст збирається швидким перебором символів при вході у viewport.
 - Steps-блок виглядає як маршрутна карта з чекпоінтами.
 
-### Етап 0.2. Scroll Depth And Parallax
+### Етап 0.2. Native Scroll Only
 
 Статус: done
 
 Задачі:
-- [x] Замінити самописний desktop smooth-scroll на Locomotive Scroll.
-- [x] Розширити depth-background модуль для керування parallax-шарами.
-- [x] Додати parallax на логотипний seal, benefit-картки, mission/audience media і gallery cards.
-- [x] Зберегти reduced-motion і mobile-friendly поведінку без зайвого паралаксу на телефоні.
+- [x] Прибрати самописний smooth-scroll і Locomotive Scroll, залишити нативний скрол браузера.
+- [x] Прибрати scroll-driven depth/parallax модуль.
+- [x] Прибрати `data-parallax` атрибути з контентних блоків.
 
 Результат:
-- Desktop scroll працює через Locomotive Scroll `5.0.1`, локально завендорений у `vendor/locomotive-scroll`.
-- Parallax працює через CSS-змінні `--parallax-y` і `--parallax-rotate`, не перебиваючи reveal-анімації.
-- На мобільному parallax-змінні обнулені, щоб не створювати ривки й зайве навантаження.
+- Desktop і mobile scroll працюють нативно без JS-scroll engine і без CSS `scroll-behavior: smooth`.
+- Scroll-driven parallax більше не виконується, щоб уникнути ривків під час прокрутки.
 
 ### Етап 0.3. Mobile Hero Visibility
 

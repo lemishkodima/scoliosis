@@ -101,11 +101,6 @@
 }
 
 @media (max-width: 680px) {
-  [data-parallax] {
-    --parallax-y: 0px !important;
-    --parallax-rotate: 0deg !important;
-  }
-
   .scroll-reveal {
     clip-path: inset(8% 0 8% 0);
     transform: translate3d(0, 24px, 0);
@@ -442,11 +437,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-parallax] {
-    --parallax-y: 0px !important;
-    --parallax-rotate: 0deg !important;
-  }
-
   *,
   *::before,
   *::after {
