@@ -1,0 +1,69 @@
+.cursor-orb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  display: none;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--navy);
+  box-shadow: 0 0 18px rgba(81, 91, 171, 0.45);
+}
+
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(81, 91, 171, 0.44);
+  background: rgba(255, 255, 255, 0.1);
+  transition:
+    width 180ms ease,
+    height 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.cursor-orb.is-hovering .cursor-ring {
+  width: 58px;
+  height: 58px;
+  border-color: rgba(23, 50, 92, 0.32);
+  background: rgba(162, 180, 226, 0.16);
+}
+
+.cursor-orb.is-pressed .cursor-ring {
+  width: 30px;
+  height: 30px;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 981px) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button {
+    cursor: none;
+  }
+
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor select {
+    cursor: text;
+  }
+
+  body.has-custom-cursor .cursor-orb {
+    display: block;
+  }
+}

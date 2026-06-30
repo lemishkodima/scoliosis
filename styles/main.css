@@ -1,0 +1,10 @@
+@import url("./base/base.css");
+@import url("./components/loader.css");
+@import url("./components/cursor.css");
+@import url("./components/header.css");
+@import url("./sections/hero.css");
+@import url("./sections/content.css");
+@import url("./components/form.css");
+@import url("./components/footer.css");
+@import url("./utilities/animations.css");
+@import url("./utilities/responsive.css");

@@ -1,0 +1,105 @@
+:root {
+  --white: #ffffff;
+  --mist: #dfe4f5;
+  --periwinkle: #a2b4e2;
+  --blue: #515bab;
+  --navy: #17325c;
+  --ink: #102642;
+  --muted: #60708a;
+  --line: rgba(23, 50, 92, 0.12);
+  --success: #2f7a64;
+  --shadow: 0 24px 80px rgba(23, 50, 92, 0.14);
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  font-family:
+    Inter, Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: #f7f9ff;
+  letter-spacing: 0;
+}
+
+body.is-loading {
+  overflow: hidden;
+}
+
+.site-header,
+main,
+.site-footer {
+  transition:
+    opacity 920ms cubic-bezier(0.2, 0.78, 0.24, 1),
+    transform 920ms cubic-bezier(0.2, 0.78, 0.24, 1),
+    filter 920ms cubic-bezier(0.2, 0.78, 0.24, 1);
+}
+
+.depth-backdrop {
+  position: fixed;
+  inset: -12vh -8vw;
+  z-index: -5;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.12), 0) scale(1.04);
+  transition: transform 120ms linear;
+}
+
+.depth-plane {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.depth-plane-grid {
+  background:
+    linear-gradient(90deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(23, 50, 92, 0.04) 1px, transparent 1px),
+    linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
+  background-position:
+    calc(var(--depth-scroll, 0px) * -0.025) 0,
+    0 calc(var(--depth-scroll, 0px) * -0.018),
+    center;
+  background-size: 12.5vw 100%, 100% 16vh, auto;
+  opacity: 0.82;
+}
+
+.depth-plane-glow {
+  background:
+    radial-gradient(circle at 72% calc(18% + var(--depth-scroll, 0px) * -0.03), rgba(162, 180, 226, 0.34), transparent 29%),
+    radial-gradient(circle at 16% calc(68% + var(--depth-scroll, 0px) * -0.02), rgba(81, 91, 171, 0.12), transparent 32%);
+  opacity: 0.86;
+  transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.06), 0);
+}
+
+img,
+svg {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(81, 91, 171, 0.35);
+  outline-offset: 3px;
+}

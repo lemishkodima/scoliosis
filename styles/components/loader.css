@@ -1,0 +1,239 @@
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--navy);
+  background: #f2f4ff;
+  transition:
+    opacity 720ms cubic-bezier(0.2, 0.78, 0.24, 1),
+    visibility 720ms cubic-bezier(0.2, 0.78, 0.24, 1),
+    transform 720ms cubic-bezier(0.2, 0.78, 0.24, 1),
+    background 520ms ease;
+}
+
+.page-loader.is-revealing {
+  background: transparent;
+}
+
+.page-loader.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.025);
+  pointer-events: none;
+}
+
+.loader-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(23, 50, 92, 0.075) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(23, 50, 92, 0.045) 1px, transparent 1px);
+  background-size: 12.5vw 100%, 100% 50%;
+  opacity: 0;
+  animation: loaderGridIn 900ms 180ms ease both;
+}
+
+.loader-blocks {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  pointer-events: none;
+}
+
+.loader-blocks span {
+  min-width: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(231, 235, 249, 0.92)),
+    linear-gradient(90deg, rgba(23, 50, 92, 0.08), transparent 16%, transparent 84%, rgba(23, 50, 92, 0.06));
+  box-shadow:
+    inset 1px 0 0 rgba(23, 50, 92, 0.07),
+    0 0 0 1px rgba(255, 255, 255, 0.36);
+  transform: scaleY(1);
+  transform-origin: top;
+  will-change: transform, opacity;
+}
+
+.page-loader.is-revealing .loader-blocks span {
+  animation: loaderBlockOpen 1280ms 320ms cubic-bezier(0.74, 0, 0.16, 1) both;
+}
+
+.loader-blocks span:nth-child(even) {
+  transform-origin: bottom;
+}
+
+.page-loader.is-revealing .loader-blocks span:nth-child(2) {
+  animation-delay: 380ms;
+}
+
+.page-loader.is-revealing .loader-blocks span:nth-child(3) {
+  animation-delay: 440ms;
+}
+
+.page-loader.is-revealing .loader-blocks span:nth-child(4) {
+  animation-delay: 500ms;
+}
+
+.page-loader.is-revealing .loader-blocks span:nth-child(5) {
+  animation-delay: 560ms;
+}
+
+.page-loader.is-revealing .loader-blocks span:nth-child(6) {
+  animation-delay: 620ms;
+}
+
+.loader-cross {
+  display: none;
+}
+
+.loader-cross::before,
+.loader-cross::after {
+  position: absolute;
+  inset: 8px 0 auto;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+}
+
+.loader-cross::after {
+  transform: rotate(90deg);
+}
+
+.loader-core {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 34px);
+  opacity: 0;
+  transform: translateY(18px) scale(0.88);
+  animation: loaderCoreReveal 960ms 620ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
+  text-align: left;
+}
+
+.loader-core::before {
+  display: none;
+}
+
+.loader-logo-orbit {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(92px, 9vw, 126px);
+  height: clamp(92px, 9vw, 126px);
+  perspective: 520px;
+}
+
+.loader-logo-orbit::before,
+.loader-logo-orbit::after {
+  display: none;
+}
+
+.loader-logo-orbit img {
+  position: relative;
+  z-index: 2;
+  width: clamp(84px, 8vw, 112px);
+  height: clamp(84px, 8vw, 112px);
+  object-fit: contain;
+  filter:
+    drop-shadow(0 20px 28px rgba(23, 50, 92, 0.14))
+    drop-shadow(0 0 18px rgba(162, 180, 226, 0.34));
+  animation: loaderLogoFloat 1800ms 720ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
+}
+
+.loader-brand-name {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  overflow: hidden;
+  padding: 6px 3px;
+  color: var(--navy);
+  font-size: clamp(1.12rem, 2.05vw, 1.72rem);
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  perspective: 900px;
+}
+
+.loader-brand-name::before {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.94) 34%, rgba(162, 180, 226, 0.26) 50%, transparent 76%);
+  content: "";
+  pointer-events: none;
+  transform: translateX(-120%);
+  animation: loaderBrandSweep 1280ms 1180ms cubic-bezier(0.74, 0, 0.16, 1) both;
+}
+
+.loader-brand-line {
+  display: flex;
+  gap: 0.08em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.loader-brand-line span {
+  display: inline-block;
+  min-width: 0.54em;
+  opacity: 0;
+  transform: translateY(112%) rotateX(64deg) scale(0.92);
+  transform-origin: 50% 80%;
+  animation: loaderLetterReveal 760ms calc(940ms + (var(--i) * 34ms)) cubic-bezier(0.2, 0.78, 0.24, 1) both;
+  will-change: transform, opacity, filter;
+}
+
+.page-loader.is-revealing .loader-cross,
+.page-loader.is-revealing .loader-grid {
+  opacity: 0;
+  transition:
+    opacity 360ms ease,
+    transform 360ms ease;
+}
+
+.page-loader.is-revealing .loader-core {
+  animation: loaderCoreGather 820ms cubic-bezier(0.74, 0, 0.16, 1) both;
+}
+
+.page-loader.is-revealing .loader-brand-line span {
+  animation: loaderLetterIntoLogo 640ms calc(var(--i) * 6ms) cubic-bezier(0.74, 0, 0.16, 1) both;
+}
+
+.page-loader.is-revealing .loader-brand-name {
+  animation: loaderBrandIntoLogo 760ms cubic-bezier(0.74, 0, 0.16, 1) both;
+}
+
+.page-loader.is-revealing .loader-logo-orbit {
+  animation: loaderLogoToCenter 820ms cubic-bezier(0.74, 0, 0.16, 1) both;
+}
+
+.page-loader.is-revealing .loader-logo-orbit img {
+  filter:
+    drop-shadow(0 18px 24px rgba(23, 50, 92, 0.16))
+    drop-shadow(0 0 16px rgba(162, 180, 226, 0.28));
+}
+
+@media (max-width: 680px) {
+  .loader-core {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .loader-brand-name {
+    align-items: center;
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    letter-spacing: 0.12em;
+  }
+
+  .loader-brand-line {
+    justify-content: center;
+  }
+}
