@@ -1,13 +1,13 @@
-import { exposeDebugApi } from "./core/debug.js";
-import { getMotionPreference } from "./core/dom.js";
-import { initCursor } from "./features/cursor.js";
-import { initHeader } from "./features/header.js";
-import { initHeroInteractions } from "./features/hero-interactions.js";
-import { initHeroVideoLoopFade } from "./features/hero-video.js";
-import { initLanguageSwitcher } from "./features/i18n.js";
-import { initPageLoader } from "./features/loader.js";
-import { initMembershipForm } from "./features/form.js";
-import { initRevealCards } from "./features/reveal.js";
+import { exposeDebugApi } from "./core/debug.js?v=20260630-wow-12";
+import { getMotionPreference } from "./core/dom.js?v=20260630-wow-12";
+import { initCursor } from "./features/cursor.js?v=20260630-wow-12";
+import { initHeader } from "./features/header.js?v=20260630-wow-12";
+import { initHeroInteractions } from "./features/hero-interactions.js?v=20260630-wow-12";
+import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260630-wow-12";
+import { initLanguageSwitcher } from "./features/i18n.js?v=20260630-wow-12";
+import { initPageLoader } from "./features/loader.js?v=20260630-wow-12";
+import { initMembershipForm } from "./features/form.js?v=20260630-wow-12";
+import { initRevealCards } from "./features/reveal.js?v=20260630-wow-12";
 
 const prefersReducedMotion = getMotionPreference();
 

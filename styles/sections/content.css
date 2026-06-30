@@ -182,29 +182,6 @@ h2 {
   clip-path: inset(0 0 0 0);
 }
 
-.gallery-card.scroll-reveal,
-.mission-media.scroll-reveal {
-  transform: translate3d(0, 28px, 0) scale(0.985);
-  clip-path: inset(0 0 100% 0);
-}
-
-.gallery-card.scroll-reveal.is-visible,
-.mission-media.scroll-reveal.is-visible {
-  transform: translate3d(0, 0, 0) scale(1);
-  clip-path: inset(0 0 0 0);
-}
-
-.mission-media.scroll-reveal img,
-.gallery-card.scroll-reveal img {
-  transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.1);
-  transition: transform 1200ms cubic-bezier(0.2, 0.78, 0.24, 1);
-}
-
-.mission-media.scroll-reveal.is-visible img,
-.gallery-card.scroll-reveal.is-visible img {
-  transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.06);
-}
-
 .icon {
   display: grid;
   place-items: center;
