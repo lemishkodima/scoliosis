@@ -4,10 +4,6 @@
   --periwinkle: #a2b4e2;
   --blue: #515bab;
   --navy: #17325c;
-  --accent: #d4fb11;
-  --accent-hover: #e8ff63;
-  --accent-soft: rgba(212, 251, 17, 0.22);
-  --accent-shadow: rgba(212, 251, 17, 0.32);
   --ink: #102642;
   --muted: #60708a;
   --line: rgba(23, 50, 92, 0.12);
@@ -33,22 +29,15 @@ body {
   font-family:
     Inter, Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
-  background-image:
+  background:
     linear-gradient(90deg, rgba(23, 50, 92, 0.045) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.035) 1px, transparent 1px),
     radial-gradient(circle at 72% 18%, rgba(162, 180, 226, 0.24), transparent 29%),
     radial-gradient(circle at 16% 68%, rgba(81, 91, 171, 0.1), transparent 32%),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
   background-attachment: fixed, fixed, fixed, fixed, fixed;
-  background-position: 0 0, 0 0, center, center, center;
-  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
   background-size: 12.5vw 100vh, 100vw 16vh, auto, auto, auto;
   letter-spacing: 0;
-}
-
-::selection {
-  color: var(--navy);
-  background: var(--accent);
 }
 
 body.is-loading {
@@ -64,16 +53,10 @@ main,
     filter 920ms cubic-bezier(0.2, 0.78, 0.24, 1);
 }
 
-main,
-.site-footer {
-  position: relative;
-  z-index: 1;
-}
-
 .depth-backdrop {
   position: fixed;
   inset: -12vh -8vw;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
   pointer-events: none;
   transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.12), 0) scale(1.04);
@@ -87,7 +70,7 @@ main,
 }
 
 .depth-plane-grid {
-  background-image:
+  background:
     linear-gradient(90deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.04) 1px, transparent 1px),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
@@ -95,9 +78,8 @@ main,
     calc(var(--depth-scroll, 0px) * -0.025) 0,
     0 calc(var(--depth-scroll, 0px) * -0.018),
     center;
-  background-repeat: repeat, repeat, no-repeat;
   background-size: 12.5vw 100%, 100% 16vh, auto;
-  opacity: 0.9;
+  opacity: 0.82;
 }
 
 .depth-plane-glow {
@@ -106,196 +88,6 @@ main,
     radial-gradient(circle at 16% calc(68% + var(--depth-scroll, 0px) * -0.02), rgba(81, 91, 171, 0.12), transparent 32%);
   opacity: 0.86;
   transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.06), 0);
-}
-
-.depth-plane-fireflies,
-.depth-plane-fireflies::before,
-.depth-plane-fireflies::after {
-  position: absolute;
-  inset: -8vh -6vw;
-  display: block;
-  content: "";
-  pointer-events: none;
-  will-change: transform, opacity;
-}
-
-.depth-plane-fireflies {
-  background:
-    radial-gradient(circle at 8% 20%, rgba(212, 251, 17, 0.72) 0 4px, rgba(212, 251, 17, 0.28) 8px, transparent 24px),
-    radial-gradient(circle at 24% 58%, rgba(212, 251, 17, 0.52) 0 3px, rgba(212, 251, 17, 0.24) 7px, transparent 22px),
-    radial-gradient(circle at 38% 76%, rgba(212, 251, 17, 0.6) 0 4px, rgba(212, 251, 17, 0.24) 8px, transparent 25px),
-    radial-gradient(circle at 58% 28%, rgba(212, 251, 17, 0.66) 0 4px, rgba(212, 251, 17, 0.25) 8px, transparent 26px),
-    radial-gradient(circle at 72% 48%, rgba(212, 251, 17, 0.5) 0 3px, rgba(212, 251, 17, 0.22) 7px, transparent 23px),
-    radial-gradient(circle at 88% 68%, rgba(212, 251, 17, 0.58) 0 4px, rgba(212, 251, 17, 0.22) 8px, transparent 24px);
-  background-repeat: no-repeat;
-  filter: blur(4px);
-  opacity: 0.96;
-  transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.04), 0);
-  animation: fireflyDriftA 18s ease-in-out infinite alternate;
-}
-
-.depth-plane-fireflies::before {
-  background:
-    radial-gradient(circle at 15% 42%, rgba(212, 251, 17, 0.46) 0 3px, rgba(212, 251, 17, 0.2) 7px, transparent 22px),
-    radial-gradient(circle at 34% 16%, rgba(212, 251, 17, 0.58) 0 4px, rgba(212, 251, 17, 0.22) 8px, transparent 25px),
-    radial-gradient(circle at 52% 62%, rgba(212, 251, 17, 0.48) 0 3px, rgba(212, 251, 17, 0.19) 7px, transparent 22px),
-    radial-gradient(circle at 78% 84%, rgba(212, 251, 17, 0.5) 0 3px, rgba(212, 251, 17, 0.2) 8px, transparent 24px),
-    radial-gradient(circle at 94% 30%, rgba(212, 251, 17, 0.44) 0 3px, rgba(212, 251, 17, 0.18) 7px, transparent 22px);
-  background-repeat: no-repeat;
-  filter: blur(5px);
-  opacity: 0.84;
-  animation: fireflyDriftB 24s ease-in-out infinite alternate;
-}
-
-.depth-plane-fireflies::after {
-  background:
-    radial-gradient(circle at 6% 82%, rgba(212, 251, 17, 0.4) 0 3px, rgba(212, 251, 17, 0.17) 6px, transparent 19px),
-    radial-gradient(circle at 28% 30%, rgba(212, 251, 17, 0.42) 0 3px, rgba(212, 251, 17, 0.18) 7px, transparent 21px),
-    radial-gradient(circle at 56% 82%, rgba(212, 251, 17, 0.5) 0 3px, rgba(212, 251, 17, 0.2) 7px, transparent 22px),
-    radial-gradient(circle at 82% 20%, rgba(212, 251, 17, 0.44) 0 3px, rgba(212, 251, 17, 0.18) 7px, transparent 22px);
-  background-repeat: no-repeat;
-  filter: blur(4px);
-  opacity: 0.78;
-  animation: fireflyDriftC 30s ease-in-out infinite alternate;
-}
-
-.firefly-particles {
-  position: absolute;
-  inset: -8vh -6vw;
-  display: block;
-  pointer-events: none;
-  transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.03), 0);
-  will-change: transform;
-}
-
-.firefly-particles i {
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  display: block;
-  width: var(--s);
-  height: var(--s);
-  border-radius: 999px;
-  background: #d4fb11;
-  box-shadow:
-    0 0 22px rgba(212, 251, 17, 0.74),
-    0 0 56px rgba(212, 251, 17, 0.28);
-  opacity: var(--o);
-  transform: translate3d(0, 0, 0) scale(1);
-  animation:
-    fireflyChaos var(--d) cubic-bezier(0.45, 0, 0.2, 1) var(--delay) infinite alternate,
-    fireflyPulse 5.8s ease-in-out var(--delay) infinite alternate;
-  will-change: transform, opacity;
-}
-
-.firefly-particles i:nth-child(1) { --x: 9%; --y: 18%; --s: 8px; --o: 0.68; --d: 11s; --delay: -2s; --dx1: 2.4vw; --dy1: -3.6vh; --dx2: -1.2vw; --dy2: 2.2vh; }
-.firefly-particles i:nth-child(2) { --x: 18%; --y: 62%; --s: 5px; --o: 0.52; --d: 15s; --delay: -7s; --dx1: -2.8vw; --dy1: 2.4vh; --dx2: 1.4vw; --dy2: -3.2vh; }
-.firefly-particles i:nth-child(3) { --x: 27%; --y: 35%; --s: 7px; --o: 0.46; --d: 13s; --delay: -4s; --dx1: 1.6vw; --dy1: 4vh; --dx2: -2.4vw; --dy2: -1.8vh; }
-.firefly-particles i:nth-child(4) { --x: 36%; --y: 79%; --s: 6px; --o: 0.58; --d: 18s; --delay: -9s; --dx1: 3vw; --dy1: -2.6vh; --dx2: -1.6vw; --dy2: 3.6vh; }
-.firefly-particles i:nth-child(5) { --x: 43%; --y: 22%; --s: 10px; --o: 0.55; --d: 16s; --delay: -5s; --dx1: -2.2vw; --dy1: -3vh; --dx2: 2.8vw; --dy2: 2vh; }
-.firefly-particles i:nth-child(6) { --x: 51%; --y: 52%; --s: 7px; --o: 0.72; --d: 12s; --delay: -3s; --dx1: 2.8vw; --dy1: 2.8vh; --dx2: -1.8vw; --dy2: -3.8vh; }
-.firefly-particles i:nth-child(7) { --x: 58%; --y: 16%; --s: 13px; --o: 0.44; --d: 21s; --delay: -12s; --dx1: -3vw; --dy1: 3vh; --dx2: 1.2vw; --dy2: -2.2vh; }
-.firefly-particles i:nth-child(8) { --x: 66%; --y: 68%; --s: 5px; --o: 0.54; --d: 14s; --delay: -6s; --dx1: 2vw; --dy1: -4.2vh; --dx2: -2.8vw; --dy2: 1.8vh; }
-.firefly-particles i:nth-child(9) { --x: 74%; --y: 31%; --s: 9px; --o: 0.5; --d: 17s; --delay: -10s; --dx1: -2.4vw; --dy1: -2vh; --dx2: 2.2vw; --dy2: 3vh; }
-.firefly-particles i:nth-child(10) { --x: 83%; --y: 56%; --s: 6px; --o: 0.62; --d: 10s; --delay: -1s; --dx1: 2.6vw; --dy1: 3.4vh; --dx2: -1.4vw; --dy2: -2.6vh; }
-.firefly-particles i:nth-child(11) { --x: 91%; --y: 24%; --s: 7px; --o: 0.48; --d: 19s; --delay: -13s; --dx1: -2.8vw; --dy1: 4.2vh; --dx2: 1.6vw; --dy2: -1.8vh; }
-.firefly-particles i:nth-child(12) { --x: 95%; --y: 82%; --s: 11px; --o: 0.38; --d: 23s; --delay: -15s; --dx1: -3.8vw; --dy1: -2.8vh; --dx2: 1vw; --dy2: 3.2vh; }
-.firefly-particles i:nth-child(13) { --x: 6%; --y: 78%; --s: 7px; --o: 0.46; --d: 20s; --delay: -11s; --dx1: 3.2vw; --dy1: -3vh; --dx2: -1.8vw; --dy2: 2.4vh; }
-.firefly-particles i:nth-child(14) { --x: 31%; --y: 9%; --s: 5px; --o: 0.56; --d: 12s; --delay: -8s; --dx1: -1.8vw; --dy1: 2.8vh; --dx2: 2.8vw; --dy2: -2.2vh; }
-.firefly-particles i:nth-child(15) { --x: 69%; --y: 88%; --s: 8px; --o: 0.42; --d: 18s; --delay: -14s; --dx1: 1.8vw; --dy1: -4.4vh; --dx2: -3vw; --dy2: 1.6vh; }
-.firefly-particles i:nth-child(16) { --x: 86%; --y: 12%; --s: 5px; --o: 0.64; --d: 13s; --delay: -6s; --dx1: -2vw; --dy1: 3.6vh; --dx2: 2.4vw; --dy2: -2.8vh; }
-
-.firefly-particles i.is-js-driven {
-  animation: none;
-}
-
-.firefly-particles i:nth-child(1) { --jx: 34; --jy: 26; }
-.firefly-particles i:nth-child(2) { --jx: 24; --jy: 38; }
-.firefly-particles i:nth-child(3) { --jx: 31; --jy: 24; }
-.firefly-particles i:nth-child(4) { --jx: 42; --jy: 28; }
-.firefly-particles i:nth-child(5) { --jx: 28; --jy: 42; }
-.firefly-particles i:nth-child(6) { --jx: 38; --jy: 34; }
-.firefly-particles i:nth-child(7) { --jx: 22; --jy: 46; }
-.firefly-particles i:nth-child(8) { --jx: 36; --jy: 22; }
-.firefly-particles i:nth-child(9) { --jx: 30; --jy: 36; }
-.firefly-particles i:nth-child(10) { --jx: 44; --jy: 30; }
-.firefly-particles i:nth-child(11) { --jx: 26; --jy: 40; }
-.firefly-particles i:nth-child(12) { --jx: 46; --jy: 24; }
-.firefly-particles i:nth-child(13) { --jx: 32; --jy: 44; }
-.firefly-particles i:nth-child(14) { --jx: 24; --jy: 30; }
-.firefly-particles i:nth-child(15) { --jx: 40; --jy: 36; }
-.firefly-particles i:nth-child(16) { --jx: 28; --jy: 34; }
-
-@keyframes fireflyDriftA {
-  0% {
-    transform: translate3d(-1vw, calc(var(--depth-scroll, 0px) * -0.04), 0) scale(1);
-  }
-
-  100% {
-    transform: translate3d(2vw, calc(-3vh + var(--depth-scroll, 0px) * -0.04), 0) scale(1.04);
-  }
-}
-
-@keyframes fireflyDriftB {
-  0% {
-    transform: translate3d(1vw, 2vh, 0) scale(0.98);
-  }
-
-  100% {
-    transform: translate3d(-2vw, -2vh, 0) scale(1.05);
-  }
-}
-
-@keyframes fireflyDriftC {
-  0% {
-    transform: translate3d(-2vw, 1vh, 0) scale(1.02);
-  }
-
-  100% {
-    transform: translate3d(1.5vw, -3vh, 0) scale(0.98);
-  }
-}
-
-@keyframes fireflyChaos {
-  0% {
-    transform: translate3d(0, 0, 0) scale(0.82);
-  }
-
-  31% {
-    transform: translate3d(var(--dx1), var(--dy1), 0) scale(1.18);
-  }
-
-  64% {
-    transform: translate3d(var(--dx2), var(--dy2), 0) scale(0.9);
-  }
-
-  100% {
-    transform: translate3d(var(--dx1), var(--dy2), 0) scale(1.08);
-  }
-}
-
-@keyframes fireflyPulse {
-  0%,
-  100% {
-    opacity: 0.24;
-  }
-
-  44% {
-    opacity: var(--o);
-  }
-
-  72% {
-    opacity: 0.42;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .depth-plane-fireflies,
-  .depth-plane-fireflies::before,
-  .depth-plane-fireflies::after,
-  .firefly-particles i {
-    animation: none;
-  }
 }
 
 img,
@@ -316,6 +108,6 @@ textarea {
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent-shadow);
+  outline: 3px solid rgba(81, 91, 171, 0.35);
   outline-offset: 3px;
 }

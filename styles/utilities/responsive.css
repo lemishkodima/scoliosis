@@ -181,12 +181,11 @@
     border-radius: 999px;
     font-size: 0.68rem;
     font-weight: 850;
-    color: var(--navy);
-    background: var(--accent);
+    color: var(--white);
+    background: var(--blue);
     box-shadow:
       0 16px 42px rgba(23, 50, 92, 0.22),
-      0 0 0 7px rgba(212, 251, 17, 0.18),
-      0 0 34px rgba(212, 251, 17, 0.28);
+      0 0 0 7px rgba(81, 91, 171, 0.13);
     line-height: 1.06;
     text-align: center;
     white-space: normal;

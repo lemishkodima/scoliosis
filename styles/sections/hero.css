@@ -25,12 +25,9 @@
   inset: 0;
   z-index: -1;
   content: "";
-  background-image:
+  background:
     radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0) 0 28%, rgba(255, 255, 255, 0.38) 54%, rgba(247, 249, 255, 0.94) 92%),
     linear-gradient(180deg, rgba(247, 249, 255, 0.68), rgba(247, 249, 255, 0) 30%, rgba(247, 249, 255, 0.78) 82%, #f7f9ff 100%);
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
-  background-size: auto, auto;
   pointer-events: none;
 }
 
@@ -58,24 +55,12 @@
 
 .eyebrow,
 .section-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
   margin: 0 0 16px;
   color: var(--blue);
   font-size: 0.78rem;
   font-weight: 850;
   letter-spacing: 0.08em;
-  text-shadow: none;
   text-transform: uppercase;
-}
-
-.eyebrow::after,
-.section-kicker::after {
-  width: 28px;
-  height: 3px;
-  background: var(--accent);
-  content: "";
 }
 
 h1,
@@ -130,18 +115,6 @@ h1 {
   z-index: 2;
   margin-top: 0;
   animation: controlsReveal 900ms 780ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
-}
-
-.hero-actions-centered::before {
-  position: absolute;
-  inset: -18px -26px;
-  z-index: -1;
-  border-radius: 999px;
-  background: radial-gradient(circle at 34% 50%, rgba(212, 251, 17, 0.28), transparent 64%);
-  content: "";
-  filter: blur(6px);
-  opacity: 0.86;
-  pointer-events: none;
 }
 
 .hero-dock {

@@ -4,13 +4,8 @@
   padding: 28px;
   border: 1px solid rgba(23, 50, 92, 0.12);
   border-radius: 8px;
-  background:
-    radial-gradient(circle at 14% 16%, rgba(212, 251, 17, 0.2) 0 3px, rgba(212, 251, 17, 0.1) 5px, transparent 16px),
-    radial-gradient(circle at 86% 72%, rgba(212, 251, 17, 0.16) 0 2px, rgba(212, 251, 17, 0.08) 5px, transparent 14px),
-    rgba(255, 255, 255, 0.88);
-  box-shadow:
-    var(--shadow),
-    0 0 0 1px rgba(212, 251, 17, 0.16);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
   scroll-margin-top: 104px;
 }
 
@@ -38,14 +33,6 @@ textarea {
   padding: 12px 14px;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.84);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: rgba(212, 251, 17, 0.95);
-  box-shadow: 0 0 0 4px rgba(212, 251, 17, 0.14);
-  outline: none;
 }
 
 textarea {
