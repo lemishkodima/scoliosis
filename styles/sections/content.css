@@ -12,7 +12,7 @@
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(242, 247, 253, 0.84)),
     radial-gradient(circle at 86% 10%, rgba(24, 183, 199, 0.16), transparent 38%),
-    radial-gradient(circle at 72% 82%, rgba(215, 169, 79, 0.1), transparent 36%),
+    radial-gradient(circle at 72% 82%, rgba(162, 180, 226, 0.12), transparent 36%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent);
   box-shadow:
     0 34px 110px rgba(23, 50, 92, 0.16),
@@ -168,7 +168,7 @@ h2 {
   left: 18px;
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--aqua), var(--gold));
+  background: linear-gradient(90deg, var(--periwinkle), var(--aqua));
   content: "";
   opacity: 0.82;
 }
@@ -176,7 +176,7 @@ h2 {
 .benefit-card:nth-child(even) {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 251, 255, 0.76)),
-    radial-gradient(circle at 16% 14%, rgba(215, 169, 79, 0.11), transparent 34%);
+    radial-gradient(circle at 16% 14%, rgba(24, 183, 199, 0.09), transparent 34%);
 }
 
 .benefit-card.is-visible {
@@ -251,7 +251,7 @@ h2 {
   min-height: 680px;
   background:
     radial-gradient(circle at 22% 24%, rgba(24, 183, 199, 0.22), transparent 28%),
-    radial-gradient(circle at 84% 76%, rgba(215, 169, 79, 0.16), transparent 32%),
+    radial-gradient(circle at 84% 76%, rgba(24, 183, 199, 0.12), transparent 32%),
     linear-gradient(135deg, #0f2748 0%, var(--navy) 58%, #102642 100%);
 }
 
@@ -277,7 +277,7 @@ h2 {
   background:
     linear-gradient(90deg, rgba(23, 50, 92, 0.18), transparent 42%, rgba(23, 50, 92, 0.24)),
     radial-gradient(circle at 54% 42%, rgba(24, 183, 199, 0.18), transparent 34%),
-    radial-gradient(circle at 72% 68%, rgba(215, 169, 79, 0.12), transparent 32%);
+    radial-gradient(circle at 72% 68%, rgba(24, 183, 199, 0.1), transparent 32%);
   content: "";
   pointer-events: none;
 }
@@ -398,7 +398,7 @@ h2 {
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent 18%, transparent 82%, rgba(23, 50, 92, 0.08)),
     radial-gradient(circle at 48% 36%, rgba(24, 183, 199, 0.13), transparent 34%),
-    radial-gradient(circle at 82% 82%, rgba(215, 169, 79, 0.12), transparent 30%);
+    radial-gradient(circle at 82% 82%, rgba(24, 183, 199, 0.1), transparent 30%);
   content: "";
   opacity: 0.78;
   pointer-events: none;
@@ -454,7 +454,7 @@ h2 {
   border-bottom: 1px solid var(--line);
   background:
     radial-gradient(circle at 88% 24%, rgba(24, 183, 199, 0.1), transparent 26%),
-    radial-gradient(circle at 14% 80%, rgba(215, 169, 79, 0.09), transparent 30%);
+    radial-gradient(circle at 14% 80%, rgba(24, 183, 199, 0.07), transparent 30%);
 }
 
 .open-lines {
@@ -514,7 +514,7 @@ h2 {
   left: calc(16.66% + 38px);
   height: 2px;
   background:
-    linear-gradient(90deg, rgba(24, 183, 199, 0.14), rgba(215, 169, 79, 0.68), rgba(24, 183, 199, 0.2)),
+    linear-gradient(90deg, rgba(24, 183, 199, 0.14), rgba(24, 183, 199, 0.58), rgba(24, 183, 199, 0.2)),
     repeating-linear-gradient(90deg, rgba(23, 50, 92, 0.38) 0 8px, transparent 8px 15px);
   content: "";
   opacity: 0.74;
@@ -530,7 +530,7 @@ h2 {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(223, 228, 245, 0.72)),
     radial-gradient(circle at 18% 18%, rgba(24, 183, 199, 0.16), transparent 42%),
-    radial-gradient(circle at 82% 82%, rgba(215, 169, 79, 0.1), transparent 34%);
+    radial-gradient(circle at 82% 82%, rgba(162, 180, 226, 0.12), transparent 34%);
   box-shadow: 0 24px 70px rgba(23, 50, 92, 0.09);
   overflow: hidden;
 }
@@ -576,7 +576,7 @@ h2 {
   left: 96px;
   display: block;
   margin-bottom: 0;
-  color: var(--gold);
+  color: var(--aqua-deep);
   font-size: 0.86rem;
   font-weight: 900;
 }

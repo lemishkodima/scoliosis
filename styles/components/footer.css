@@ -7,7 +7,7 @@
   color: rgba(255, 255, 255, 0.78);
   background:
     radial-gradient(circle at 14% 28%, rgba(24, 183, 199, 0.24), transparent 30%),
-    radial-gradient(circle at 88% 22%, rgba(215, 169, 79, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 22%, rgba(24, 183, 199, 0.14), transparent 28%),
     linear-gradient(135deg, #102642 0%, var(--navy) 68%, #0b2444 100%);
 }
 
@@ -61,7 +61,7 @@
 
 .footer-contacts a:hover,
 .footer-meta a:hover {
-  color: var(--gold);
+  color: var(--aqua);
 }
 
 .footer-meta {

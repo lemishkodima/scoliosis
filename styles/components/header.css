@@ -120,7 +120,7 @@
   bottom: 4px;
   left: 0;
   height: 1px;
-  background: linear-gradient(90deg, var(--aqua), var(--gold));
+  background: linear-gradient(90deg, var(--periwinkle), var(--aqua));
   content: "";
   opacity: 0;
   transform: scaleX(0.4);
