@@ -19,26 +19,29 @@
   }
 
   .hero {
+    min-height: 198svh;
     padding-top: 130px;
   }
 
   .hero-dock {
     margin-top: clamp(-310px, -29vw, -190px);
+    margin-bottom: clamp(260px, 36vh, 420px);
   }
 
   .intro {
-    margin-top: -58px;
+    margin-top: clamp(-720px, -66vh, -440px);
   }
 
   .hero-visual {
     width: 100vw;
-    min-height: clamp(420px, 52vw, 560px);
+    min-height: 100svh;
     margin-top: 0;
   }
 
   .hero-video-stage {
     width: 100vw;
-    height: clamp(420px, 52vw, 560px);
+    height: 100svh;
+    min-height: 720px;
   }
 
   .logo-stage {
@@ -338,7 +341,7 @@
   }
 
   .intro {
-    margin-top: -34px;
+    margin-top: clamp(-650px, -60vh, -360px);
     padding: 34px 18px 58px;
   }
 

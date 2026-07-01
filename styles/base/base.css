@@ -71,7 +71,7 @@ main,
 
 .depth-backdrop {
   position: fixed;
-  inset: -12vh -8vw;
+  inset: -12vh 0;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;

@@ -4,6 +4,8 @@
 }
 
 .site-hero {
+  position: relative;
+  z-index: 1;
   width: 100%;
 }
 
@@ -13,11 +15,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  padding: 136px 0 142px;
+  min-height: clamp(1760px, 220vh, 2200px);
+  padding: 136px 0 0;
   gap: 0;
   text-align: center;
-  overflow: clip;
+  overflow: visible;
 }
 
 .hero::before {
@@ -128,6 +130,7 @@ h1 {
   justify-items: center;
   width: min(720px, calc(100% - 32px));
   margin-top: clamp(-480px, -34vw, -340px);
+  margin-bottom: clamp(300px, 38vh, 520px);
   padding: 18px clamp(16px, 3vw, 28px) 20px;
   border: 0;
   border-radius: 8px;
@@ -194,13 +197,15 @@ h1 {
 }
 
 .hero-visual {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   display: grid;
   place-items: center;
   width: 100vw;
   min-width: 0;
-  min-height: clamp(500px, 49vw, 760px);
-  margin-top: clamp(-32px, -2vw, -12px);
+  min-height: 100vh;
+  margin-top: clamp(-156px, -8vw, -92px);
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
   perspective: 2100px;
@@ -221,7 +226,8 @@ h1 {
 .hero-video-stage {
   position: relative;
   width: 100vw;
-  height: clamp(500px, 49vw, 760px);
+  height: 100vh;
+  min-height: clamp(640px, 100vh, 920px);
   aspect-ratio: auto;
   overflow: hidden;
   border-radius: 0;

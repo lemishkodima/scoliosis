@@ -1,16 +1,16 @@
 .intro {
   position: relative;
-  z-index: 18;
+  z-index: 32;
   width: 100vw;
   max-width: none;
-  margin-top: clamp(-128px, -7.4vw, -72px);
+  margin-top: clamp(-820px, -78vh, -560px);
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
   padding: clamp(54px, 5.8vw, 86px) clamp(24px, 4.8vw, 72px) clamp(82px, 7.6vw, 118px);
   border: 0;
   border-radius: 0;
   background: #102642;
-  box-shadow: none;
+  box-shadow: 0 -28px 90px rgba(16, 38, 66, 0.18);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   transform: translate3d(0, calc(var(--intro-rise, 0px) * -1), 0);
