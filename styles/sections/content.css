@@ -189,8 +189,11 @@ h2 {
   height: 46px;
   margin-bottom: 36px;
   border-radius: 8px;
-  color: var(--blue);
-  background: rgba(223, 228, 245, 0.82);
+  color: var(--navy);
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.86), transparent 42%),
+    var(--accent);
+  box-shadow: 0 12px 30px rgba(212, 251, 17, 0.24);
 }
 
 .icon svg {
@@ -304,8 +307,9 @@ h2 {
   width: 20px;
   height: 20px;
   border-radius: 999px;
-  color: var(--white);
-  background: var(--blue);
+  color: var(--navy);
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(212, 251, 17, 0.13);
   content: "✓";
   font-size: 0.78rem;
   line-height: 20px;
@@ -438,9 +442,11 @@ h2 {
 }
 
 .open-lines span.is-scrambling {
-  color: var(--blue);
-  opacity: 0.84;
-  text-shadow: 0 0 18px rgba(162, 180, 226, 0.28);
+  color: var(--accent);
+  opacity: 0.92;
+  text-shadow:
+    0 0 16px rgba(212, 251, 17, 0.3),
+    0 0 28px rgba(162, 180, 226, 0.24);
 }
 
 .open-lines span.is-scrambled {
@@ -464,7 +470,7 @@ h2 {
   left: calc(16.66% + 38px);
   height: 2px;
   background:
-    linear-gradient(90deg, rgba(81, 91, 171, 0.15), rgba(81, 91, 171, 0.58), rgba(81, 91, 171, 0.15)),
+    linear-gradient(90deg, rgba(81, 91, 171, 0.15), rgba(212, 251, 17, 0.72), rgba(81, 91, 171, 0.15)),
     repeating-linear-gradient(90deg, rgba(23, 50, 92, 0.38) 0 8px, transparent 8px 15px);
   content: "";
   opacity: 0.74;
@@ -493,15 +499,16 @@ h2 {
   place-items: center;
   width: 52px;
   height: 52px;
-  border: 1px solid rgba(81, 91, 171, 0.34);
+  border: 1px solid rgba(212, 251, 17, 0.72);
   border-radius: 999px;
   background:
     radial-gradient(circle at 36% 30%, rgba(255, 255, 255, 0.94), rgba(223, 228, 245, 0.82)),
     var(--white);
   box-shadow:
-    0 16px 36px rgba(81, 91, 171, 0.16),
-    inset 0 0 0 8px rgba(162, 180, 226, 0.14);
-  color: var(--blue);
+    0 16px 36px rgba(81, 91, 171, 0.14),
+    0 0 32px rgba(212, 251, 17, 0.18),
+    inset 0 0 0 8px rgba(212, 251, 17, 0.16);
+  color: var(--navy);
   content: "✓";
   font-size: 1.05rem;
   font-weight: 950;
@@ -525,7 +532,7 @@ h2 {
   left: 96px;
   display: block;
   margin-bottom: 0;
-  color: var(--blue);
+  color: var(--navy);
   font-size: 0.86rem;
   font-weight: 900;
 }

@@ -35,6 +35,14 @@ textarea {
   background: rgba(255, 255, 255, 0.84);
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(212, 251, 17, 0.95);
+  box-shadow: 0 0 0 4px rgba(212, 251, 17, 0.14);
+  outline: none;
+}
+
 textarea {
   min-height: 92px;
   resize: vertical;

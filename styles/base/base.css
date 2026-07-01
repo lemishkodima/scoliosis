@@ -4,6 +4,10 @@
   --periwinkle: #a2b4e2;
   --blue: #515bab;
   --navy: #17325c;
+  --accent: #d4fb11;
+  --accent-hover: #e8ff63;
+  --accent-soft: rgba(212, 251, 17, 0.22);
+  --accent-shadow: rgba(212, 251, 17, 0.32);
   --ink: #102642;
   --muted: #60708a;
   --line: rgba(23, 50, 92, 0.12);
@@ -38,6 +42,11 @@ body {
   background-attachment: fixed, fixed, fixed, fixed, fixed;
   background-size: 12.5vw 100vh, 100vw 16vh, auto, auto, auto;
   letter-spacing: 0;
+}
+
+::selection {
+  color: var(--navy);
+  background: var(--accent);
 }
 
 body.is-loading {
@@ -108,6 +117,6 @@ textarea {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(81, 91, 171, 0.35);
+  outline: 3px solid var(--accent-shadow);
   outline-offset: 3px;
 }

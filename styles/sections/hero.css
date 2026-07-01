@@ -60,6 +60,7 @@
   font-size: 0.78rem;
   font-weight: 850;
   letter-spacing: 0.08em;
+  text-shadow: 0 0 18px var(--accent-soft);
   text-transform: uppercase;
 }
 

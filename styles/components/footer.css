@@ -60,7 +60,7 @@
 
 .footer-contacts a:hover,
 .footer-meta a:hover {
-  color: var(--white);
+  color: var(--accent);
 }
 
 .footer-meta {
