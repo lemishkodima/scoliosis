@@ -159,6 +159,52 @@ main,
   animation: fireflyDriftC 30s ease-in-out infinite alternate;
 }
 
+.firefly-particles {
+  position: absolute;
+  inset: -8vh -6vw;
+  display: block;
+  pointer-events: none;
+  transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.03), 0);
+  will-change: transform;
+}
+
+.firefly-particles i {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  display: block;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 999px;
+  background: #d4fb11;
+  box-shadow:
+    0 0 22px rgba(212, 251, 17, 0.74),
+    0 0 56px rgba(212, 251, 17, 0.28);
+  opacity: var(--o);
+  transform: translate3d(0, 0, 0) scale(1);
+  animation:
+    fireflyChaos var(--d) cubic-bezier(0.45, 0, 0.2, 1) var(--delay) infinite alternate,
+    fireflyPulse 5.8s ease-in-out var(--delay) infinite alternate;
+  will-change: transform, opacity;
+}
+
+.firefly-particles i:nth-child(1) { --x: 9%; --y: 18%; --s: 8px; --o: 0.68; --d: 11s; --delay: -2s; --dx1: 2.4vw; --dy1: -3.6vh; --dx2: -1.2vw; --dy2: 2.2vh; }
+.firefly-particles i:nth-child(2) { --x: 18%; --y: 62%; --s: 5px; --o: 0.52; --d: 15s; --delay: -7s; --dx1: -2.8vw; --dy1: 2.4vh; --dx2: 1.4vw; --dy2: -3.2vh; }
+.firefly-particles i:nth-child(3) { --x: 27%; --y: 35%; --s: 7px; --o: 0.46; --d: 13s; --delay: -4s; --dx1: 1.6vw; --dy1: 4vh; --dx2: -2.4vw; --dy2: -1.8vh; }
+.firefly-particles i:nth-child(4) { --x: 36%; --y: 79%; --s: 6px; --o: 0.58; --d: 18s; --delay: -9s; --dx1: 3vw; --dy1: -2.6vh; --dx2: -1.6vw; --dy2: 3.6vh; }
+.firefly-particles i:nth-child(5) { --x: 43%; --y: 22%; --s: 10px; --o: 0.55; --d: 16s; --delay: -5s; --dx1: -2.2vw; --dy1: -3vh; --dx2: 2.8vw; --dy2: 2vh; }
+.firefly-particles i:nth-child(6) { --x: 51%; --y: 52%; --s: 7px; --o: 0.72; --d: 12s; --delay: -3s; --dx1: 2.8vw; --dy1: 2.8vh; --dx2: -1.8vw; --dy2: -3.8vh; }
+.firefly-particles i:nth-child(7) { --x: 58%; --y: 16%; --s: 13px; --o: 0.44; --d: 21s; --delay: -12s; --dx1: -3vw; --dy1: 3vh; --dx2: 1.2vw; --dy2: -2.2vh; }
+.firefly-particles i:nth-child(8) { --x: 66%; --y: 68%; --s: 5px; --o: 0.54; --d: 14s; --delay: -6s; --dx1: 2vw; --dy1: -4.2vh; --dx2: -2.8vw; --dy2: 1.8vh; }
+.firefly-particles i:nth-child(9) { --x: 74%; --y: 31%; --s: 9px; --o: 0.5; --d: 17s; --delay: -10s; --dx1: -2.4vw; --dy1: -2vh; --dx2: 2.2vw; --dy2: 3vh; }
+.firefly-particles i:nth-child(10) { --x: 83%; --y: 56%; --s: 6px; --o: 0.62; --d: 10s; --delay: -1s; --dx1: 2.6vw; --dy1: 3.4vh; --dx2: -1.4vw; --dy2: -2.6vh; }
+.firefly-particles i:nth-child(11) { --x: 91%; --y: 24%; --s: 7px; --o: 0.48; --d: 19s; --delay: -13s; --dx1: -2.8vw; --dy1: 4.2vh; --dx2: 1.6vw; --dy2: -1.8vh; }
+.firefly-particles i:nth-child(12) { --x: 95%; --y: 82%; --s: 11px; --o: 0.38; --d: 23s; --delay: -15s; --dx1: -3.8vw; --dy1: -2.8vh; --dx2: 1vw; --dy2: 3.2vh; }
+.firefly-particles i:nth-child(13) { --x: 6%; --y: 78%; --s: 7px; --o: 0.46; --d: 20s; --delay: -11s; --dx1: 3.2vw; --dy1: -3vh; --dx2: -1.8vw; --dy2: 2.4vh; }
+.firefly-particles i:nth-child(14) { --x: 31%; --y: 9%; --s: 5px; --o: 0.56; --d: 12s; --delay: -8s; --dx1: -1.8vw; --dy1: 2.8vh; --dx2: 2.8vw; --dy2: -2.2vh; }
+.firefly-particles i:nth-child(15) { --x: 69%; --y: 88%; --s: 8px; --o: 0.42; --d: 18s; --delay: -14s; --dx1: 1.8vw; --dy1: -4.4vh; --dx2: -3vw; --dy2: 1.6vh; }
+.firefly-particles i:nth-child(16) { --x: 86%; --y: 12%; --s: 5px; --o: 0.64; --d: 13s; --delay: -6s; --dx1: -2vw; --dy1: 3.6vh; --dx2: 2.4vw; --dy2: -2.8vh; }
+
 @keyframes fireflyDriftA {
   0% {
     transform: translate3d(-1vw, calc(var(--depth-scroll, 0px) * -0.04), 0) scale(1);
@@ -189,10 +235,44 @@ main,
   }
 }
 
+@keyframes fireflyChaos {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.82);
+  }
+
+  31% {
+    transform: translate3d(var(--dx1), var(--dy1), 0) scale(1.18);
+  }
+
+  64% {
+    transform: translate3d(var(--dx2), var(--dy2), 0) scale(0.9);
+  }
+
+  100% {
+    transform: translate3d(var(--dx1), var(--dy2), 0) scale(1.08);
+  }
+}
+
+@keyframes fireflyPulse {
+  0%,
+  100% {
+    opacity: 0.24;
+  }
+
+  44% {
+    opacity: var(--o);
+  }
+
+  72% {
+    opacity: 0.42;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .depth-plane-fireflies,
   .depth-plane-fireflies::before,
-  .depth-plane-fireflies::after {
+  .depth-plane-fireflies::after,
+  .firefly-particles i {
     animation: none;
   }
 }
