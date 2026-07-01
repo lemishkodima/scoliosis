@@ -34,13 +34,16 @@ body {
     Inter, Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background:
+    linear-gradient(135deg, rgba(212, 251, 17, 0.16) 0 10%, transparent 10% 28%, rgba(212, 251, 17, 0.09) 28% 38%, transparent 38% 100%),
     linear-gradient(90deg, rgba(23, 50, 92, 0.045) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.035) 1px, transparent 1px),
+    linear-gradient(110deg, transparent 0 54%, rgba(212, 251, 17, 0.12) 54% 62%, transparent 62% 100%),
     radial-gradient(circle at 72% 18%, rgba(162, 180, 226, 0.24), transparent 29%),
     radial-gradient(circle at 16% 68%, rgba(81, 91, 171, 0.1), transparent 32%),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
-  background-attachment: fixed, fixed, fixed, fixed, fixed;
-  background-size: 12.5vw 100vh, 100vw 16vh, auto, auto, auto;
+  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed;
+  background-position: 0 0, 0 0, 0 0, center, center, center, center;
+  background-size: 50vw 48vh, 12.5vw 100vh, 100vw 16vh, 100% 100%, auto, auto, auto;
   letter-spacing: 0;
 }
 
@@ -80,19 +83,22 @@ main,
 
 .depth-plane-grid {
   background:
+    linear-gradient(135deg, rgba(212, 251, 17, 0.13) 0 11%, transparent 11% 31%, rgba(212, 251, 17, 0.08) 31% 42%, transparent 42% 100%),
     linear-gradient(90deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.04) 1px, transparent 1px),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
   background-position:
+    calc(var(--depth-scroll, 0px) * -0.04) calc(var(--depth-scroll, 0px) * -0.02),
     calc(var(--depth-scroll, 0px) * -0.025) 0,
     0 calc(var(--depth-scroll, 0px) * -0.018),
     center;
-  background-size: 12.5vw 100%, 100% 16vh, auto;
-  opacity: 0.82;
+  background-size: 50vw 48vh, 12.5vw 100%, 100% 16vh, auto;
+  opacity: 0.9;
 }
 
 .depth-plane-glow {
   background:
+    linear-gradient(115deg, transparent 0 60%, rgba(212, 251, 17, 0.15) 60% 68%, transparent 68% 100%),
     radial-gradient(circle at 72% calc(18% + var(--depth-scroll, 0px) * -0.03), rgba(162, 180, 226, 0.34), transparent 29%),
     radial-gradient(circle at 16% calc(68% + var(--depth-scroll, 0px) * -0.02), rgba(81, 91, 171, 0.12), transparent 32%);
   opacity: 0.86;

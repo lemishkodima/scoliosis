@@ -4,8 +4,12 @@
   padding: 28px;
   border: 1px solid rgba(23, 50, 92, 0.12);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(135deg, rgba(212, 251, 17, 0.22) 0 14%, transparent 14% 42%, rgba(212, 251, 17, 0.1) 42% 52%, transparent 52% 100%),
+    rgba(255, 255, 255, 0.88);
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px rgba(212, 251, 17, 0.16);
   scroll-margin-top: 104px;
 }
 
