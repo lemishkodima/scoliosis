@@ -45,88 +45,114 @@
 
 .loader-blocks span {
   position: absolute;
-  left: var(--loader-panel-left, 0);
-  width: var(--loader-panel-width, 34vw);
-  height: var(--loader-panel-height, 58vh);
+  left: calc((var(--loader-panel-index, 0) * 8.333vw) - 1px);
+  width: calc(8.333vw + 4px);
+  height: calc(53vh + var(--loader-panel-depth, 0vh));
   background: linear-gradient(135deg, #07162c 0%, #102642 52%, #17325c 100%);
   box-shadow:
-    inset 1px 0 0 rgba(255, 255, 255, 0.018),
-    inset -1px 0 0 rgba(0, 0, 0, 0.16),
-    0 26px 80px rgba(8, 27, 51, 0.28);
+    inset 1px 0 0 rgba(255, 255, 255, 0.016),
+    inset -1px 0 0 rgba(0, 0, 0, 0.18),
+    0 24px 72px rgba(8, 27, 51, 0.22);
   transform: translateY(0);
   will-change: transform, opacity;
 }
 
-.loader-blocks span:nth-child(1) {
-  --loader-panel-left: -2vw;
-  --loader-panel-width: 29vw;
-  --loader-panel-height: 57vh;
-  --loader-exit-y: -112%;
-  top: 0;
+.loader-blocks span:nth-child(-n + 12) {
+  --loader-exit-y: -118%;
+  bottom: calc(50% - 2px);
 }
 
-.loader-blocks span:nth-child(2) {
-  --loader-panel-left: 24vw;
-  --loader-panel-width: 30vw;
-  --loader-panel-height: 63vh;
-  --loader-exit-y: -112%;
-  top: 0;
+.loader-blocks span:nth-child(n + 13) {
+  --loader-exit-y: 118%;
+  top: calc(50% - 2px);
 }
 
-.loader-blocks span:nth-child(3) {
-  --loader-panel-left: 51vw;
-  --loader-panel-width: 51vw;
-  --loader-panel-height: 55vh;
-  --loader-exit-y: -112%;
-  top: 0;
+.loader-blocks span:nth-child(1),
+.loader-blocks span:nth-child(13) {
+  --loader-panel-index: 0;
+  --loader-panel-depth: 2vh;
+  --loader-distance: 6;
 }
 
-.loader-blocks span:nth-child(4) {
-  --loader-panel-left: -2vw;
-  --loader-panel-width: 35vw;
-  --loader-panel-height: 54vh;
-  --loader-exit-y: 112%;
-  bottom: 0;
+.loader-blocks span:nth-child(2),
+.loader-blocks span:nth-child(14) {
+  --loader-panel-index: 1;
+  --loader-panel-depth: 6vh;
+  --loader-distance: 5;
 }
 
-.loader-blocks span:nth-child(5) {
-  --loader-panel-left: 30vw;
-  --loader-panel-width: 30vw;
-  --loader-panel-height: 62vh;
-  --loader-exit-y: 112%;
-  bottom: 0;
+.loader-blocks span:nth-child(3),
+.loader-blocks span:nth-child(15) {
+  --loader-panel-index: 2;
+  --loader-panel-depth: 3vh;
+  --loader-distance: 4;
 }
 
-.loader-blocks span:nth-child(6) {
-  --loader-panel-left: 57vw;
-  --loader-panel-width: 45vw;
-  --loader-panel-height: 51vh;
-  --loader-exit-y: 112%;
-  bottom: 0;
+.loader-blocks span:nth-child(4),
+.loader-blocks span:nth-child(16) {
+  --loader-panel-index: 3;
+  --loader-panel-depth: 9vh;
+  --loader-distance: 3;
+}
+
+.loader-blocks span:nth-child(5),
+.loader-blocks span:nth-child(17) {
+  --loader-panel-index: 4;
+  --loader-panel-depth: 5vh;
+  --loader-distance: 2;
+}
+
+.loader-blocks span:nth-child(6),
+.loader-blocks span:nth-child(18) {
+  --loader-panel-index: 5;
+  --loader-panel-depth: 12vh;
+  --loader-distance: 1;
+}
+
+.loader-blocks span:nth-child(7),
+.loader-blocks span:nth-child(19) {
+  --loader-panel-index: 6;
+  --loader-panel-depth: 14vh;
+  --loader-distance: 0;
+}
+
+.loader-blocks span:nth-child(8),
+.loader-blocks span:nth-child(20) {
+  --loader-panel-index: 7;
+  --loader-panel-depth: 7vh;
+  --loader-distance: 1;
+}
+
+.loader-blocks span:nth-child(9),
+.loader-blocks span:nth-child(21) {
+  --loader-panel-index: 8;
+  --loader-panel-depth: 11vh;
+  --loader-distance: 2;
+}
+
+.loader-blocks span:nth-child(10),
+.loader-blocks span:nth-child(22) {
+  --loader-panel-index: 9;
+  --loader-panel-depth: 4vh;
+  --loader-distance: 3;
+}
+
+.loader-blocks span:nth-child(11),
+.loader-blocks span:nth-child(23) {
+  --loader-panel-index: 10;
+  --loader-panel-depth: 8vh;
+  --loader-distance: 4;
+}
+
+.loader-blocks span:nth-child(12),
+.loader-blocks span:nth-child(24) {
+  --loader-panel-index: 11;
+  --loader-panel-depth: 2vh;
+  --loader-distance: 5;
 }
 
 .page-loader.is-revealing .loader-blocks span {
-  animation: loaderBlockOpen 1180ms 120ms cubic-bezier(0.74, 0, 0.16, 1) both;
-}
-
-.page-loader.is-revealing .loader-blocks span:nth-child(2) {
-  animation-delay: 180ms;
-}
-
-.page-loader.is-revealing .loader-blocks span:nth-child(3) {
-  animation-delay: 240ms;
-}
-
-.page-loader.is-revealing .loader-blocks span:nth-child(4) {
-  animation-delay: 220ms;
-}
-
-.page-loader.is-revealing .loader-blocks span:nth-child(5) {
-  animation-delay: 280ms;
-}
-
-.page-loader.is-revealing .loader-blocks span:nth-child(6) {
-  animation-delay: 340ms;
+  animation: loaderBlockOpen 1180ms calc(80ms + (var(--loader-distance, 0) * 34ms)) cubic-bezier(0.74, 0, 0.16, 1) both;
 }
 
 .loader-cross {
