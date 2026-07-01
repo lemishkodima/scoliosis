@@ -6,8 +6,9 @@
   padding: clamp(52px, 7vw, 86px) max(16px, calc((100vw - 1180px) / 2));
   color: rgba(255, 255, 255, 0.78);
   background:
-    radial-gradient(circle at 14% 28%, rgba(162, 180, 226, 0.24), transparent 30%),
-    linear-gradient(135deg, #102642 0%, var(--navy) 100%);
+    radial-gradient(circle at 14% 28%, rgba(24, 183, 199, 0.24), transparent 30%),
+    radial-gradient(circle at 88% 22%, rgba(215, 169, 79, 0.18), transparent 28%),
+    linear-gradient(135deg, #102642 0%, var(--navy) 68%, #0b2444 100%);
 }
 
 .footer-brand-group {
@@ -60,7 +61,7 @@
 
 .footer-contacts a:hover,
 .footer-meta a:hover {
-  color: var(--white);
+  color: var(--gold);
 }
 
 .footer-meta {

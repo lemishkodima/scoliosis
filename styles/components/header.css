@@ -33,8 +33,12 @@
   padding-top: 12px;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(23, 50, 92, 0.07);
-  background: rgba(247, 249, 255, 0.82);
-  box-shadow: 0 18px 54px rgba(23, 50, 92, 0.1);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.78), rgba(246, 250, 255, 0.86)),
+    radial-gradient(circle at 86% 50%, rgba(24, 183, 199, 0.12), transparent 28%);
+  box-shadow:
+    0 18px 54px rgba(23, 50, 92, 0.1),
+    inset 0 -1px 0 rgba(24, 183, 199, 0.1);
   backdrop-filter: blur(22px) saturate(1.14);
   -webkit-backdrop-filter: blur(22px) saturate(1.14);
 }
@@ -116,7 +120,7 @@
   bottom: 4px;
   left: 0;
   height: 1px;
-  background: currentColor;
+  background: linear-gradient(90deg, var(--aqua), var(--gold));
   content: "";
   opacity: 0;
   transform: scaleX(0.4);
@@ -215,7 +219,7 @@
 }
 
 .language-menu button[aria-pressed="true"] {
-  color: var(--blue);
+  color: var(--aqua-deep);
 }
 
 .header-cta,
@@ -225,11 +229,15 @@
   justify-content: center;
   min-height: 46px;
   padding: 0 20px;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 8px;
   color: var(--white);
-  background: var(--blue);
-  box-shadow: 0 14px 36px rgba(81, 91, 171, 0.28);
+  background:
+    linear-gradient(135deg, var(--aqua) 0%, var(--blue) 54%, var(--navy) 100%);
+  box-shadow:
+    0 18px 44px rgba(24, 183, 199, 0.24),
+    0 12px 34px rgba(81, 91, 171, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.26);
   font-weight: 750;
   cursor: pointer;
   transition:
@@ -251,8 +259,11 @@
   border: 1px solid rgba(23, 50, 92, 0.14);
   border-radius: 8px;
   color: var(--navy);
-  background: rgba(255, 255, 255, 0.52);
-  box-shadow: 0 14px 34px rgba(23, 50, 92, 0.08);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(240, 249, 252, 0.58));
+  box-shadow:
+    0 14px 34px rgba(23, 50, 92, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
   font-weight: 800;
   backdrop-filter: blur(14px);
   transition:
@@ -262,15 +273,20 @@
 }
 
 .secondary-button:hover {
-  border-color: rgba(81, 91, 171, 0.36);
-  box-shadow: 0 16px 40px rgba(23, 50, 92, 0.14);
+  border-color: rgba(24, 183, 199, 0.42);
+  box-shadow:
+    0 16px 40px rgba(23, 50, 92, 0.14),
+    0 0 0 4px rgba(24, 183, 199, 0.08);
   transform: translateY(-1px);
 }
 
 .header-cta:hover,
 .primary-button:hover {
-  background: var(--navy);
-  box-shadow: 0 16px 42px rgba(23, 50, 92, 0.28);
+  background:
+    linear-gradient(135deg, var(--navy) 0%, var(--aqua-deep) 100%);
+  box-shadow:
+    0 18px 48px rgba(24, 183, 199, 0.3),
+    0 16px 42px rgba(23, 50, 92, 0.28);
   transform: translateY(-1px);
 }
 

@@ -4,6 +4,13 @@
   --periwinkle: #a2b4e2;
   --blue: #515bab;
   --navy: #17325c;
+  --aqua: #18b7c7;
+  --aqua-deep: #087f9d;
+  --aqua-soft: rgba(24, 183, 199, 0.18);
+  --aqua-glow: rgba(24, 183, 199, 0.32);
+  --gold: #d7a94f;
+  --gold-soft: rgba(215, 169, 79, 0.2);
+  --gold-glow: rgba(215, 169, 79, 0.28);
   --ink: #102642;
   --muted: #60708a;
   --line: rgba(23, 50, 92, 0.12);
@@ -32,12 +39,18 @@ body {
   background:
     linear-gradient(90deg, rgba(23, 50, 92, 0.045) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 72% 18%, rgba(162, 180, 226, 0.24), transparent 29%),
-    radial-gradient(circle at 16% 68%, rgba(81, 91, 171, 0.1), transparent 32%),
-    linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
+    radial-gradient(circle at 74% 16%, rgba(24, 183, 199, 0.17), transparent 28%),
+    radial-gradient(circle at 86% 72%, rgba(215, 169, 79, 0.13), transparent 30%),
+    radial-gradient(circle at 16% 68%, rgba(81, 91, 171, 0.12), transparent 32%),
+    linear-gradient(135deg, #ffffff 0%, #f7f9ff 42%, #edf2fb 78%, #f8fbff 100%);
   background-attachment: fixed, fixed, fixed, fixed, fixed;
   background-size: 12.5vw 100vh, 100vw 16vh, auto, auto, auto;
   letter-spacing: 0;
+}
+
+::selection {
+  color: var(--navy);
+  background: rgba(24, 183, 199, 0.26);
 }
 
 body.is-loading {
@@ -73,18 +86,23 @@ main,
   background:
     linear-gradient(90deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 78% 20%, rgba(24, 183, 199, 0.12), transparent 28%),
+    radial-gradient(circle at 22% 78%, rgba(215, 169, 79, 0.09), transparent 30%),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
   background-position:
     calc(var(--depth-scroll, 0px) * -0.025) 0,
     0 calc(var(--depth-scroll, 0px) * -0.018),
+    center,
+    center,
     center;
-  background-size: 12.5vw 100%, 100% 16vh, auto;
+  background-size: 12.5vw 100%, 100% 16vh, auto, auto, auto;
   opacity: 0.82;
 }
 
 .depth-plane-glow {
   background:
-    radial-gradient(circle at 72% calc(18% + var(--depth-scroll, 0px) * -0.03), rgba(162, 180, 226, 0.34), transparent 29%),
+    radial-gradient(circle at 72% calc(18% + var(--depth-scroll, 0px) * -0.03), rgba(24, 183, 199, 0.26), transparent 27%),
+    radial-gradient(circle at 88% calc(64% + var(--depth-scroll, 0px) * -0.024), rgba(215, 169, 79, 0.14), transparent 28%),
     radial-gradient(circle at 16% calc(68% + var(--depth-scroll, 0px) * -0.02), rgba(81, 91, 171, 0.12), transparent 32%);
   opacity: 0.86;
   transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.06), 0);

@@ -2,10 +2,16 @@
   display: grid;
   gap: 18px;
   padding: 28px;
-  border: 1px solid rgba(23, 50, 92, 0.12);
+  border: 1px solid rgba(24, 183, 199, 0.18);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(245, 250, 253, 0.86)),
+    radial-gradient(circle at 86% 8%, rgba(24, 183, 199, 0.12), transparent 32%),
+    radial-gradient(circle at 18% 96%, rgba(215, 169, 79, 0.1), transparent 34%);
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px rgba(255, 255, 255, 0.72),
+    0 22px 70px rgba(24, 183, 199, 0.08);
   scroll-margin-top: 104px;
 }
 
@@ -28,11 +34,26 @@ select,
 textarea {
   width: 100%;
   min-height: 48px;
-  border: 1px solid rgba(23, 50, 92, 0.18);
+  border: 1px solid rgba(23, 50, 92, 0.16);
   border-radius: 8px;
   padding: 12px 14px;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.84);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(24, 183, 199, 0.58);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 0 0 4px rgba(24, 183, 199, 0.1),
+    0 10px 30px rgba(23, 50, 92, 0.06);
+  outline: 0;
 }
 
 textarea {

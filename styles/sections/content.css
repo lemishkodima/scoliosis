@@ -10,8 +10,9 @@
   border: 1px solid rgba(23, 50, 92, 0.1);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.93), rgba(242, 245, 253, 0.8)),
-    radial-gradient(circle at 86% 10%, rgba(162, 180, 226, 0.24), transparent 38%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(242, 247, 253, 0.84)),
+    radial-gradient(circle at 86% 10%, rgba(24, 183, 199, 0.16), transparent 38%),
+    radial-gradient(circle at 72% 82%, rgba(215, 169, 79, 0.1), transparent 36%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent);
   box-shadow:
     0 34px 110px rgba(23, 50, 92, 0.16),
@@ -37,7 +38,8 @@
   border-radius: inherit;
   background:
     linear-gradient(90deg, rgba(23, 50, 92, 0.08) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px);
+    linear-gradient(180deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 0 42%, rgba(24, 183, 199, 0.08) 42% 43%, transparent 43% 100%);
   background-size: 25% 100%, 100% 50%;
   content: "";
   opacity: 0.34;
@@ -141,18 +143,40 @@ h2 {
 }
 
 .benefit-card {
+  position: relative;
   min-height: 290px;
   padding: 26px;
   border: 1px solid rgba(23, 50, 92, 0.1);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.76);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(248, 251, 255, 0.76)),
+    radial-gradient(circle at 82% 12%, rgba(24, 183, 199, 0.1), transparent 34%);
   box-shadow: 0 20px 60px rgba(23, 50, 92, 0.07);
   transform: translate3d(0, calc(18px + var(--parallax-y, 0px)), 0);
   opacity: 0;
   transition:
     transform 520ms ease,
     opacity 520ms ease,
-    box-shadow 180ms ease;
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.benefit-card::before {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  left: 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--aqua), var(--gold));
+  content: "";
+  opacity: 0.82;
+}
+
+.benefit-card:nth-child(even) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 251, 255, 0.76)),
+    radial-gradient(circle at 16% 14%, rgba(215, 169, 79, 0.11), transparent 34%);
 }
 
 .benefit-card.is-visible {
@@ -161,6 +185,7 @@ h2 {
 }
 
 .benefit-card:hover {
+  border-color: rgba(24, 183, 199, 0.28);
   box-shadow: var(--shadow);
   transform: translate3d(0, calc(var(--parallax-y, 0px) - 3px), 0);
 }
@@ -189,8 +214,12 @@ h2 {
   height: 46px;
   margin-bottom: 36px;
   border-radius: 8px;
-  color: var(--blue);
-  background: rgba(223, 228, 245, 0.82);
+  color: var(--white);
+  background:
+    linear-gradient(135deg, var(--aqua), var(--blue));
+  box-shadow:
+    0 16px 36px rgba(24, 183, 199, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.26);
 }
 
 .icon svg {
@@ -220,7 +249,10 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.75fr);
   min-height: 680px;
-  background: var(--navy);
+  background:
+    radial-gradient(circle at 22% 24%, rgba(24, 183, 199, 0.22), transparent 28%),
+    radial-gradient(circle at 84% 76%, rgba(215, 169, 79, 0.16), transparent 32%),
+    linear-gradient(135deg, #0f2748 0%, var(--navy) 58%, #102642 100%);
 }
 
 .mission-media {
@@ -244,7 +276,8 @@ h2 {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(23, 50, 92, 0.18), transparent 42%, rgba(23, 50, 92, 0.24)),
-    radial-gradient(circle at 54% 42%, rgba(162, 180, 226, 0.18), transparent 34%);
+    radial-gradient(circle at 54% 42%, rgba(24, 183, 199, 0.18), transparent 34%),
+    radial-gradient(circle at 72% 68%, rgba(215, 169, 79, 0.12), transparent 32%);
   content: "";
   pointer-events: none;
 }
@@ -290,9 +323,12 @@ h2 {
 .check-list li {
   position: relative;
   padding: 16px 18px 16px 48px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(23, 50, 92, 0.11);
+  border-left: 4px solid rgba(24, 183, 199, 0.58);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.74);
+  background:
+    linear-gradient(90deg, rgba(24, 183, 199, 0.07), rgba(255, 255, 255, 0.76) 34%),
+    rgba(255, 255, 255, 0.74);
   color: var(--navy);
   font-weight: 750;
 }
@@ -305,7 +341,8 @@ h2 {
   height: 20px;
   border-radius: 999px;
   color: var(--white);
-  background: var(--blue);
+  background: linear-gradient(135deg, var(--aqua), var(--blue));
+  box-shadow: 0 8px 18px rgba(24, 183, 199, 0.22);
   content: "✓";
   font-size: 0.78rem;
   line-height: 20px;
@@ -348,7 +385,9 @@ h2 {
   overflow: hidden;
   border-radius: 8px;
   background: var(--mist);
-  box-shadow: 0 22px 60px rgba(23, 50, 92, 0.1);
+  box-shadow:
+    0 22px 60px rgba(23, 50, 92, 0.1),
+    0 0 0 1px rgba(24, 183, 199, 0.08);
   transform: translateZ(0);
 }
 
@@ -358,7 +397,8 @@ h2 {
   z-index: 2;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent 18%, transparent 82%, rgba(23, 50, 92, 0.08)),
-    radial-gradient(circle at 48% 36%, rgba(162, 180, 226, 0.12), transparent 34%);
+    radial-gradient(circle at 48% 36%, rgba(24, 183, 199, 0.13), transparent 34%),
+    radial-gradient(circle at 82% 82%, rgba(215, 169, 79, 0.12), transparent 30%);
   content: "";
   opacity: 0.78;
   pointer-events: none;
@@ -380,7 +420,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.9) contrast(1.04) brightness(1.02);
+  filter: saturate(1.04) contrast(1.05) brightness(1.02);
   transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.06);
   transition: transform 900ms cubic-bezier(0.2, 0.78, 0.24, 1);
   will-change: transform;
@@ -412,6 +452,9 @@ h2 {
   padding: 90px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 88% 24%, rgba(24, 183, 199, 0.1), transparent 26%),
+    radial-gradient(circle at 14% 80%, rgba(215, 169, 79, 0.09), transparent 30%);
 }
 
 .open-lines {
@@ -426,7 +469,14 @@ h2 {
 
 .open-lines span:nth-child(even) {
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(23, 50, 92, 0.72);
+  -webkit-text-stroke: 1.5px rgba(8, 127, 157, 0.7);
+}
+
+.open-lines span:nth-child(3) {
+  background: linear-gradient(90deg, var(--navy), var(--blue), var(--aqua-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .open-lines span {
@@ -438,9 +488,9 @@ h2 {
 }
 
 .open-lines span.is-scrambling {
-  color: var(--blue);
+  color: var(--aqua-deep);
   opacity: 0.84;
-  text-shadow: 0 0 18px rgba(162, 180, 226, 0.28);
+  text-shadow: 0 0 18px rgba(24, 183, 199, 0.22);
 }
 
 .open-lines span.is-scrambled {
@@ -464,7 +514,7 @@ h2 {
   left: calc(16.66% + 38px);
   height: 2px;
   background:
-    linear-gradient(90deg, rgba(81, 91, 171, 0.15), rgba(81, 91, 171, 0.58), rgba(81, 91, 171, 0.15)),
+    linear-gradient(90deg, rgba(24, 183, 199, 0.14), rgba(215, 169, 79, 0.68), rgba(24, 183, 199, 0.2)),
     repeating-linear-gradient(90deg, rgba(23, 50, 92, 0.38) 0 8px, transparent 8px 15px);
   content: "";
   opacity: 0.74;
@@ -478,8 +528,9 @@ h2 {
   border: 1px solid rgba(23, 50, 92, 0.12);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(223, 228, 245, 0.72)),
-    radial-gradient(circle at 18% 18%, rgba(162, 180, 226, 0.26), transparent 42%);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(223, 228, 245, 0.72)),
+    radial-gradient(circle at 18% 18%, rgba(24, 183, 199, 0.16), transparent 42%),
+    radial-gradient(circle at 82% 82%, rgba(215, 169, 79, 0.1), transparent 34%);
   box-shadow: 0 24px 70px rgba(23, 50, 92, 0.09);
   overflow: hidden;
 }
@@ -493,15 +544,15 @@ h2 {
   place-items: center;
   width: 52px;
   height: 52px;
-  border: 1px solid rgba(81, 91, 171, 0.34);
+  border: 1px solid rgba(24, 183, 199, 0.36);
   border-radius: 999px;
   background:
     radial-gradient(circle at 36% 30%, rgba(255, 255, 255, 0.94), rgba(223, 228, 245, 0.82)),
-    var(--white);
+    linear-gradient(135deg, var(--aqua), var(--blue));
   box-shadow:
-    0 16px 36px rgba(81, 91, 171, 0.16),
-    inset 0 0 0 8px rgba(162, 180, 226, 0.14);
-  color: var(--blue);
+    0 16px 36px rgba(24, 183, 199, 0.18),
+    inset 0 0 0 8px rgba(255, 255, 255, 0.18);
+  color: var(--white);
   content: "✓";
   font-size: 1.05rem;
   font-weight: 950;
@@ -525,7 +576,7 @@ h2 {
   left: 96px;
   display: block;
   margin-bottom: 0;
-  color: var(--blue);
+  color: var(--gold);
   font-size: 0.86rem;
   font-weight: 900;
 }
