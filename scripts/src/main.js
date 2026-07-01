@@ -1,13 +1,13 @@
-import { exposeDebugApi } from "./core/debug.js?v=20260701-loader-cleanup";
-import { getMotionPreference } from "./core/dom.js?v=20260701-loader-cleanup";
-import { initCursor } from "./features/cursor.js?v=20260701-loader-cleanup";
-import { initHeader } from "./features/header.js?v=20260701-loader-cleanup";
-import { initHeroInteractions } from "./features/hero-interactions.js?v=20260701-loader-cleanup";
-import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260701-loader-cleanup";
-import { initLanguageSwitcher } from "./features/i18n.js?v=20260701-loader-cleanup";
-import { initPageLoader } from "./features/loader.js?v=20260701-loader-cleanup";
-import { initMembershipForm } from "./features/form.js?v=20260701-loader-cleanup";
-import { initRevealCards } from "./features/reveal.js?v=20260701-loader-cleanup";
+import { exposeDebugApi } from "./core/debug.js?v=20260701-hero-title-drop-6";
+import { getMotionPreference } from "./core/dom.js?v=20260701-hero-title-drop-6";
+import { initCursor } from "./features/cursor.js?v=20260701-hero-title-drop-6";
+import { initHeader } from "./features/header.js?v=20260701-hero-title-drop-6";
+import { initHeroInteractions } from "./features/hero-interactions.js?v=20260701-hero-title-drop-6";
+import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260701-hero-title-drop-6";
+import { initLanguageSwitcher } from "./features/i18n.js?v=20260701-hero-title-drop-6";
+import { initPageLoader } from "./features/loader.js?v=20260701-hero-title-drop-6";
+import { initMembershipForm } from "./features/form.js?v=20260701-hero-title-drop-6";
+import { initRevealCards } from "./features/reveal.js?v=20260701-hero-title-drop-6";
 
 const prefersReducedMotion = getMotionPreference();
 

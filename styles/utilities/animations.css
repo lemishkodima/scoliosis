@@ -309,6 +309,16 @@
   }
 }
 
+@keyframes heroTitleScrollDrop {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: 0 clamp(92px, 11vh, 160px);
+  }
+}
+
 @keyframes controlsReveal {
   from {
     opacity: 0;

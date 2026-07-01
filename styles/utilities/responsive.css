@@ -311,6 +311,12 @@
     line-height: 1.04;
   }
 
+  @supports (animation-timeline: scroll(root block)) {
+    .hero-copy > * {
+      animation-range: 0 260px;
+    }
+  }
+
   h2 {
     font-size: clamp(1.85rem, 10vw, 2.8rem);
   }
