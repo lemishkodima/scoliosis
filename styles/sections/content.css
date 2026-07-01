@@ -3,7 +3,7 @@
   z-index: 24;
   width: 100vw;
   max-width: none;
-  margin-top: -100vh;
+  margin-top: clamp(-520px, -42vh, -390px);
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
   padding: clamp(54px, 5.8vw, 86px) clamp(24px, 4.8vw, 72px) clamp(82px, 7.6vw, 118px);
@@ -122,7 +122,17 @@ h2 {
 
 .benefits,
 .steps {
+  position: relative;
+  z-index: 22;
   padding: 96px 0;
+}
+
+.benefits::before {
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: #f7f9ff;
+  content: "";
 }
 
 .section-heading {

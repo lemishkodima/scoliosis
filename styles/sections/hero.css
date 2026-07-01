@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: clamp(1680px, 220vh, 2600px);
+  min-height: clamp(1580px, 198vh, 2320px);
   padding: 136px 0 0;
   gap: 0;
   text-align: center;
@@ -136,7 +136,8 @@ h1 {
 }
 
 .hero-dock {
-  position: relative;
+  position: sticky;
+  top: calc(100vh - clamp(270px, 31vh, 330px));
   z-index: 16;
   display: grid;
   justify-items: center;
