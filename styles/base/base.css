@@ -205,6 +205,27 @@ main,
 .firefly-particles i:nth-child(15) { --x: 69%; --y: 88%; --s: 8px; --o: 0.42; --d: 18s; --delay: -14s; --dx1: 1.8vw; --dy1: -4.4vh; --dx2: -3vw; --dy2: 1.6vh; }
 .firefly-particles i:nth-child(16) { --x: 86%; --y: 12%; --s: 5px; --o: 0.64; --d: 13s; --delay: -6s; --dx1: -2vw; --dy1: 3.6vh; --dx2: 2.4vw; --dy2: -2.8vh; }
 
+.firefly-particles i.is-js-driven {
+  animation: none;
+}
+
+.firefly-particles i:nth-child(1) { --jx: 34; --jy: 26; }
+.firefly-particles i:nth-child(2) { --jx: 24; --jy: 38; }
+.firefly-particles i:nth-child(3) { --jx: 31; --jy: 24; }
+.firefly-particles i:nth-child(4) { --jx: 42; --jy: 28; }
+.firefly-particles i:nth-child(5) { --jx: 28; --jy: 42; }
+.firefly-particles i:nth-child(6) { --jx: 38; --jy: 34; }
+.firefly-particles i:nth-child(7) { --jx: 22; --jy: 46; }
+.firefly-particles i:nth-child(8) { --jx: 36; --jy: 22; }
+.firefly-particles i:nth-child(9) { --jx: 30; --jy: 36; }
+.firefly-particles i:nth-child(10) { --jx: 44; --jy: 30; }
+.firefly-particles i:nth-child(11) { --jx: 26; --jy: 40; }
+.firefly-particles i:nth-child(12) { --jx: 46; --jy: 24; }
+.firefly-particles i:nth-child(13) { --jx: 32; --jy: 44; }
+.firefly-particles i:nth-child(14) { --jx: 24; --jy: 30; }
+.firefly-particles i:nth-child(15) { --jx: 40; --jy: 36; }
+.firefly-particles i:nth-child(16) { --jx: 28; --jy: 34; }
+
 @keyframes fireflyDriftA {
   0% {
     transform: translate3d(-1vw, calc(var(--depth-scroll, 0px) * -0.04), 0) scale(1);
