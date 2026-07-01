@@ -5,7 +5,7 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  color: var(--navy);
+  color: #f7f9ff;
   background:
     radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.92), rgba(242, 244, 255, 0.86) 38%, #eef2fb 100%);
   transition:
@@ -39,25 +39,51 @@
 
 .loader-blocks {
   position: absolute;
-  inset: 0;
+  inset: 0 -2px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: center;
+  gap: 0;
   pointer-events: none;
 }
 
 .loader-blocks span {
   min-width: 0;
-  background:
-    radial-gradient(circle at 34% 18%, rgba(24, 183, 199, 0.18), transparent 34%),
-    radial-gradient(circle at 86% 76%, rgba(216, 246, 74, 0.1), transparent 32%),
-    linear-gradient(135deg, #102642 0%, var(--navy) 68%, #0b2444 100%);
+  width: calc(100% + 3px);
+  height: var(--loader-panel-height, 100vh);
+  margin-left: -1px;
+  background: linear-gradient(135deg, #081b33 0%, #102642 48%, #17325c 100%);
   box-shadow:
-    inset 1px 0 0 rgba(255, 255, 255, 0.08),
-    inset -1px 0 0 rgba(0, 0, 0, 0.18),
-    0 22px 70px rgba(23, 50, 92, 0.16);
+    inset 1px 0 0 rgba(255, 255, 255, 0.018),
+    inset -1px 0 0 rgba(0, 0, 0, 0.16),
+    0 26px 80px rgba(8, 27, 51, 0.28);
   transform: scaleY(1);
   transform-origin: top;
   will-change: transform, opacity;
+}
+
+.loader-blocks span:nth-child(1) {
+  --loader-panel-height: 10vh;
+}
+
+.loader-blocks span:nth-child(2) {
+  --loader-panel-height: 28vh;
+}
+
+.loader-blocks span:nth-child(3) {
+  --loader-panel-height: 46vh;
+}
+
+.loader-blocks span:nth-child(4) {
+  --loader-panel-height: 56vh;
+}
+
+.loader-blocks span:nth-child(5) {
+  --loader-panel-height: 34vh;
+}
+
+.loader-blocks span:nth-child(6) {
+  --loader-panel-height: 18vh;
 }
 
 .page-loader.is-revealing .loader-blocks span {
@@ -155,7 +181,7 @@
   gap: 4px;
   overflow: hidden;
   padding: 6px 3px;
-  color: var(--navy);
+  color: rgba(247, 249, 255, 0.92);
   font-size: clamp(1.12rem, 2.05vw, 1.72rem);
   font-weight: 950;
   letter-spacing: 0.14em;
@@ -165,15 +191,7 @@
 }
 
 .loader-brand-name::before {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.94) 34%, rgba(162, 180, 226, 0.26) 50%, transparent 76%);
-  content: "";
-  pointer-events: none;
-  transform: translateX(-120%);
-  animation: loaderBrandSweep 1280ms 1180ms cubic-bezier(0.74, 0, 0.16, 1) both;
+  display: none;
 }
 
 .loader-brand-line {
