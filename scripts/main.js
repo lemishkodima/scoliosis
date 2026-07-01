@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260701-hero-title-drop-7";
+import "./src/main.js?v=20260701-hero-dock-bottom-2";
