@@ -229,14 +229,13 @@
   justify-content: center;
   min-height: 46px;
   padding: 0 20px;
-  border: 0;
+  border: 1px solid rgba(212, 251, 17, 0.84);
   border-radius: 8px;
   color: var(--navy);
-  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  background: var(--accent);
   box-shadow:
-    0 14px 36px rgba(81, 91, 171, 0.18),
-    0 0 0 1px rgba(212, 251, 17, 0.48),
-    0 0 32px var(--accent-shadow);
+    0 14px 36px rgba(81, 91, 171, 0.16),
+    0 0 0 6px rgba(212, 251, 17, 0.12);
   font-weight: 750;
   cursor: pointer;
   transition:
@@ -281,6 +280,7 @@
 .primary-button:hover {
   background: var(--navy);
   color: var(--accent);
+  border-color: var(--accent);
   box-shadow:
     0 16px 42px rgba(23, 50, 92, 0.28),
     0 0 34px rgba(212, 251, 17, 0.22);
