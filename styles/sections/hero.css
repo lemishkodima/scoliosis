@@ -26,13 +26,11 @@
   z-index: -1;
   content: "";
   background-image:
-    linear-gradient(rgba(212, 251, 17, 0.14), rgba(212, 251, 17, 0.14)),
-    linear-gradient(rgba(212, 251, 17, 0.1), rgba(212, 251, 17, 0.1)),
     radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0) 0 28%, rgba(255, 255, 255, 0.38) 54%, rgba(247, 249, 255, 0.94) 92%),
     linear-gradient(180deg, rgba(247, 249, 255, 0.68), rgba(247, 249, 255, 0) 30%, rgba(247, 249, 255, 0.78) 82%, #f7f9ff 100%);
-  background-position: 12.5vw 14vh, 75vw 50vh, center, center;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 25vw 16vh, 12.5vw 16vh, auto, auto;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto, auto;
   pointer-events: none;
 }
 

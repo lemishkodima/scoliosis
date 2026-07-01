@@ -34,17 +34,15 @@ body {
     Inter, Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background-image:
-    linear-gradient(rgba(212, 251, 17, 0.14), rgba(212, 251, 17, 0.14)),
-    linear-gradient(rgba(212, 251, 17, 0.1), rgba(212, 251, 17, 0.1)),
     linear-gradient(90deg, rgba(23, 50, 92, 0.045) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.035) 1px, transparent 1px),
     radial-gradient(circle at 72% 18%, rgba(162, 180, 226, 0.24), transparent 29%),
     radial-gradient(circle at 16% 68%, rgba(81, 91, 171, 0.1), transparent 32%),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
-  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed;
-  background-position: 12.5vw 18vh, 75vw 64vh, 0 0, 0 0, center, center, center;
-  background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 25vw 16vh, 12.5vw 16vh, 12.5vw 100vh, 100vw 16vh, auto, auto, auto;
+  background-attachment: fixed, fixed, fixed, fixed, fixed;
+  background-position: 0 0, 0 0, center, center, center;
+  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 12.5vw 100vh, 100vw 16vh, auto, auto, auto;
   letter-spacing: 0;
 }
 
@@ -84,19 +82,15 @@ main,
 
 .depth-plane-grid {
   background-image:
-    linear-gradient(rgba(212, 251, 17, 0.12), rgba(212, 251, 17, 0.12)),
-    linear-gradient(rgba(212, 251, 17, 0.08), rgba(212, 251, 17, 0.08)),
     linear-gradient(90deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.04) 1px, transparent 1px),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
   background-position:
-    calc(12.5vw + var(--depth-scroll, 0px) * -0.025) calc(18vh + var(--depth-scroll, 0px) * -0.018),
-    calc(75vw + var(--depth-scroll, 0px) * -0.025) calc(64vh + var(--depth-scroll, 0px) * -0.018),
     calc(var(--depth-scroll, 0px) * -0.025) 0,
     0 calc(var(--depth-scroll, 0px) * -0.018),
     center;
-  background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat;
-  background-size: 25vw 16vh, 12.5vw 16vh, 12.5vw 100%, 100% 16vh, auto;
+  background-repeat: repeat, repeat, no-repeat;
+  background-size: 12.5vw 100%, 100% 16vh, auto;
   opacity: 0.9;
 }
 
@@ -106,6 +100,90 @@ main,
     radial-gradient(circle at 16% calc(68% + var(--depth-scroll, 0px) * -0.02), rgba(81, 91, 171, 0.12), transparent 32%);
   opacity: 0.86;
   transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.06), 0);
+}
+
+.depth-plane-fireflies,
+.depth-plane-fireflies::before,
+.depth-plane-fireflies::after {
+  position: absolute;
+  inset: -8vh -6vw;
+  display: block;
+  content: "";
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.depth-plane-fireflies {
+  background:
+    radial-gradient(circle at 9% 18%, rgba(212, 251, 17, 0.32) 0 3px, rgba(212, 251, 17, 0.16) 4px, transparent 13px),
+    radial-gradient(circle at 32% 72%, rgba(212, 251, 17, 0.24) 0 2px, rgba(212, 251, 17, 0.12) 4px, transparent 11px),
+    radial-gradient(circle at 64% 26%, rgba(212, 251, 17, 0.3) 0 3px, rgba(212, 251, 17, 0.13) 5px, transparent 14px),
+    radial-gradient(circle at 84% 58%, rgba(212, 251, 17, 0.2) 0 2px, rgba(212, 251, 17, 0.1) 4px, transparent 12px);
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  opacity: 0.68;
+  transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.04), 0);
+  animation: fireflyDriftA 18s ease-in-out infinite alternate;
+}
+
+.depth-plane-fireflies::before {
+  background:
+    radial-gradient(circle at 18% 48%, rgba(212, 251, 17, 0.24) 0 2px, rgba(212, 251, 17, 0.1) 4px, transparent 12px),
+    radial-gradient(circle at 48% 12%, rgba(212, 251, 17, 0.3) 0 3px, rgba(212, 251, 17, 0.14) 5px, transparent 15px),
+    radial-gradient(circle at 76% 82%, rgba(212, 251, 17, 0.22) 0 2px, rgba(212, 251, 17, 0.1) 4px, transparent 13px);
+  background-repeat: no-repeat;
+  filter: blur(7px);
+  opacity: 0.62;
+  animation: fireflyDriftB 24s ease-in-out infinite alternate;
+}
+
+.depth-plane-fireflies::after {
+  background:
+    radial-gradient(circle at 6% 82%, rgba(212, 251, 17, 0.22) 0 2px, rgba(212, 251, 17, 0.09) 4px, transparent 10px),
+    radial-gradient(circle at 55% 62%, rgba(212, 251, 17, 0.28) 0 2px, rgba(212, 251, 17, 0.12) 4px, transparent 12px),
+    radial-gradient(circle at 92% 24%, rgba(212, 251, 17, 0.2) 0 2px, rgba(212, 251, 17, 0.09) 4px, transparent 11px);
+  background-repeat: no-repeat;
+  filter: blur(5px);
+  opacity: 0.55;
+  animation: fireflyDriftC 30s ease-in-out infinite alternate;
+}
+
+@keyframes fireflyDriftA {
+  0% {
+    transform: translate3d(-1vw, calc(var(--depth-scroll, 0px) * -0.04), 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(2vw, calc(-3vh + var(--depth-scroll, 0px) * -0.04), 0) scale(1.04);
+  }
+}
+
+@keyframes fireflyDriftB {
+  0% {
+    transform: translate3d(1vw, 2vh, 0) scale(0.98);
+  }
+
+  100% {
+    transform: translate3d(-2vw, -2vh, 0) scale(1.05);
+  }
+}
+
+@keyframes fireflyDriftC {
+  0% {
+    transform: translate3d(-2vw, 1vh, 0) scale(1.02);
+  }
+
+  100% {
+    transform: translate3d(1.5vw, -3vh, 0) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .depth-plane-fireflies,
+  .depth-plane-fireflies::before,
+  .depth-plane-fireflies::after {
+    animation: none;
+  }
 }
 
 img,

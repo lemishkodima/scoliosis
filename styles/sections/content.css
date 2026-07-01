@@ -36,13 +36,11 @@
   inset: 0;
   border-radius: inherit;
   background-image:
-    linear-gradient(rgba(212, 251, 17, 0.13), rgba(212, 251, 17, 0.13)),
-    linear-gradient(rgba(212, 251, 17, 0.1), rgba(212, 251, 17, 0.1)),
     linear-gradient(90deg, rgba(23, 50, 92, 0.08) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px);
-  background-position: 25% 0, 75% 50%, 0 0, 0 0;
-  background-repeat: no-repeat, no-repeat, repeat, repeat;
-  background-size: 25% 50%, 12.5% 50%, 25% 100%, 100% 50%;
+  background-position: 0 0, 0 0;
+  background-repeat: repeat, repeat;
+  background-size: 25% 100%, 100% 50%;
   content: "";
   opacity: 0.34;
   pointer-events: none;
@@ -137,10 +135,25 @@ h2 {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(rgba(212, 251, 17, 0.14), rgba(212, 251, 17, 0.14)) 12.5% 18% / 25% 18% no-repeat,
-    linear-gradient(rgba(212, 251, 17, 0.1), rgba(212, 251, 17, 0.1)) 75% 58% / 12.5% 18% no-repeat;
+    radial-gradient(circle at 18% 24%, rgba(212, 251, 17, 0.22) 0 3px, rgba(212, 251, 17, 0.1) 5px, transparent 16px),
+    radial-gradient(circle at 82% 58%, rgba(212, 251, 17, 0.18) 0 2px, rgba(212, 251, 17, 0.08) 5px, transparent 14px),
+    radial-gradient(circle at 56% 18%, rgba(212, 251, 17, 0.16) 0 2px, rgba(212, 251, 17, 0.08) 5px, transparent 13px);
+  background-repeat: no-repeat;
   content: "";
+  filter: blur(5px);
+  opacity: 0.78;
   pointer-events: none;
+  animation: sectionFireflyDrift 22s ease-in-out infinite alternate;
+}
+
+@keyframes sectionFireflyDrift {
+  0% {
+    transform: translate3d(-0.8vw, 1vh, 0);
+  }
+
+  100% {
+    transform: translate3d(1.2vw, -1.5vh, 0);
+  }
 }
 
 .section-heading {

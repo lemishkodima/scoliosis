@@ -5,8 +5,8 @@
   border: 1px solid rgba(23, 50, 92, 0.12);
   border-radius: 8px;
   background:
-    linear-gradient(rgba(212, 251, 17, 0.14), rgba(212, 251, 17, 0.14)) 0 0 / 38% 22% no-repeat,
-    linear-gradient(rgba(212, 251, 17, 0.1), rgba(212, 251, 17, 0.1)) 100% 78% / 24% 22% no-repeat,
+    radial-gradient(circle at 14% 16%, rgba(212, 251, 17, 0.2) 0 3px, rgba(212, 251, 17, 0.1) 5px, transparent 16px),
+    radial-gradient(circle at 86% 72%, rgba(212, 251, 17, 0.16) 0 2px, rgba(212, 251, 17, 0.08) 5px, transparent 14px),
     rgba(255, 255, 255, 0.88);
   box-shadow:
     var(--shadow),
