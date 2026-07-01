@@ -64,10 +64,16 @@ main,
     filter 920ms cubic-bezier(0.2, 0.78, 0.24, 1);
 }
 
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
 .depth-backdrop {
   position: fixed;
   inset: -12vh -8vw;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
   transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.12), 0) scale(1.04);
@@ -115,36 +121,41 @@ main,
 
 .depth-plane-fireflies {
   background:
-    radial-gradient(circle at 9% 18%, rgba(212, 251, 17, 0.32) 0 3px, rgba(212, 251, 17, 0.16) 4px, transparent 13px),
-    radial-gradient(circle at 32% 72%, rgba(212, 251, 17, 0.24) 0 2px, rgba(212, 251, 17, 0.12) 4px, transparent 11px),
-    radial-gradient(circle at 64% 26%, rgba(212, 251, 17, 0.3) 0 3px, rgba(212, 251, 17, 0.13) 5px, transparent 14px),
-    radial-gradient(circle at 84% 58%, rgba(212, 251, 17, 0.2) 0 2px, rgba(212, 251, 17, 0.1) 4px, transparent 12px);
+    radial-gradient(circle at 8% 20%, rgba(212, 251, 17, 0.72) 0 4px, rgba(212, 251, 17, 0.28) 8px, transparent 24px),
+    radial-gradient(circle at 24% 58%, rgba(212, 251, 17, 0.52) 0 3px, rgba(212, 251, 17, 0.24) 7px, transparent 22px),
+    radial-gradient(circle at 38% 76%, rgba(212, 251, 17, 0.6) 0 4px, rgba(212, 251, 17, 0.24) 8px, transparent 25px),
+    radial-gradient(circle at 58% 28%, rgba(212, 251, 17, 0.66) 0 4px, rgba(212, 251, 17, 0.25) 8px, transparent 26px),
+    radial-gradient(circle at 72% 48%, rgba(212, 251, 17, 0.5) 0 3px, rgba(212, 251, 17, 0.22) 7px, transparent 23px),
+    radial-gradient(circle at 88% 68%, rgba(212, 251, 17, 0.58) 0 4px, rgba(212, 251, 17, 0.22) 8px, transparent 24px);
   background-repeat: no-repeat;
-  filter: blur(6px);
-  opacity: 0.68;
+  filter: blur(4px);
+  opacity: 0.96;
   transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.04), 0);
   animation: fireflyDriftA 18s ease-in-out infinite alternate;
 }
 
 .depth-plane-fireflies::before {
   background:
-    radial-gradient(circle at 18% 48%, rgba(212, 251, 17, 0.24) 0 2px, rgba(212, 251, 17, 0.1) 4px, transparent 12px),
-    radial-gradient(circle at 48% 12%, rgba(212, 251, 17, 0.3) 0 3px, rgba(212, 251, 17, 0.14) 5px, transparent 15px),
-    radial-gradient(circle at 76% 82%, rgba(212, 251, 17, 0.22) 0 2px, rgba(212, 251, 17, 0.1) 4px, transparent 13px);
+    radial-gradient(circle at 15% 42%, rgba(212, 251, 17, 0.46) 0 3px, rgba(212, 251, 17, 0.2) 7px, transparent 22px),
+    radial-gradient(circle at 34% 16%, rgba(212, 251, 17, 0.58) 0 4px, rgba(212, 251, 17, 0.22) 8px, transparent 25px),
+    radial-gradient(circle at 52% 62%, rgba(212, 251, 17, 0.48) 0 3px, rgba(212, 251, 17, 0.19) 7px, transparent 22px),
+    radial-gradient(circle at 78% 84%, rgba(212, 251, 17, 0.5) 0 3px, rgba(212, 251, 17, 0.2) 8px, transparent 24px),
+    radial-gradient(circle at 94% 30%, rgba(212, 251, 17, 0.44) 0 3px, rgba(212, 251, 17, 0.18) 7px, transparent 22px);
   background-repeat: no-repeat;
-  filter: blur(7px);
-  opacity: 0.62;
+  filter: blur(5px);
+  opacity: 0.84;
   animation: fireflyDriftB 24s ease-in-out infinite alternate;
 }
 
 .depth-plane-fireflies::after {
   background:
-    radial-gradient(circle at 6% 82%, rgba(212, 251, 17, 0.22) 0 2px, rgba(212, 251, 17, 0.09) 4px, transparent 10px),
-    radial-gradient(circle at 55% 62%, rgba(212, 251, 17, 0.28) 0 2px, rgba(212, 251, 17, 0.12) 4px, transparent 12px),
-    radial-gradient(circle at 92% 24%, rgba(212, 251, 17, 0.2) 0 2px, rgba(212, 251, 17, 0.09) 4px, transparent 11px);
+    radial-gradient(circle at 6% 82%, rgba(212, 251, 17, 0.4) 0 3px, rgba(212, 251, 17, 0.17) 6px, transparent 19px),
+    radial-gradient(circle at 28% 30%, rgba(212, 251, 17, 0.42) 0 3px, rgba(212, 251, 17, 0.18) 7px, transparent 21px),
+    radial-gradient(circle at 56% 82%, rgba(212, 251, 17, 0.5) 0 3px, rgba(212, 251, 17, 0.2) 7px, transparent 22px),
+    radial-gradient(circle at 82% 20%, rgba(212, 251, 17, 0.44) 0 3px, rgba(212, 251, 17, 0.18) 7px, transparent 22px);
   background-repeat: no-repeat;
-  filter: blur(5px);
-  opacity: 0.55;
+  filter: blur(4px);
+  opacity: 0.78;
   animation: fireflyDriftC 30s ease-in-out infinite alternate;
 }
 
