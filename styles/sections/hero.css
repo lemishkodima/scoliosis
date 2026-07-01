@@ -51,6 +51,7 @@
   min-width: 0;
   max-width: min(1040px, calc(100% - 32px));
   --hero-title-drop: 0px;
+  --hero-title-scroll-drop: clamp(150px, 11vh, 160px);
   animation: titleLift 900ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
 }
 
@@ -64,7 +65,7 @@
   .hero-copy > * {
     animation: heroTitleScrollDrop linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 340px;
+    animation-range: 0 260px;
   }
 }
 

@@ -212,6 +212,10 @@
     padding: 118px 0 76px;
   }
 
+  .hero-copy {
+    --hero-title-scroll-drop: clamp(92px, 14vh, 130px);
+  }
+
   .hero-visual {
     width: 100vw;
     min-height: clamp(430px, 112vw, 540px);
@@ -313,7 +317,7 @@
 
   @supports (animation-timeline: scroll(root block)) {
     .hero-copy > * {
-      animation-range: 0 260px;
+      animation-range: 0 240px;
     }
   }
 

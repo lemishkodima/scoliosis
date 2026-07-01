@@ -315,7 +315,7 @@
   }
 
   to {
-    translate: 0 clamp(92px, 11vh, 160px);
+    translate: 0 var(--hero-title-scroll-drop, 150px);
   }
 }
 

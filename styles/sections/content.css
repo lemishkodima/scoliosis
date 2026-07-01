@@ -1,6 +1,6 @@
 .intro {
   position: relative;
-  z-index: 32;
+  z-index: 24;
   width: 100vw;
   max-width: none;
   margin-top: clamp(-560px, -46vh, -360px);
