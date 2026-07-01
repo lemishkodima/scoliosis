@@ -120,7 +120,7 @@
   bottom: 4px;
   left: 0;
   height: 1px;
-  background: linear-gradient(90deg, var(--periwinkle), var(--aqua));
+  background: var(--volt);
   content: "";
   opacity: 0;
   transform: scaleX(0.4);
@@ -231,12 +231,12 @@
   padding: 0 20px;
   border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 8px;
-  color: var(--white);
+  color: var(--navy);
   background:
-    linear-gradient(135deg, var(--aqua) 0%, var(--blue) 54%, var(--navy) 100%);
+    linear-gradient(135deg, var(--volt) 0%, #e9ff78 100%);
   box-shadow:
-    0 18px 44px rgba(24, 183, 199, 0.24),
-    0 12px 34px rgba(81, 91, 171, 0.22),
+    0 18px 44px rgba(216, 246, 74, 0.24),
+    0 12px 34px rgba(81, 91, 171, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.26);
   font-weight: 750;
   cursor: pointer;
@@ -284,6 +284,7 @@
 .primary-button:hover {
   background:
     linear-gradient(135deg, var(--navy) 0%, var(--aqua-deep) 100%);
+  color: var(--white);
   box-shadow:
     0 18px 48px rgba(24, 183, 199, 0.3),
     0 16px 42px rgba(23, 50, 92, 0.28);

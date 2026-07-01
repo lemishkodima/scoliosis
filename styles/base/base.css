@@ -8,6 +8,9 @@
   --aqua-deep: #087f9d;
   --aqua-soft: rgba(24, 183, 199, 0.18);
   --aqua-glow: rgba(24, 183, 199, 0.32);
+  --volt: #d8f64a;
+  --volt-soft: rgba(216, 246, 74, 0.24);
+  --volt-glow: rgba(216, 246, 74, 0.3);
   --ink: #102642;
   --muted: #60708a;
   --line: rgba(23, 50, 92, 0.12);
@@ -36,8 +39,8 @@ body {
   background:
     linear-gradient(90deg, rgba(23, 50, 92, 0.045) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 74% 16%, rgba(24, 183, 199, 0.17), transparent 28%),
-    radial-gradient(circle at 86% 72%, rgba(24, 183, 199, 0.09), transparent 30%),
+    radial-gradient(circle at 74% 16%, rgba(24, 183, 199, 0.14), transparent 28%),
+    radial-gradient(circle at 86% 72%, rgba(216, 246, 74, 0.13), transparent 30%),
     radial-gradient(circle at 16% 68%, rgba(81, 91, 171, 0.12), transparent 32%),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 42%, #edf2fb 78%, #f8fbff 100%);
   background-attachment: fixed, fixed, fixed, fixed, fixed;
@@ -84,7 +87,7 @@ main,
     linear-gradient(90deg, rgba(23, 50, 92, 0.055) 1px, transparent 1px),
     linear-gradient(180deg, rgba(23, 50, 92, 0.04) 1px, transparent 1px),
     radial-gradient(circle at 78% 20%, rgba(24, 183, 199, 0.12), transparent 28%),
-    radial-gradient(circle at 22% 78%, rgba(24, 183, 199, 0.07), transparent 30%),
+    radial-gradient(circle at 22% 78%, rgba(216, 246, 74, 0.1), transparent 30%),
     linear-gradient(135deg, #ffffff 0%, #f7f9ff 46%, #edf2fb 100%);
   background-position:
     calc(var(--depth-scroll, 0px) * -0.025) 0,
@@ -99,7 +102,7 @@ main,
 .depth-plane-glow {
   background:
     radial-gradient(circle at 72% calc(18% + var(--depth-scroll, 0px) * -0.03), rgba(24, 183, 199, 0.26), transparent 27%),
-    radial-gradient(circle at 88% calc(64% + var(--depth-scroll, 0px) * -0.024), rgba(24, 183, 199, 0.1), transparent 28%),
+    radial-gradient(circle at 88% calc(64% + var(--depth-scroll, 0px) * -0.024), rgba(216, 246, 74, 0.14), transparent 28%),
     radial-gradient(circle at 16% calc(68% + var(--depth-scroll, 0px) * -0.02), rgba(81, 91, 171, 0.12), transparent 32%);
   opacity: 0.86;
   transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.06), 0);

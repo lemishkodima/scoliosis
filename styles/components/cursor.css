@@ -22,9 +22,9 @@
 .cursor-dot {
   width: 7px;
   height: 7px;
-  background: var(--aqua);
+  background: var(--volt);
   box-shadow:
-    0 0 18px rgba(24, 183, 199, 0.48),
+    0 0 18px rgba(216, 246, 74, 0.46),
     0 0 34px rgba(24, 183, 199, 0.1);
   transition:
     opacity 160ms ease,
@@ -47,8 +47,8 @@
 .cursor-orb.is-hovering .cursor-ring {
   width: 58px;
   height: 58px;
-  border-color: rgba(24, 183, 199, 0.42);
-  background: rgba(24, 183, 199, 0.12);
+  border-color: rgba(216, 246, 74, 0.52);
+  background: rgba(216, 246, 74, 0.12);
 }
 
 .cursor-orb.is-reading .cursor-dot {
