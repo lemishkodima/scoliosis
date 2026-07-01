@@ -57,6 +57,11 @@ body.is-loading {
   overflow: hidden;
 }
 
+body.is-loading .depth-plane-grid,
+body.loader-cleanup .depth-plane-grid {
+  opacity: 0;
+}
+
 .site-header,
 main,
 .site-footer {

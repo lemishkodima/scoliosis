@@ -18,7 +18,9 @@ export function initPageLoader({ prefersReducedMotion }) {
 
     window.setTimeout(() => {
       pageLoader.classList.add("is-revealing");
+      document.body.classList.add("loader-cleanup");
       document.body.classList.remove("is-loading");
+      window.setTimeout(() => document.body.classList.remove("loader-cleanup"), prefersReducedMotion ? 120 : 1200);
       window.setTimeout(
         () => {
           hasHidden = true;

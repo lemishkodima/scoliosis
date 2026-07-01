@@ -17,6 +17,7 @@
 
 .page-loader.is-revealing {
   background: transparent;
+  pointer-events: none;
 }
 
 .page-loader.is-hidden {
@@ -27,14 +28,7 @@
 }
 
 .loader-grid {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(23, 50, 92, 0.075) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(23, 50, 92, 0.045) 1px, transparent 1px);
-  background-size: 12.5vw 100%, 100% 50%;
-  opacity: 0;
-  animation: loaderGridIn 900ms 180ms ease both;
+  display: none;
 }
 
 .loader-blocks {
