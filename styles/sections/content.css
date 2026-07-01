@@ -177,9 +177,7 @@ h2 {
 }
 
 .benefit-card:nth-child(2) .icon {
-  color: var(--volt);
-  background: var(--navy);
-  box-shadow: 0 16px 36px rgba(23, 50, 92, 0.18);
+  color: var(--navy);
 }
 
 .benefit-card:nth-child(2) h3,
@@ -198,9 +196,7 @@ h2 {
 }
 
 .benefit-card:nth-child(3) .icon {
-  color: var(--navy);
-  background: var(--volt);
-  box-shadow: 0 16px 36px rgba(216, 246, 74, 0.18);
+  color: var(--volt);
 }
 
 .benefit-card:nth-child(3) h3,
@@ -243,12 +239,9 @@ h2 {
   height: 46px;
   margin-bottom: 36px;
   border-radius: 8px;
-  color: var(--white);
-  background:
-    linear-gradient(135deg, var(--aqua), var(--blue));
-  box-shadow:
-    0 16px 36px rgba(24, 183, 199, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.26);
+  color: var(--aqua-deep);
+  background: transparent;
+  box-shadow: none;
 }
 
 .icon svg {
