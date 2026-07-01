@@ -198,6 +198,13 @@
     width: min(100% - 22px, 1180px);
   }
 
+  .intro.section-shell {
+    width: 100vw;
+    max-width: none;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+  }
+
   .hero {
     padding: 118px 0 76px;
   }
