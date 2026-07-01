@@ -39,79 +39,94 @@
 
 .loader-blocks {
   position: absolute;
-  inset: 0 -2px;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  align-items: center;
-  gap: 0;
+  inset: -2px;
   pointer-events: none;
 }
 
 .loader-blocks span {
-  min-width: 0;
-  width: calc(100% + 3px);
-  height: var(--loader-panel-height, 100vh);
-  margin-left: -1px;
-  background: linear-gradient(135deg, #081b33 0%, #102642 48%, #17325c 100%);
+  position: absolute;
+  left: var(--loader-panel-left, 0);
+  width: var(--loader-panel-width, 34vw);
+  height: var(--loader-panel-height, 58vh);
+  background: linear-gradient(135deg, #07162c 0%, #102642 52%, #17325c 100%);
   box-shadow:
     inset 1px 0 0 rgba(255, 255, 255, 0.018),
     inset -1px 0 0 rgba(0, 0, 0, 0.16),
     0 26px 80px rgba(8, 27, 51, 0.28);
-  transform: scaleY(1);
-  transform-origin: top;
+  transform: translateY(0);
   will-change: transform, opacity;
 }
 
 .loader-blocks span:nth-child(1) {
-  --loader-panel-height: 10vh;
+  --loader-panel-left: -2vw;
+  --loader-panel-width: 29vw;
+  --loader-panel-height: 57vh;
+  --loader-exit-y: -112%;
+  top: 0;
 }
 
 .loader-blocks span:nth-child(2) {
-  --loader-panel-height: 28vh;
+  --loader-panel-left: 24vw;
+  --loader-panel-width: 30vw;
+  --loader-panel-height: 63vh;
+  --loader-exit-y: -112%;
+  top: 0;
 }
 
 .loader-blocks span:nth-child(3) {
-  --loader-panel-height: 46vh;
+  --loader-panel-left: 51vw;
+  --loader-panel-width: 51vw;
+  --loader-panel-height: 55vh;
+  --loader-exit-y: -112%;
+  top: 0;
 }
 
 .loader-blocks span:nth-child(4) {
-  --loader-panel-height: 56vh;
+  --loader-panel-left: -2vw;
+  --loader-panel-width: 35vw;
+  --loader-panel-height: 54vh;
+  --loader-exit-y: 112%;
+  bottom: 0;
 }
 
 .loader-blocks span:nth-child(5) {
-  --loader-panel-height: 34vh;
+  --loader-panel-left: 30vw;
+  --loader-panel-width: 30vw;
+  --loader-panel-height: 62vh;
+  --loader-exit-y: 112%;
+  bottom: 0;
 }
 
 .loader-blocks span:nth-child(6) {
-  --loader-panel-height: 18vh;
+  --loader-panel-left: 57vw;
+  --loader-panel-width: 45vw;
+  --loader-panel-height: 51vh;
+  --loader-exit-y: 112%;
+  bottom: 0;
 }
 
 .page-loader.is-revealing .loader-blocks span {
-  animation: loaderBlockOpen 1040ms 220ms cubic-bezier(0.74, 0, 0.16, 1) both;
-}
-
-.loader-blocks span:nth-child(even) {
-  transform-origin: bottom;
+  animation: loaderBlockOpen 1180ms 120ms cubic-bezier(0.74, 0, 0.16, 1) both;
 }
 
 .page-loader.is-revealing .loader-blocks span:nth-child(2) {
-  animation-delay: 380ms;
+  animation-delay: 180ms;
 }
 
 .page-loader.is-revealing .loader-blocks span:nth-child(3) {
-  animation-delay: 440ms;
+  animation-delay: 240ms;
 }
 
 .page-loader.is-revealing .loader-blocks span:nth-child(4) {
-  animation-delay: 500ms;
+  animation-delay: 220ms;
 }
 
 .page-loader.is-revealing .loader-blocks span:nth-child(5) {
-  animation-delay: 560ms;
+  animation-delay: 280ms;
 }
 
 .page-loader.is-revealing .loader-blocks span:nth-child(6) {
-  animation-delay: 620ms;
+  animation-delay: 340ms;
 }
 
 .loader-cross {

@@ -23,19 +23,25 @@
 @keyframes loaderBlockOpen {
   0% {
     opacity: 1;
-    transform: scaleY(1);
+    transform: translateY(0);
   }
 
-  34% {
+  24% {
     opacity: 1;
-    transform: scaleY(1);
-    filter: brightness(1.02);
+    transform: translateY(0);
+    filter: brightness(1);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateY(calc(var(--loader-exit-y, -112%) * 0.72));
+    filter: brightness(1.01);
   }
 
   100% {
-    opacity: 0;
-    transform: scaleY(0);
-    filter: brightness(1.12);
+    opacity: 1;
+    transform: translateY(var(--loader-exit-y, -112%));
+    filter: brightness(1.02);
   }
 }
 
