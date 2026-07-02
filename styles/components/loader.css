@@ -182,18 +182,29 @@
 .loader-core {
   position: relative;
   z-index: 2;
-  display: inline-flex;
+  display: grid;
   align-items: center;
   justify-content: center;
-  gap: clamp(18px, 3vw, 34px);
+  width: min(540px, calc(100vw - 48px));
   opacity: 0;
-  transform: translateY(18px) scale(0.88);
+  transform: translateY(18px) scale(0.92);
   animation: loaderCoreReveal 780ms 260ms var(--ease-soft) both;
-  text-align: left;
+  text-align: center;
 }
 
 .loader-core::before {
   display: none;
+}
+
+.loader-logo-full {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 24px 38px rgba(23, 50, 92, 0.2))
+    drop-shadow(0 0 22px rgba(162, 180, 226, 0.26));
 }
 
 .loader-logo-orbit {

@@ -4,7 +4,7 @@
   left: 0;
   z-index: 80;
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) auto minmax(260px, 1fr);
+  grid-template-columns: minmax(300px, 1fr) auto minmax(260px, 1fr);
   align-items: center;
   width: 100%;
   min-height: 96px;
@@ -25,7 +25,14 @@
 
 .site-header:not(.is-scrolled) .site-nav,
 .site-header:not(.is-scrolled) .header-actions {
-  opacity: 0.82;
+  opacity: 0.94;
+}
+
+.site-header:not(.is-scrolled) .site-nav a,
+.site-header:not(.is-scrolled) .language-current,
+.site-header:not(.is-scrolled) .language-menu button {
+  color: rgba(247, 249, 255, 0.9);
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
 .site-header.is-scrolled {
@@ -44,11 +51,23 @@
 }
 
 .brand {
-  display: inline-flex;
+  display: block;
   align-items: center;
   justify-self: start;
-  gap: 12px;
+  width: clamp(184px, 16vw, 270px);
   min-width: 0;
+  line-height: 0;
+}
+
+.brand-logo-full {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 12px 24px rgba(23, 50, 92, 0.14))
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.1));
 }
 
 .brand-object {

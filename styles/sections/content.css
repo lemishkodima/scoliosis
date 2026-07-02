@@ -3,7 +3,7 @@
   z-index: 24;
   width: 100vw;
   max-width: none;
-  margin-top: clamp(-260px, -20vh, -150px);
+  margin-top: clamp(-640px, -58vh, -520px);
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
   padding: clamp(54px, 5.8vw, 86px) clamp(24px, 4.8vw, 72px) clamp(82px, 7.6vw, 118px);
@@ -133,7 +133,7 @@ h2 {
 .steps {
   position: relative;
   z-index: 22;
-  padding: 96px 0;
+  padding: clamp(58px, 6vw, 82px) 0 96px;
 }
 
 .benefits::before {
@@ -150,6 +150,12 @@ h2 {
   gap: 42px;
   align-items: end;
   margin-bottom: 38px;
+}
+
+.section-heading.scroll-reveal {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 0 0);
 }
 
 .section-heading h2 {
@@ -300,8 +306,9 @@ h2 {
 .section-transition-tiles {
   position: relative;
   z-index: 23;
-  height: clamp(54px, 7vw, 110px);
-  margin: clamp(-54px, -4vw, -26px) 0;
+  display: none;
+  height: 0;
+  margin: 0;
   overflow: hidden;
   pointer-events: none;
 }
