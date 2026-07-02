@@ -64,8 +64,7 @@ main,
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.12), 0) scale(1.04);
-  will-change: transform;
+  transform: none;
 }
 
 .depth-plane {
@@ -87,7 +86,7 @@ main,
 .depth-plane-glow {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(237, 242, 251, 0.2));
   opacity: 0.5;
-  transform: translate3d(0, calc(var(--depth-scroll, 0px) * -0.06), 0);
+  transform: none;
 }
 
 img,

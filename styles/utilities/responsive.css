@@ -107,8 +107,8 @@
 
 @media (max-width: 680px) {
   .scroll-reveal {
-    clip-path: inset(8% 0 8% 0);
-    transform: translate3d(0, 24px, 0);
+    clip-path: none;
+    transform: none;
   }
 
   .site-header {
