@@ -35,6 +35,11 @@
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
+.site-header:not(.is-scrolled) .brand-title {
+  color: rgba(247, 249, 255, 0.94);
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+}
+
 .site-header.is-scrolled {
   min-height: 76px;
   padding-top: 12px;
@@ -51,31 +56,19 @@
 }
 
 .brand {
-  display: block;
+  display: inline-flex;
   align-items: center;
   justify-self: start;
-  width: clamp(184px, 16vw, 270px);
+  gap: 10px;
   min-width: 0;
-  line-height: 0;
-}
-
-.brand-logo-full {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  object-fit: contain;
-  filter:
-    drop-shadow(0 12px 24px rgba(23, 50, 92, 0.14))
-    drop-shadow(0 0 18px rgba(255, 255, 255, 0.1));
 }
 
 .brand-object {
   position: relative;
   display: grid;
   place-items: center;
-  width: 58px;
-  height: 58px;
+  width: 62px;
+  height: 62px;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
@@ -90,8 +83,8 @@
 .brand-object img {
   position: relative;
   z-index: 2;
-  width: 58px;
-  height: 58px;
+  width: 62px;
+  height: 62px;
   object-fit: contain;
   filter: drop-shadow(0 10px 14px rgba(23, 50, 92, 0.12));
   transform: none;
@@ -105,13 +98,19 @@
 
 .brand-title {
   display: grid;
-  gap: 1px;
+  gap: 2px;
   color: var(--navy);
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   font-weight: 950;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.brand-title span:nth-child(2) {
+  font-size: 1.14em;
+  letter-spacing: 0.045em;
+  line-height: 0.86;
 }
 
 .site-nav {
