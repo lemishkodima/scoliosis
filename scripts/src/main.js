@@ -8,7 +8,7 @@ import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260701-hero-
 import { initLanguageSwitcher } from "./features/i18n.js?v=20260701-hero-overlay-balance-1";
 import { initPageLoader } from "./features/loader.js?v=20260702-motion-scene-1";
 import { initMembershipForm } from "./features/form.js?v=20260701-hero-overlay-balance-1";
-import { initRevealCards } from "./features/reveal.js?v=20260702-motion-scene-1";
+import { initRevealCards } from "./features/reveal.js?v=20260702-reveal-fallback-1";
 
 const prefersReducedMotion = getMotionPreference();
 

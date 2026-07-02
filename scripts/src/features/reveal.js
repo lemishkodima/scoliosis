@@ -125,11 +125,40 @@ export function initRevealCards({ prefersReducedMotion = false } = {}) {
     item.style.setProperty("--reveal-index", `${index % 6}`);
   });
 
-  const allItems = [...cards, ...revealItems];
+  const allItems = Array.from(new Set([...cards, ...revealItems]));
   cards.forEach((card, index) => {
     card.dataset.reveal = card.dataset.reveal || "card-tile";
     card.style.setProperty("--reveal-index", `${index % 4}`);
   });
+
+  const pendingItems = new Set(allItems);
+  let revealObserver;
+  let fallbackFrame = 0;
+
+  function showItem(item) {
+    if (!pendingItems.has(item)) return;
+    item.classList.add("is-visible");
+    pendingItems.delete(item);
+    if (revealObserver) revealObserver.unobserve(item);
+  }
+
+  function revealVisibleItems() {
+    fallbackFrame = 0;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const triggerLine = viewportHeight * 1.08;
+
+    pendingItems.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top <= triggerLine) {
+        showItem(item);
+      }
+    });
+  }
+
+  function scheduleFallbackReveal() {
+    if (fallbackFrame) return;
+    fallbackFrame = window.requestAnimationFrame(revealVisibleItems);
+  }
 
   if (!("IntersectionObserver" in window)) {
     allItems.forEach((item) => item.classList.add("is-visible"));
@@ -143,14 +172,11 @@ export function initRevealCards({ prefersReducedMotion = false } = {}) {
     };
   }
 
-  let observedCount = allItems.length;
-  const revealObserver = new IntersectionObserver(
+  revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-          observedCount -= 1;
+          showItem(entry.target);
         }
       });
     },
@@ -158,6 +184,11 @@ export function initRevealCards({ prefersReducedMotion = false } = {}) {
   );
 
   allItems.forEach((item) => revealObserver.observe(item));
+  revealVisibleItems();
+  window.setTimeout(scheduleFallbackReveal, 180);
+  window.setTimeout(scheduleFallbackReveal, 720);
+  window.addEventListener("scroll", scheduleFallbackReveal, { passive: true });
+  window.addEventListener("resize", scheduleFallbackReveal);
 
   const scramble = initOpenLinesScramble({ prefersReducedMotion });
 
@@ -167,7 +198,7 @@ export function initRevealCards({ prefersReducedMotion = false } = {}) {
         enabled: true,
         cardCount: cards.length,
         revealCount: revealItems.length,
-        remaining: observedCount,
+        remaining: pendingItems.size,
         scramble: typeof scramble.getState === "function" ? scramble.getState() : scramble,
       };
     },
