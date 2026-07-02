@@ -123,8 +123,8 @@
   .brand {
     grid-column: 1;
     justify-self: start;
-    gap: 7px;
-    max-width: calc(100vw - 86px);
+    gap: 8px;
+    max-width: calc(100vw - 92px);
   }
 
   .brand-copy {
@@ -143,9 +143,22 @@
   }
 
   .brand-title {
-    font-size: 0.57rem;
-    letter-spacing: 0.065em;
-    line-height: 0.92;
+    gap: 2px;
+  }
+
+  .brand-title span:nth-child(1),
+  .brand-title span:nth-child(3) {
+    font-size: clamp(0.43rem, 1.65vw, 0.56rem);
+    letter-spacing: 0.34em;
+  }
+
+  .brand-title span:nth-child(2) {
+    font-size: clamp(0.82rem, 3.25vw, 1rem);
+    letter-spacing: 0.025em;
+  }
+
+  .brand-title span:nth-child(3) {
+    letter-spacing: 0.24em;
   }
 
   .header-actions {

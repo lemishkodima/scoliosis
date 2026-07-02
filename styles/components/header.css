@@ -47,7 +47,7 @@
   display: inline-flex;
   align-items: center;
   justify-self: start;
-  gap: 12px;
+  gap: 14px;
   min-width: 0;
 }
 
@@ -81,18 +81,42 @@
 
 .brand-copy {
   display: grid;
-  line-height: 0.92;
+  line-height: 1;
 }
 
 .brand-title {
   display: grid;
-  gap: 1px;
+  gap: 3px;
   color: var(--navy);
-  font-size: 0.84rem;
   font-weight: 950;
-  letter-spacing: 0.09em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.brand-title span {
+  display: block;
+  line-height: 0.88;
+  text-shadow: 0 8px 16px rgba(23, 50, 92, 0.1);
+}
+
+.brand-title span:nth-child(1),
+.brand-title span:nth-child(3) {
+  color: var(--periwinkle);
+  font-size: clamp(0.58rem, 0.68vw, 0.82rem);
+  font-weight: 850;
+  letter-spacing: 0.46em;
+}
+
+.brand-title span:nth-child(2) {
+  color: var(--navy);
+  font-size: clamp(1.08rem, 1.42vw, 1.72rem);
+  font-weight: 950;
+  letter-spacing: 0.035em;
+  line-height: 0.76;
+}
+
+.brand-title span:nth-child(3) {
+  letter-spacing: 0.34em;
 }
 
 .site-nav {
