@@ -4,7 +4,7 @@
   left: 0;
   z-index: 80;
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) auto minmax(260px, 1fr);
+  grid-template-columns: minmax(260px, 1fr) auto minmax(260px, 1fr);
   align-items: center;
   width: 100%;
   min-height: 96px;
@@ -25,19 +25,7 @@
 
 .site-header:not(.is-scrolled) .site-nav,
 .site-header:not(.is-scrolled) .header-actions {
-  opacity: 0.94;
-}
-
-.site-header:not(.is-scrolled) .site-nav a,
-.site-header:not(.is-scrolled) .language-current,
-.site-header:not(.is-scrolled) .language-menu button {
-  color: rgba(247, 249, 255, 0.9);
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
-}
-
-.site-header:not(.is-scrolled) .brand-title {
-  color: rgba(247, 249, 255, 0.94);
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+  opacity: 0.82;
 }
 
 .site-header.is-scrolled {
@@ -59,7 +47,7 @@
   display: inline-flex;
   align-items: center;
   justify-self: start;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
 }
 
@@ -67,8 +55,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 62px;
-  height: 62px;
+  width: 58px;
+  height: 58px;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
@@ -83,8 +71,8 @@
 .brand-object img {
   position: relative;
   z-index: 2;
-  width: 62px;
-  height: 62px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
   filter: drop-shadow(0 10px 14px rgba(23, 50, 92, 0.12));
   transform: none;
@@ -98,19 +86,13 @@
 
 .brand-title {
   display: grid;
-  gap: 2px;
+  gap: 1px;
   color: var(--navy);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 950;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   white-space: nowrap;
-}
-
-.brand-title span:nth-child(2) {
-  font-size: 1.14em;
-  letter-spacing: 0.045em;
-  line-height: 0.86;
 }
 
 .site-nav {

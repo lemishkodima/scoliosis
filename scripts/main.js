@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260702-metabole-fix-4";
+import "./src/main.js?v=20260702-hero-group-1";
