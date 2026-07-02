@@ -99,23 +99,20 @@
 
 .brand-title span:nth-child(1),
 .brand-title span:nth-child(3) {
-  color: var(--periwinkle);
+  color: var(--navy);
   font-size: clamp(0.58rem, 0.68vw, 0.82rem);
   font-weight: 850;
   letter-spacing: 0.46em;
 }
 
 .brand-title span:nth-child(2) {
-  color: transparent;
-  background: linear-gradient(180deg, #8fa9e7 0%, #4f76b5 22%, #17325c 55%, #061f49 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: var(--navy);
   font-size: clamp(1.08rem, 1.42vw, 1.72rem);
   font-weight: 950;
   letter-spacing: 0.035em;
   line-height: 0.9;
-  filter: drop-shadow(0 5px 5px rgba(23, 50, 92, 0.28));
-  text-shadow: none;
+  filter: none;
+  text-shadow: 0 8px 16px rgba(23, 50, 92, 0.1);
 }
 
 .brand-title span:nth-child(3) {

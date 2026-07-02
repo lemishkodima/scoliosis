@@ -31,22 +31,19 @@
 
 .footer-wordmark span:nth-child(1),
 .footer-wordmark span:nth-child(3) {
-  color: rgba(162, 180, 226, 0.92);
+  color: rgba(255, 255, 255, 0.92);
   font-size: clamp(0.72rem, 0.92vw, 0.9rem);
   font-weight: 850;
   letter-spacing: 0.42em;
 }
 
 .footer-wordmark span:nth-child(2) {
-  color: transparent;
-  background: linear-gradient(180deg, #f6f9ff 0%, #a2b4e2 25%, #5477b4 58%, #17325c 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: rgba(255, 255, 255, 0.96);
   font-size: clamp(1.32rem, 1.9vw, 2.08rem);
   font-weight: 950;
   letter-spacing: 0.035em;
   line-height: 0.76;
-  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.24));
+  filter: none;
 }
 
 .footer-wordmark span:nth-child(3) {
