@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260703-no-scroll-animations-1";
+import "./src/main.js?v=20260703-loader-panels-1";

@@ -5,7 +5,7 @@ import { initHeader } from "./features/header.js?v=20260701-hero-overlay-balance
 import { initHeroInteractions } from "./features/hero-interactions.js?v=20260701-hero-overlay-balance-1";
 import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260701-hero-overlay-balance-1";
 import { initLanguageSwitcher } from "./features/i18n.js?v=20260702-content-update-1";
-import { initPageLoader } from "./features/loader.js?v=20260702-motion-scene-1";
+import { initPageLoader } from "./features/loader.js?v=20260703-loader-panels-1";
 import { initMembershipForm } from "./features/form.js?v=20260701-hero-overlay-balance-1";
 
 const prefersReducedMotion = getMotionPreference();

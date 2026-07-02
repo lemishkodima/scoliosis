@@ -33,9 +33,9 @@ export function initPageLoader({ prefersReducedMotion }) {
           phase = "hidden";
           hasHidden = true;
           pageLoader.classList.add("is-hidden");
-          window.setTimeout(() => pageLoader.remove(), prefersReducedMotion ? 60 : 420);
+          window.setTimeout(() => pageLoader.remove(), prefersReducedMotion ? 60 : 520);
         },
-        prefersReducedMotion ? 70 : 1320,
+        prefersReducedMotion ? 70 : 1780,
       );
     }, delay);
   }

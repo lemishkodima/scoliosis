@@ -26,21 +26,27 @@
     transform: translateY(0);
   }
 
-  24% {
+  12% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(calc(var(--loader-exit-y, -112%) * 0.04));
     filter: brightness(1);
   }
 
-  72% {
+  78% {
     opacity: 1;
-    transform: translateY(calc(var(--loader-exit-y, -112%) * 0.72));
+    transform: translateY(calc(var(--loader-exit-y, -112%) * 0.92));
+    filter: brightness(1.01);
+  }
+
+  92% {
+    opacity: 0.72;
+    transform: translateY(calc(var(--loader-exit-y, -112%) * 1.02));
     filter: brightness(1.01);
   }
 
   100% {
-    opacity: 1;
-    transform: translateY(var(--loader-exit-y, -112%));
+    opacity: 0;
+    transform: translateY(calc(var(--loader-exit-y, -112%) * 1.08));
     filter: brightness(1.02);
   }
 }

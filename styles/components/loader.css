@@ -154,7 +154,7 @@
 }
 
 .page-loader.is-revealing .loader-blocks span {
-  animation: loaderBlockOpen var(--dur-scene) calc(52ms + (var(--loader-distance, 0) * 28ms)) var(--ease-premium) both;
+  animation: loaderBlockOpen 1320ms calc(42ms + (var(--loader-distance, 0) * 20ms)) cubic-bezier(0.72, 0, 0.14, 1) both;
 }
 
 .page-loader.is-loader-open .loader-blocks::before {
