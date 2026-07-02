@@ -45,6 +45,23 @@
   }
 }
 
+@keyframes loaderCenterSlit {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  32% {
+    opacity: 1;
+    width: 18vw;
+  }
+
+  100% {
+    opacity: 0;
+    width: 100vw;
+  }
+}
+
 @keyframes loaderCrossTravel {
   0% {
     opacity: 0;

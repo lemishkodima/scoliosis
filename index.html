@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#17325C" />
     <title>Українська асоціація сколіозу - членство для спеціалістів</title>
     <link rel="icon" href="assets/images/logo-mark-transparent.webp" />
-    <link rel="stylesheet" href="styles/main.css?v=20260701-hero-overlay-balance-1" />
+    <link rel="stylesheet" href="styles/main.css?v=20260702-motion-scene-1" />
   </head>
   <body class="is-loading">
     <div class="depth-backdrop" data-depth-backdrop aria-hidden="true">
@@ -111,8 +111,8 @@
     <a class="mobile-floating-cta" href="#membership-form" data-i18n="cta.short">Подати заявку</a>
 
     <main id="top">
-      <section class="hero site-hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-copy">
+      <section class="hero site-hero section-shell" aria-labelledby="hero-title" data-hero-scene>
+        <div class="hero-copy" data-hero-copy>
           <p class="eyebrow" data-i18n="hero.eyebrow">Українська асоціація сколіозу</p>
           <h1 id="hero-title" data-i18n="hero.title">
             Майбутнє лікування сколіозу починається зі спільноти
@@ -139,7 +139,7 @@
           </div>
         </div>
 
-        <div class="hero-dock">
+        <div class="hero-dock" data-hero-dock>
           <div class="hero-actions hero-actions-centered">
             <a class="primary-button" href="#membership-form" data-i18n="cta.short">Подати заявку</a>
             <a class="secondary-button" href="#benefits" data-i18n="cta.more">Дізнатись більше</a>
@@ -167,7 +167,20 @@
         </div>
       </section>
 
-      <section class="intro section-shell" aria-labelledby="intro-title">
+      <div class="section-transition-tiles" data-reveal="tile-transition" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <section class="intro section-shell" aria-labelledby="intro-title" data-hero-intro>
         <div class="section-kicker" data-i18n="intro.kicker">Не просто членство</div>
         <div class="intro-grid">
           <h2 id="intro-title" data-i18n="intro.title">
@@ -433,6 +446,6 @@
       </div>
     </footer>
 
-    <script type="module" src="scripts/main.js?v=20260701-hero-overlay-balance-1"></script>
+    <script type="module" src="scripts/main.js?v=20260702-motion-scene-1"></script>
   </body>
 </html>

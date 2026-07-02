@@ -9,25 +9,33 @@ export function initPageLoader({ prefersReducedMotion }) {
   }
 
   const startedAt = window.performance.now();
-  const minimumDuration = prefersReducedMotion ? 160 : 2200;
+  const minimumDuration = prefersReducedMotion ? 120 : 1550;
   let hasHidden = false;
+  let phase = "enter";
+
+  pageLoader.classList.add("is-loader-enter");
 
   function hideLoader() {
     const elapsed = window.performance.now() - startedAt;
     const delay = Math.max(0, minimumDuration - elapsed);
 
     window.setTimeout(() => {
+      phase = "open";
+      pageLoader.classList.remove("is-loader-enter");
+      pageLoader.classList.add("is-loader-open");
       pageLoader.classList.add("is-revealing");
       document.body.classList.add("loader-cleanup");
       document.body.classList.remove("is-loading");
-      window.setTimeout(() => document.body.classList.remove("loader-cleanup"), prefersReducedMotion ? 120 : 1200);
+      document.body.classList.add("is-hero-ready");
+      window.setTimeout(() => document.body.classList.remove("loader-cleanup"), prefersReducedMotion ? 90 : 920);
       window.setTimeout(
         () => {
+          phase = "hidden";
           hasHidden = true;
           pageLoader.classList.add("is-hidden");
-          window.setTimeout(() => pageLoader.remove(), prefersReducedMotion ? 80 : 520);
+          window.setTimeout(() => pageLoader.remove(), prefersReducedMotion ? 60 : 420);
         },
-        prefersReducedMotion ? 80 : 1500,
+        prefersReducedMotion ? 70 : 1320,
       );
     }, delay);
   }
@@ -43,6 +51,7 @@ export function initPageLoader({ prefersReducedMotion }) {
       return {
         mounted: document.body.contains(pageLoader),
         hidden: hasHidden || pageLoader.classList.contains("is-hidden"),
+        phase,
         reducedMotion: prefersReducedMotion,
       };
     },

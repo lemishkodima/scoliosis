@@ -19,19 +19,19 @@
   }
 
   .hero {
-    min-height: 160svh;
+    min-height: clamp(1120px, 156svh, 1480px);
     padding-top: 130px;
   }
 
   .hero-dock {
-    position: relative;
-    top: auto;
-    margin-top: clamp(-310px, -29vw, -190px);
-    margin-bottom: clamp(140px, 22vh, 260px);
+    position: sticky;
+    top: calc(100svh - 300px);
+    margin-top: clamp(-470px, -42vh, -310px);
+    margin-bottom: clamp(92px, 16vh, 180px);
   }
 
   .intro {
-    margin-top: clamp(-520px, -44vh, -340px);
+    margin-top: clamp(-220px, -18vh, -120px);
   }
 
   .hero-visual {
@@ -211,11 +211,12 @@
   }
 
   .hero {
-    padding: 118px 0 76px;
+    min-height: clamp(980px, 146svh, 1220px);
+    padding: 118px 0 64px;
   }
 
   .hero-copy {
-    --hero-title-scroll-drop: clamp(92px, 14vh, 130px);
+    top: 96px;
   }
 
   .hero-visual {
@@ -230,8 +231,9 @@
 
   .hero-dock {
     width: min(100% - 22px, 520px);
-    margin-top: clamp(-310px, -58vw, -230px);
-    margin-bottom: clamp(58px, 14vh, 120px);
+    top: calc(100svh - 226px);
+    margin-top: clamp(110px, 30vh, 250px);
+    margin-bottom: clamp(64px, 12vh, 112px);
     padding: 12px 12px 16px;
   }
 
@@ -319,12 +321,6 @@
     line-height: 1.04;
   }
 
-  @supports (animation-timeline: scroll(root block)) {
-    .hero-copy > * {
-      animation-range: 0 240px;
-    }
-  }
-
   h2 {
     font-size: clamp(1.85rem, 10vw, 2.8rem);
   }
@@ -355,7 +351,7 @@
   }
 
   .intro {
-    margin-top: clamp(-460px, -42vh, -300px);
+    margin-top: clamp(48px, 10vh, 100px);
     padding: 34px 18px 58px;
   }
 

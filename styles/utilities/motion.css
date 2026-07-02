@@ -1,0 +1,26 @@
+:root {
+  --ease-premium: cubic-bezier(0.74, 0, 0.16, 1);
+  --ease-soft: cubic-bezier(0.2, 0.78, 0.24, 1);
+  --ease-out: cubic-bezier(0.16, 0.92, 0.2, 1);
+  --dur-fast: 360ms;
+  --dur-medium: 720ms;
+  --dur-scene: 1180ms;
+  --dur-panel: 980ms;
+  --panel-dark: #102642;
+  --motion-stagger: 78ms;
+  --hero-progress: 0;
+  --hero-title-y: 0px;
+  --hero-dock-y: 0px;
+  --hero-video-scale: 1;
+  --intro-lift: 0px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-medium: 1ms;
+    --dur-scene: 1ms;
+    --dur-panel: 1ms;
+    --motion-stagger: 0ms;
+  }
+}

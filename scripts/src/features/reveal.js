@@ -103,14 +103,34 @@ function initOpenLinesScramble({ prefersReducedMotion }) {
 export function initRevealCards({ prefersReducedMotion = false } = {}) {
   const cards = qsa(".reveal-card");
   const revealItems = qsa(
-    ".section-heading, .mission-copy, .audience-copy, .gallery-copy, .opens, .step-list li, .apply-copy, .membership-form",
+    ".section-heading, .mission-copy, .audience-copy, .gallery-copy, .gallery-card, .opens, .step-list li, .apply-copy, .membership-form, .section-transition-tiles",
   );
   revealItems.forEach((item, index) => {
     item.classList.add("scroll-reveal");
+    if (!item.dataset.reveal) {
+      if (item.classList.contains("gallery-card")) {
+        item.dataset.reveal = "media-wipe";
+      } else if (item.classList.contains("membership-form")) {
+        item.dataset.reveal = "form-panel";
+      } else if (item.classList.contains("section-transition-tiles")) {
+        item.dataset.reveal = "tile-transition";
+      } else if (item.matches(".step-list li, .section-heading")) {
+        item.dataset.reveal = "card-tile";
+      } else if (item.classList.contains("opens")) {
+        item.dataset.reveal = "section-panel";
+      } else {
+        item.dataset.reveal = "line-mask";
+      }
+    }
     item.style.setProperty("--reveal-index", `${index % 6}`);
   });
 
   const allItems = [...cards, ...revealItems];
+  cards.forEach((card, index) => {
+    card.dataset.reveal = card.dataset.reveal || "card-tile";
+    card.style.setProperty("--reveal-index", `${index % 4}`);
+  });
+
   if (!("IntersectionObserver" in window)) {
     allItems.forEach((item) => item.classList.add("is-visible"));
     return {
@@ -134,7 +154,7 @@ export function initRevealCards({ prefersReducedMotion = false } = {}) {
         }
       });
     },
-    { threshold: 0.18 },
+    { rootMargin: "0px 0px -10% 0px", threshold: 0.16 },
   );
 
   allItems.forEach((item) => revealObserver.observe(item));
