@@ -211,7 +211,7 @@
   }
 
   .hero {
-    min-height: clamp(980px, 146svh, 1220px);
+    min-height: clamp(1080px, 150svh, 1280px);
     padding: 118px 0 64px;
   }
 
@@ -232,7 +232,7 @@
   .hero-dock {
     width: min(100% - 22px, 520px);
     top: calc(100svh - 226px);
-    margin-top: clamp(110px, 30vh, 250px);
+    margin-top: clamp(-190px, -22vh, -140px);
     margin-bottom: clamp(64px, 12vh, 112px);
     padding: 12px 12px 16px;
   }
@@ -351,7 +351,7 @@
   }
 
   .intro {
-    margin-top: clamp(48px, 10vh, 100px);
+    margin-top: clamp(-10px, 2vh, 36px);
     padding: 34px 18px 58px;
   }
 

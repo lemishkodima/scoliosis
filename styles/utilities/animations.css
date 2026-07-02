@@ -326,6 +326,18 @@
   }
 }
 
+@keyframes sceneFadeIn {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
 @keyframes heroTitleScrollDrop {
   from {
     translate: 0 0;

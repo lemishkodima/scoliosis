@@ -51,8 +51,8 @@
   width: 100%;
   min-width: 0;
   max-width: min(1040px, calc(100% - 32px));
-  transform: translate3d(0, var(--hero-title-y, 0px), 0);
-  animation: titleLift 900ms var(--ease-soft) both;
+  transform: translate3d(0, calc(var(--hero-title-y, 0px) + var(--hero-group-y, 0px)), 0);
+  animation: sceneFadeIn 900ms var(--ease-soft) both;
   will-change: transform;
 }
 
@@ -124,7 +124,7 @@ h1 {
   position: relative;
   z-index: 2;
   margin-top: 0;
-  animation: controlsReveal 900ms 780ms var(--ease-soft) both;
+  animation: sceneFadeIn 900ms 780ms var(--ease-soft) both;
 }
 
 .hero-dock {
@@ -143,8 +143,8 @@ h1 {
   box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  transform: translate3d(0, var(--hero-dock-y, 0px), 0);
-  animation: controlsReveal 900ms 860ms var(--ease-soft) both;
+  transform: translate3d(0, calc(var(--hero-dock-y, 0px) + var(--hero-group-y, 0px)), 0);
+  animation: sceneFadeIn 900ms 860ms var(--ease-soft) both;
   will-change: transform;
 }
 
