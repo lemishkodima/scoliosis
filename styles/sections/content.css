@@ -582,25 +582,11 @@ h2 {
   padding: 90px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 88% 24%, rgba(24, 183, 199, 0.1), transparent 26%),
-    radial-gradient(circle at 14% 80%, rgba(216, 246, 74, 0.16), transparent 30%);
+  background: transparent;
 }
 
 .opens::before {
-  position: absolute;
-  top: 34px;
-  right: max(18px, calc((100vw - 1240px) / 2));
-  width: clamp(132px, 16vw, 240px);
-  height: clamp(92px, 9vw, 150px);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(216, 246, 74, 0.86), rgba(216, 246, 74, 0.38)),
-    repeating-linear-gradient(112deg, transparent 0 14px, rgba(23, 50, 92, 0.16) 14px 16px, transparent 16px 28px);
-  content: "";
-  opacity: 0.58;
-  pointer-events: none;
-  transform: rotate(-4deg);
+  display: none;
 }
 
 .open-lines {
@@ -615,14 +601,11 @@ h2 {
 
 .open-lines span:nth-child(even) {
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(8, 127, 157, 0.7);
+  -webkit-text-stroke: 1.5px rgba(23, 50, 92, 0.48);
 }
 
 .open-lines span:nth-child(3) {
-  background: linear-gradient(90deg, var(--navy), var(--blue), var(--aqua-deep));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--navy);
 }
 
 .open-lines span {
@@ -634,9 +617,9 @@ h2 {
 }
 
 .open-lines span.is-scrambling {
-  color: var(--aqua-deep);
+  color: var(--navy);
   opacity: 0.84;
-  text-shadow: 0 0 18px rgba(24, 183, 199, 0.22);
+  text-shadow: none;
 }
 
 .open-lines span.is-scrambled {
