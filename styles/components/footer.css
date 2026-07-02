@@ -42,7 +42,7 @@
 
 .footer-wordmark span:nth-child(2) {
   color: transparent;
-  background: linear-gradient(180deg, #f6f9ff 0%, #a2b4e2 24%, #ffffff 44%, #7392d1 100%);
+  background: linear-gradient(180deg, #f6f9ff 0%, #a2b4e2 25%, #5477b4 58%, #17325c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   font-size: clamp(1.32rem, 1.9vw, 2.08rem);

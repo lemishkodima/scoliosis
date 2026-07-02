@@ -227,7 +227,7 @@
   display: grid;
   gap: clamp(7px, 0.8vw, 12px);
   overflow: hidden;
-  padding: 10px 5px 14px;
+  padding: 10px 5px 22px;
   color: rgba(162, 180, 226, 0.94);
   font-weight: 950;
   line-height: 0.84;
@@ -262,17 +262,16 @@
   font-size: clamp(2.4rem, 6.9vw, 6.2rem);
   font-weight: 950;
   letter-spacing: 0.015em;
-  line-height: 0.72;
+  line-height: 0.9;
+  padding-bottom: 0.08em;
   filter:
-    drop-shadow(0 8px 7px rgba(0, 0, 0, 0.24))
-    drop-shadow(0 13px 14px rgba(23, 50, 92, 0.22));
+    drop-shadow(0 8px 7px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 16px 16px rgba(23, 50, 92, 0.26));
 }
 
 .loader-brand-line:nth-child(2) span {
   color: transparent;
-  background:
-    linear-gradient(180deg, #8fa9e7 0%, #234a86 24%, #092755 58%, #3f68a8 100%),
-    linear-gradient(90deg, #17325c, #061f49);
+  background: linear-gradient(180deg, #9eb5ee 0%, #5179ba 24%, #17325c 56%, #061f49 100%);
   -webkit-background-clip: text;
   background-clip: text;
   text-shadow: none;

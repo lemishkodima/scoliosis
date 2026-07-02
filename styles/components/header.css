@@ -109,13 +109,13 @@
 
 .brand-title span:nth-child(2) {
   color: transparent;
-  background: linear-gradient(180deg, #6f8ed0 0%, #17325c 38%, #0d2c58 68%, #315a9b 100%);
+  background: linear-gradient(180deg, #8fa9e7 0%, #4f76b5 22%, #17325c 55%, #061f49 100%);
   -webkit-background-clip: text;
   background-clip: text;
   font-size: clamp(1.08rem, 1.42vw, 1.72rem);
   font-weight: 950;
   letter-spacing: 0.035em;
-  line-height: 0.76;
+  line-height: 0.9;
   filter: drop-shadow(0 5px 5px rgba(23, 50, 92, 0.28));
   text-shadow: none;
 }
