@@ -4,13 +4,6 @@
   --periwinkle: #a2b4e2;
   --blue: #515bab;
   --navy: #17325c;
-  --aqua: #18b7c7;
-  --aqua-deep: #087f9d;
-  --aqua-soft: rgba(24, 183, 199, 0.18);
-  --aqua-glow: rgba(24, 183, 199, 0.32);
-  --volt: #d8f64a;
-  --volt-soft: rgba(216, 246, 74, 0.24);
-  --volt-glow: rgba(216, 246, 74, 0.3);
   --ink: #102642;
   --muted: #60708a;
   --line: rgba(23, 50, 92, 0.12);
@@ -43,8 +36,8 @@ body {
 }
 
 ::selection {
-  color: var(--navy);
-  background: rgba(24, 183, 199, 0.26);
+  color: var(--white);
+  background: rgba(23, 50, 92, 0.82);
 }
 
 body.is-loading {

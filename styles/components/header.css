@@ -33,12 +33,10 @@
   padding-top: 12px;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(23, 50, 92, 0.07);
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.78), rgba(246, 250, 255, 0.86)),
-    radial-gradient(circle at 86% 50%, rgba(24, 183, 199, 0.12), transparent 28%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.84), rgba(246, 250, 255, 0.9));
   box-shadow:
     0 18px 54px rgba(23, 50, 92, 0.1),
-    inset 0 -1px 0 rgba(24, 183, 199, 0.1);
+    inset 0 -1px 0 rgba(23, 50, 92, 0.08);
   backdrop-filter: blur(22px) saturate(1.14);
   -webkit-backdrop-filter: blur(22px) saturate(1.14);
 }
@@ -149,7 +147,7 @@
   bottom: 4px;
   left: 0;
   height: 1px;
-  background: var(--volt);
+  background: var(--blue);
   content: "";
   opacity: 0;
   transform: scaleX(0.4);
@@ -248,7 +246,7 @@
 }
 
 .language-menu button[aria-pressed="true"] {
-  color: var(--aqua-deep);
+  color: var(--blue);
 }
 
 .header-cta,
@@ -258,14 +256,12 @@
   justify-content: center;
   min-height: 46px;
   padding: 0 20px;
-  border: 1px solid rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(23, 50, 92, 0.16);
   border-radius: 8px;
-  color: var(--navy);
-  background:
-    linear-gradient(135deg, var(--volt) 0%, #e9ff78 100%);
+  color: var(--white);
+  background: var(--navy);
   box-shadow:
-    0 18px 44px rgba(216, 246, 74, 0.24),
-    0 12px 34px rgba(81, 91, 171, 0.16),
+    0 12px 34px rgba(23, 50, 92, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.26);
   font-weight: 750;
   cursor: pointer;
@@ -302,20 +298,17 @@
 }
 
 .secondary-button:hover {
-  border-color: rgba(24, 183, 199, 0.42);
+  border-color: rgba(81, 91, 171, 0.28);
   box-shadow:
-    0 16px 40px rgba(23, 50, 92, 0.14),
-    0 0 0 4px rgba(24, 183, 199, 0.08);
+    0 16px 40px rgba(23, 50, 92, 0.14);
   transform: translateY(-1px);
 }
 
 .header-cta:hover,
 .primary-button:hover {
-  background:
-    linear-gradient(135deg, var(--navy) 0%, var(--aqua-deep) 100%);
+  background: var(--blue);
   color: var(--white);
   box-shadow:
-    0 18px 48px rgba(24, 183, 199, 0.3),
     0 16px 42px rgba(23, 50, 92, 0.28);
   transform: translateY(-1px);
 }
