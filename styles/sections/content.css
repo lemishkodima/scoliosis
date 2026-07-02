@@ -156,6 +156,19 @@ h2 {
   margin-bottom: 0;
 }
 
+.section-heading-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.section-heading-text {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: rgba(16, 38, 66, 0.72);
+  font-size: clamp(1rem, 1.2vw, 1.16rem);
+  line-height: 1.68;
+}
+
 .benefit-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -431,6 +444,14 @@ h2 {
 
 .audience-copy {
   max-width: 980px;
+}
+
+.audience-lead {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: rgba(16, 38, 66, 0.72);
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  line-height: 1.72;
 }
 
 .check-list {

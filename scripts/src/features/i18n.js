@@ -1,4 +1,4 @@
-import { translations } from "../config/translations.js";
+import { translations } from "../config/translations.js?v=20260702-content-update-1";
 import { qs, qsa, selectors } from "../core/dom.js";
 
 let currentLanguage = localStorage.getItem("scoliosis-language") || "uk";
