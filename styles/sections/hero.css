@@ -8,6 +8,15 @@
   top: 0;
   z-index: 1;
   width: 100%;
+  transition:
+    opacity 220ms ease,
+    visibility 220ms ease;
+}
+
+body.is-hero-background-hidden .site-hero {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hero {

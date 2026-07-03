@@ -22,6 +22,9 @@
 .steps,
 .apply {
   background: #f7f9ff;
+  min-height: calc(100svh - var(--stack-header-offset));
+  box-shadow: 0 0 0 100vmax #f7f9ff;
+  clip-path: inset(0 -100vmax);
 }
 
 .benefits::before,
