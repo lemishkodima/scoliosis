@@ -89,6 +89,13 @@ h1 {
   text-wrap: balance;
 }
 
+.hero-title-accent {
+  color: var(--accent-lime);
+  text-shadow:
+    0 1px 0 rgba(23, 50, 92, 0.18),
+    0 18px 42px rgba(212, 251, 17, 0.32);
+}
+
 .hero-lead {
   margin-right: auto;
   margin-left: auto;

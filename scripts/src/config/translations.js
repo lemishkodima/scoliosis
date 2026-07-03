@@ -16,6 +16,9 @@ export const translations = {
     "cta.loading": "Надсилаємо заявку...",
     "hero.eyebrow": "Українська асоціація сколіозу",
     "hero.title": "Майбутнє лікування сколіозу починається зі спільноти",
+    "hero.titleBefore": "Майбутнє лікування",
+    "hero.titleAccent": "сколіозу",
+    "hero.titleAfter": "починається зі спільноти",
     "hero.lead":
       "Ми об'єднуємо лікарів, фізичних терапевтів, ортезистів, науковців, пацієнтів та їхні родини, щоб сприяти розвитку консервативного лікування сколіозу відповідно до міжнародних стандартів.",
     "hero.statsAria": "Напрями асоціації",
@@ -149,6 +152,9 @@ export const translations = {
     "cta.loading": "Preparing application...",
     "hero.eyebrow": "Ukrainian Scoliosis Association",
     "hero.title": "The future of scoliosis care starts with community",
+    "hero.titleBefore": "The future of",
+    "hero.titleAccent": "scoliosis",
+    "hero.titleAfter": "care starts with community",
     "hero.lead":
       "We unite doctors, physical therapists, orthotists, researchers, patients and their families to support the development of conservative scoliosis treatment according to international standards.",
     "hero.statsAria": "Association focus areas",
@@ -282,6 +288,9 @@ Object.assign(translations, {
     "cta.loading": "Przygotowujemy zgłoszenie...",
     "hero.eyebrow": "Ukraińskie Stowarzyszenie Skoliozy",
     "hero.title": "Przyszłość leczenia skoliozy zaczyna się od społeczności",
+    "hero.titleBefore": "Przyszłość leczenia",
+    "hero.titleAccent": "skoliozy",
+    "hero.titleAfter": "zaczyna się od społeczności",
     "hero.lead":
       "Łączymy lekarzy, fizjoterapeutów, ortotyków, naukowców, pacjentów i ich rodziny, aby wspierać rozwój zachowawczego leczenia skoliozy zgodnie ze standardami międzynarodowymi.",
     "hero.statsAria": "Główne kierunki stowarzyszenia",
@@ -399,6 +408,9 @@ Object.assign(translations, {
     "cta.loading": "Antrag wird vorbereitet...",
     "hero.eyebrow": "Ukrainische Skoliose-Vereinigung",
     "hero.title": "Die Zukunft der Skoliosebehandlung beginnt mit Gemeinschaft",
+    "hero.titleBefore": "Die Zukunft der",
+    "hero.titleAccent": "Skoliosebehandlung",
+    "hero.titleAfter": "beginnt mit Gemeinschaft",
     "hero.lead":
       "Wir verbinden Ärzte, Physiotherapeuten, Orthopädietechniker, Wissenschaftler, Patienten und ihre Familien, um die Entwicklung der konservativen Skoliosebehandlung nach internationalen Standards zu fördern.",
     "hero.statsAria": "Schwerpunkte der Vereinigung",
@@ -516,6 +528,9 @@ Object.assign(translations, {
     "cta.loading": "Préparation de la candidature...",
     "hero.eyebrow": "Association ukrainienne de la scoliose",
     "hero.title": "L'avenir du traitement de la scoliose commence par la communauté",
+    "hero.titleBefore": "L'avenir du traitement de la",
+    "hero.titleAccent": "scoliose",
+    "hero.titleAfter": "commence par la communauté",
     "hero.lead":
       "Nous réunissons médecins, kinésithérapeutes, orthésistes, chercheurs, patients et leurs familles afin de soutenir le développement du traitement conservateur de la scoliose selon les standards internationaux.",
     "hero.statsAria": "Axes de l'association",
@@ -633,6 +648,9 @@ Object.assign(translations, {
     "cta.loading": "Preparando solicitud...",
     "hero.eyebrow": "Asociación Ucraniana de Escoliosis",
     "hero.title": "El futuro del tratamiento de la escoliosis empieza con la comunidad",
+    "hero.titleBefore": "El futuro del tratamiento de la",
+    "hero.titleAccent": "escoliosis",
+    "hero.titleAfter": "empieza con la comunidad",
     "hero.lead":
       "Unimos a médicos, fisioterapeutas, ortesistas, investigadores, pacientes y sus familias para promover el desarrollo del tratamiento conservador de la escoliosis conforme a estándares internacionales.",
     "hero.statsAria": "Áreas de la asociación",
