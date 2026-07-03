@@ -476,6 +476,7 @@
   .opens {
     position: relative;
     top: auto;
+    min-height: auto;
   }
 
   .gallery-mosaic {
@@ -491,12 +492,17 @@
   }
 
   .opens {
-    padding: 66px 0;
+    padding: 46px 0 24px;
   }
 
   .open-lines {
-    font-size: clamp(1.85rem, 10vw, 3.25rem);
-    line-height: 1.06;
+    gap: 7px;
+    font-size: clamp(1.7rem, 8.8vw, 2.75rem);
+    line-height: 1.02;
+  }
+
+  .open-lines span {
+    min-height: 0.9em;
   }
 
   .steps {

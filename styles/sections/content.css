@@ -367,11 +367,15 @@ h2 {
   transform: translateY(-3px);
 }
 
+.section-heading.is-reveal-ready,
+.gallery-copy.is-reveal-ready,
 .reveal-card.is-reveal-ready,
 .gallery-card.is-reveal-ready,
+.audience-copy.is-reveal-ready,
 .mission-media.is-reveal-ready,
 .mission-copy.is-reveal-ready,
 .check-list li.is-reveal-ready,
+.apply-copy.is-reveal-ready,
 .membership-form.is-reveal-ready {
   opacity: 0;
   transform: translate3d(0, 26px, 0);
@@ -386,11 +390,15 @@ h2 {
   transform: translate3d(0, 30px, 0) scale(0.985);
 }
 
+.section-heading.is-reveal-ready.is-visible,
+.gallery-copy.is-reveal-ready.is-visible,
 .reveal-card.is-reveal-ready.is-visible,
 .gallery-card.is-reveal-ready.is-visible,
+.audience-copy.is-reveal-ready.is-visible,
 .mission-media.is-reveal-ready.is-visible,
 .mission-copy.is-reveal-ready.is-visible,
 .check-list li.is-reveal-ready.is-visible,
+.apply-copy.is-reveal-ready.is-visible,
 .membership-form.is-reveal-ready.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);

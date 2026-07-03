@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260703-loader-dot-video-edge-1";
+import "./src/main.js?v=20260703-open-lines-reveal-1";
