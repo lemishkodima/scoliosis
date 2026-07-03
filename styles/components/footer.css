@@ -31,7 +31,7 @@
 
 .footer-wordmark span:nth-child(1),
 .footer-wordmark span:nth-child(3) {
-  color: rgba(255, 255, 255, 0.92);
+  color: #7D95D4;
   font-size: clamp(0.72rem, 0.92vw, 0.9rem);
   font-weight: 850;
   letter-spacing: 0.42em;

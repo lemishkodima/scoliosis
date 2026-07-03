@@ -249,8 +249,8 @@
 
 .loader-brand-line:nth-child(1),
 .loader-brand-line:nth-child(3) {
-  color: rgba(162, 180, 226, 0.95);
-  font-size: clamp(0.92rem, 1.8vw, 1.62rem);
+  color: #7D95D4;
+  font-size: clamp(0.78rem, 1.5vw, 1.38rem);
   font-weight: 850;
   letter-spacing: 0.42em;
   line-height: 1.08;
@@ -260,7 +260,7 @@
 .loader-brand-line:nth-child(2) {
   gap: 0.045em;
   color: transparent;
-  font-size: clamp(3.2rem, 7.8vw, 7.15rem);
+  font-size: clamp(2.72rem, 6.65vw, 6.18rem);
   font-weight: 950;
   letter-spacing: 0.015em;
   line-height: 0.96;
@@ -338,13 +338,13 @@
 
   .loader-brand-line:nth-child(1),
   .loader-brand-line:nth-child(3) {
-    font-size: clamp(0.72rem, 4.15vw, 1.08rem);
+    font-size: clamp(0.64rem, 3.65vw, 0.96rem);
     letter-spacing: 0.3em;
     line-height: 1.08;
   }
 
   .loader-brand-line:nth-child(2) {
-    font-size: clamp(2.95rem, 16.4vw, 4.72rem);
+    font-size: clamp(2.44rem, 13.9vw, 4.08rem);
     letter-spacing: 0.005em;
     line-height: 0.98;
   }

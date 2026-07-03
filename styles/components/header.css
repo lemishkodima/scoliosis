@@ -99,7 +99,7 @@
 
 .brand-title span:nth-child(1),
 .brand-title span:nth-child(3) {
-  color: var(--navy);
+  color: #7D95D4;
   font-size: clamp(0.58rem, 0.68vw, 0.82rem);
   font-weight: 850;
   letter-spacing: 0.46em;
