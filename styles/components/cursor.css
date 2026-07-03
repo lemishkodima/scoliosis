@@ -22,7 +22,7 @@
 .cursor-dot {
   width: 7px;
   height: 7px;
-  background: var(--navy);
+  background: var(--accent-lime);
   box-shadow:
     0 0 18px rgba(23, 50, 92, 0.2);
   transition:
@@ -46,7 +46,7 @@
 .cursor-orb.is-hovering .cursor-ring {
   width: 58px;
   height: 58px;
-  border-color: rgba(81, 91, 171, 0.32);
+  border-color: var(--accent-lime);
   background: rgba(223, 228, 245, 0.18);
 }
 

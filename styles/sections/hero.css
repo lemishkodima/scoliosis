@@ -192,17 +192,17 @@ h1 {
 
 .hero-stats div {
   padding-top: 16px;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--accent-lime);
 }
 
 .hero-stats dt {
-  color: var(--blue);
+  color: var(--navy);
   font-size: 0.82rem;
   font-weight: 850;
 }
 
 .hero-stats div:nth-child(2) dt {
-  color: var(--blue);
+  color: var(--navy);
 }
 
 .hero-stats dd {

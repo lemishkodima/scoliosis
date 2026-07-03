@@ -442,7 +442,7 @@ h2 {
   position: relative;
   padding: 16px 18px 16px 48px;
   border: 1px solid rgba(23, 50, 92, 0.11);
-  border-left: 4px solid rgba(81, 91, 171, 0.5);
+  border-left: 4px solid var(--accent-lime);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.76);
   color: var(--navy);
@@ -456,8 +456,8 @@ h2 {
   width: 20px;
   height: 20px;
   border-radius: 999px;
-  color: var(--white);
-  background: var(--blue);
+  color: var(--navy);
+  background: var(--accent-lime);
   box-shadow: 0 8px 18px rgba(23, 50, 92, 0.16);
   content: "✓";
   font-size: 0.78rem;
@@ -631,7 +631,7 @@ h2 {
   right: calc(16.66% + 38px);
   left: calc(16.66% + 38px);
   height: 2px;
-  background: repeating-linear-gradient(90deg, rgba(23, 50, 92, 0.38) 0 8px, transparent 8px 15px);
+  background: repeating-linear-gradient(90deg, var(--accent-lime) 0 8px, transparent 8px 15px);
   content: "";
   opacity: 0.74;
   pointer-events: none;
@@ -657,13 +657,13 @@ h2 {
   place-items: center;
   width: 52px;
   height: 52px;
-  border: 1px solid rgba(81, 91, 171, 0.3);
+  border: 1px solid rgba(23, 50, 92, 0.14);
   border-radius: 999px;
-  background: var(--blue);
+  background: var(--accent-lime);
   box-shadow:
     0 16px 36px rgba(23, 50, 92, 0.16),
     inset 0 0 0 8px rgba(255, 255, 255, 0.18);
-  color: var(--white);
+  color: var(--navy);
   content: "✓";
   font-size: 1.05rem;
   font-weight: 950;
@@ -701,7 +701,7 @@ h2 {
   left: 96px;
   display: block;
   margin-bottom: 0;
-  color: var(--blue);
+  color: var(--navy);
   font-size: 0.86rem;
   font-weight: 900;
 }

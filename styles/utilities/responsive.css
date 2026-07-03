@@ -199,8 +199,8 @@
     border-radius: 999px;
     font-size: 0.68rem;
     font-weight: 850;
-    color: var(--white);
-    background: var(--navy);
+    color: var(--navy);
+    background: var(--accent-lime);
     box-shadow:
       0 16px 42px rgba(23, 50, 92, 0.22);
     line-height: 1.06;
@@ -435,7 +435,7 @@
     left: 26px;
     width: 2px;
     height: auto;
-    background: repeating-linear-gradient(180deg, rgba(23, 50, 92, 0.38) 0 8px, transparent 8px 15px);
+    background: repeating-linear-gradient(180deg, var(--accent-lime) 0 8px, transparent 8px 15px);
   }
 
   .step-list li {
