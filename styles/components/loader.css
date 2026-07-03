@@ -154,7 +154,7 @@
 }
 
 .page-loader.is-revealing .loader-blocks span {
-  animation: loaderBlockOpen 1320ms calc(42ms + (var(--loader-distance, 0) * 20ms)) cubic-bezier(0.72, 0, 0.14, 1) both;
+  animation: loaderBlockOpen 1320ms calc(760ms + (var(--loader-distance, 0) * 20ms)) cubic-bezier(0.72, 0, 0.14, 1) both;
 }
 
 .page-loader.is-loader-open .loader-blocks::before {
@@ -312,6 +312,7 @@
 }
 
 .page-loader.is-revealing .loader-logo-orbit img {
+  animation: loaderLogoCompress 620ms var(--ease-premium) both;
   filter:
     drop-shadow(0 18px 24px rgba(23, 50, 92, 0.16))
     drop-shadow(0 0 16px rgba(162, 180, 226, 0.28));
@@ -355,11 +356,11 @@
   }
 
   .page-loader.is-revealing .loader-core {
-    animation: loaderCoreGatherMobile 980ms var(--ease-premium) both;
+    animation: loaderCoreGatherMobile 640ms var(--ease-premium) both;
   }
 
   .page-loader.is-revealing .loader-blocks span {
-    animation-delay: calc(520ms + (var(--loader-distance, 0) * 20ms));
+    animation-delay: calc(760ms + (var(--loader-distance, 0) * 20ms));
   }
 
   .page-loader.is-loader-open .loader-blocks::before {
@@ -372,7 +373,7 @@
   }
 
   .page-loader.is-revealing .loader-brand-name {
-    animation: loaderBrandIntoLogoMobile 620ms var(--ease-premium) both;
+    animation: loaderBrandIntoLogoMobile 520ms var(--ease-premium) both;
   }
 
   .page-loader.is-revealing .loader-logo-orbit {

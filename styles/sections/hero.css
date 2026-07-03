@@ -162,10 +162,10 @@ h1 {
   margin-right: calc(50% - 50svw);
   margin-bottom: 0;
   margin-left: calc(50% - 50svw);
-  padding: clamp(10px, 1.8vh, 18px) clamp(16px, 3vw, 28px) 0;
+  padding: clamp(30px, 4.8vh, 62px) clamp(16px, 3vw, 28px) 0;
   border: 0;
   border-radius: 0;
-  background: #f7f9ff;
+  background: linear-gradient(180deg, rgba(247, 249, 255, 0), rgba(247, 249, 255, 0.9) 36%, #f7f9ff 100%);
   box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -285,11 +285,11 @@ h1 {
   filter: none;
   transform: none;
   mask-image:
-    linear-gradient(180deg, transparent 0, #000 15%, #000 78%, transparent 100%),
+    linear-gradient(180deg, transparent 0, #000 12%, #000 70%, transparent 100%),
     linear-gradient(90deg, transparent 0, #000 13%, #000 87%, transparent 100%);
   mask-composite: intersect;
   -webkit-mask-image:
-    linear-gradient(180deg, transparent 0, #000 15%, #000 78%, transparent 100%),
+    linear-gradient(180deg, transparent 0, #000 12%, #000 70%, transparent 100%),
     linear-gradient(90deg, transparent 0, #000 13%, #000 87%, transparent 100%);
   -webkit-mask-composite: source-in;
   animation: videoHeroReveal 1100ms 180ms var(--ease-soft) both;

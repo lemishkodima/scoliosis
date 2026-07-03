@@ -183,10 +183,10 @@ h2 {
   z-index: 37;
   width: 100vw;
   max-width: none;
-  min-height: max(1040px, calc(230svh - var(--stack-header-offset)));
+  min-height: max(680px, calc(105svh - var(--stack-header-offset)));
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
-  padding: clamp(78px, 8vw, 118px) 0 clamp(180px, 18vw, 280px);
+  padding: clamp(78px, 8vw, 118px) 0 clamp(76px, 8vw, 116px);
   overflow: hidden;
   --steps-progress: 0;
 }

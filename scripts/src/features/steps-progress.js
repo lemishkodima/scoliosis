@@ -37,9 +37,11 @@ export function initStepsProgress({ prefersReducedMotion }) {
   }
 
   function measureProgress() {
-    const start = section.offsetTop - window.innerHeight * 0.62;
+    const listTop = section.offsetTop + list.offsetTop;
+    const listBottom = listTop + list.offsetHeight;
+    const start = listTop - window.innerHeight * 0.82;
     const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
-    const naturalEnd = section.offsetTop + section.offsetHeight - window.innerHeight * 0.38;
+    const naturalEnd = listBottom - window.innerHeight * 0.36;
     const end = Math.min(naturalEnd, maxScroll);
     const scrollDistance = Math.max(end - start, 1);
     return clamp((window.scrollY - start) / scrollDistance);
