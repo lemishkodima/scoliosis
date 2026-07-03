@@ -324,7 +324,7 @@ h1 {
 }
 
 .hero-video-stage.is-loop-fading::after {
-  opacity: 0.8;
+  opacity: 0;
 }
 
 .hero-video-stage.is-loop-fading .hero-video-sweep {
@@ -337,23 +337,18 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: 2;
+  display: none;
   pointer-events: none;
   content: "";
 }
 
 .hero-video-stage::before {
-  background:
-    repeating-linear-gradient(112deg, transparent 0 73%, rgba(255, 255, 255, 0.42) 73.3% 73.7%, transparent 74% 100%),
-    linear-gradient(90deg, rgba(247, 249, 255, 0.72), rgba(247, 249, 255, 0.1) 24%, rgba(247, 249, 255, 0.08) 76%, rgba(239, 243, 251, 0.72)),
-    linear-gradient(180deg, rgba(247, 249, 255, 0.84), rgba(247, 249, 255, 0.12) 23%, rgba(247, 249, 255, 0.08) 68%, rgba(247, 249, 255, 0.62) 88%, rgba(247, 249, 255, 0.88));
+  background: none;
 }
 
 .hero-video-stage::after {
-  background:
-    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0) 0 36%, rgba(255, 255, 255, 0.08) 62%, rgba(247, 249, 255, 0.38) 100%),
-    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.16));
-  mix-blend-mode: screen;
-  opacity: 0.28;
+  background: none;
+  opacity: 0;
 }
 
 .hero-depth-plane {
@@ -364,17 +359,17 @@ h1 {
 }
 
 .hero-depth-plane-back {
-  background: linear-gradient(90deg, rgba(23, 50, 92, 0.012), transparent 24%, transparent 76%, rgba(23, 50, 92, 0.01));
-  opacity: 0.2;
+  display: none;
+  background: none;
+  opacity: 0;
   transform: translate3d(0, calc(var(--hero-video-y, 0px) * -0.24), 0);
 }
 
 .hero-depth-plane-front {
   z-index: 3;
-  background:
-    radial-gradient(ellipse at 50% 56%, transparent 0 40%, rgba(255, 255, 255, 0.1) 62%, rgba(247, 249, 255, 0.54) 96%),
-    linear-gradient(180deg, rgba(247, 249, 255, 0.08), transparent 32%, rgba(247, 249, 255, 0.16) 74%, rgba(247, 249, 255, 0.72));
-  opacity: 0.62;
+  display: none;
+  background: none;
+  opacity: 0;
 }
 
 .hero-video-sweep {
@@ -398,7 +393,7 @@ h1 {
   height: 100%;
   object-fit: cover;
   object-position: center 48%;
-  filter: saturate(1.02) contrast(1.03) brightness(1.08);
+  filter: saturate(1.04) contrast(1.05) brightness(1.02);
   opacity: 1;
   transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1.02);
   transition:

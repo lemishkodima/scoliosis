@@ -800,7 +800,7 @@ h2 {
   transform: none;
   transition:
     filter 180ms ease,
-    opacity 180ms ease;
+    opacity 120ms linear;
 }
 
 .step-list li:nth-child(1) {
@@ -827,10 +827,10 @@ h2 {
   z-index: 0;
   display: block;
   background: #2634f5;
-  content: none;
+  content: "";
   transform: scaleX(var(--step-fill, 0));
   transform-origin: left center;
-  transition: none;
+  transition: transform 80ms linear;
 }
 
 .step-list li::after {
@@ -885,6 +885,7 @@ h2 {
   font-weight: 900;
   line-height: 1;
   opacity: var(--step-copy, 0);
+  transition: opacity 100ms linear;
 }
 
 .step-list strong {
@@ -899,6 +900,7 @@ h2 {
   text-transform: uppercase;
   white-space: nowrap;
   opacity: var(--step-copy, 0);
+  transition: opacity 100ms linear;
 }
 
 .apply {

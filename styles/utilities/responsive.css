@@ -477,11 +477,13 @@
   }
 
   .steps {
-    width: 100%;
+    width: 100vw;
     max-width: none;
+    min-height: max(720px, 170svh);
     margin-right: 0;
-    margin-left: 0;
+    margin-left: 50%;
     padding: 58px 0 76px;
+    transform: translateX(-50%);
   }
 
   .steps .section-heading {
@@ -494,8 +496,11 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
+    width: 100vw;
     min-height: 0;
-    padding: 0 0 42px;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 0 56px;
     border-top-color: rgba(23, 50, 92, 0.08);
     border-bottom-color: rgba(23, 50, 92, 0.08);
     background:
@@ -515,20 +520,22 @@
   .step-list li:nth-child(3) {
     grid-column: 1;
     grid-row: auto;
-    min-height: 38px;
+    width: 100%;
+    min-height: 44px;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 0 20px;
+    margin-left: 0;
+    padding: 0 18px;
     transform: none;
   }
 
   .step-list li:nth-child(2) {
-    margin-left: 10%;
+    margin-left: 0;
   }
 
   .step-list li:nth-child(3) {
-    width: 80%;
-    margin-left: 20%;
+    width: 100%;
+    margin-left: 0;
   }
 
   .step-list span {
@@ -539,6 +546,10 @@
 
   .step-list strong {
     font-size: 0.78rem;
+    line-height: 1.12;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 
   .footer-brand-group {
