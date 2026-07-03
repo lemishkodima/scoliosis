@@ -249,7 +249,7 @@
 
 .loader-brand-line:nth-child(1),
 .loader-brand-line:nth-child(3) {
-  color: #7D95D4;
+  color: #A2B4E2;
   font-size: clamp(0.78rem, 1.5vw, 1.38rem);
   font-weight: 850;
   letter-spacing: 0.42em;
