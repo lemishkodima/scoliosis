@@ -134,6 +134,21 @@ h2 {
   padding: 96px 0;
 }
 
+.steps {
+  min-height: 190svh;
+  padding: 0;
+  --steps-progress: 0;
+}
+
+.steps-sticky {
+  position: sticky;
+  top: clamp(84px, 11vh, 126px);
+  display: grid;
+  align-content: center;
+  min-height: calc(100svh - clamp(84px, 11vh, 126px));
+  padding: clamp(62px, 8vh, 96px) 0 clamp(72px, 10vh, 118px);
+}
+
 .benefits::before {
   position: absolute;
   inset: 0 calc(50% - 50vw);
@@ -681,6 +696,7 @@ h2 {
   margin: 0;
   padding: 0;
   list-style: none;
+  --steps-progress: inherit;
 }
 
 .step-list::before {
@@ -688,15 +704,32 @@ h2 {
   top: 50px;
   right: calc(16.66% + 38px);
   left: calc(16.66% + 38px);
+  z-index: 0;
   height: 2px;
-  background: repeating-linear-gradient(90deg, var(--accent-lime) 0 8px, transparent 8px 15px);
+  background: repeating-linear-gradient(90deg, rgba(23, 50, 92, 0.14) 0 8px, transparent 8px 15px);
   content: "";
   opacity: 0.74;
   pointer-events: none;
 }
 
+.step-list::after {
+  position: absolute;
+  top: 50px;
+  right: calc(16.66% + 38px);
+  left: calc(16.66% + 38px);
+  z-index: 0;
+  height: 2px;
+  background: var(--accent-lime);
+  content: "";
+  pointer-events: none;
+  transform: scaleX(var(--steps-progress));
+  transform-origin: left center;
+  transition: transform 120ms linear;
+}
+
 .step-list li {
   position: relative;
+  z-index: 1;
   min-height: 252px;
   padding: 98px 28px 28px;
   border: 1px solid rgba(23, 50, 92, 0.12);
@@ -704,6 +737,15 @@ h2 {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(223, 228, 245, 0.72));
   box-shadow: 0 24px 70px rgba(23, 50, 92, 0.09);
   overflow: hidden;
+  opacity: 0.78;
+  transform: translateY(18px) scale(0.97);
+  transition:
+    background 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    color 260ms ease,
+    opacity 260ms ease,
+    transform 260ms ease;
 }
 
 .step-list li::before {
@@ -725,6 +767,11 @@ h2 {
   content: "✓";
   font-size: 1.05rem;
   font-weight: 950;
+  transition:
+    background 240ms ease,
+    box-shadow 240ms ease,
+    color 240ms ease,
+    transform 240ms ease;
 }
 
 .step-list li::after {
@@ -739,18 +786,49 @@ h2 {
   transform: translate(34%, 34%);
 }
 
-.step-list li:nth-child(2) {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+.step-list li.is-active {
+  background: var(--blue);
   border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 30px 86px rgba(23, 50, 92, 0.18);
+  opacity: 1;
+  transform: translateY(0) scale(1.02);
 }
 
-.step-list li:nth-child(2)::after {
+.step-list li.is-active::before {
+  background: #6570c7;
+  box-shadow:
+    0 16px 36px rgba(23, 50, 92, 0.18),
+    inset 0 0 0 8px rgba(162, 180, 226, 0.42);
+  color: var(--white);
+}
+
+.step-list li.is-active::after {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.step-list li:nth-child(2) span,
-.step-list li:nth-child(2) strong {
+.step-list li.is-active span,
+.step-list li.is-active strong {
   color: var(--white);
+}
+
+.step-list li.is-complete {
+  border-color: rgba(212, 251, 17, 0.62);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(223, 228, 245, 0.78));
+  opacity: 0.92;
+  transform: translateY(0) scale(0.99);
+}
+
+.step-list li.is-complete::before {
+  background: var(--accent-lime);
+  color: var(--navy);
+  box-shadow:
+    0 16px 36px rgba(23, 50, 92, 0.14),
+    inset 0 0 0 8px rgba(23, 50, 92, 0.1);
+}
+
+.step-list li.is-complete span,
+.step-list li.is-complete strong {
+  color: var(--navy);
 }
 
 .step-list span {

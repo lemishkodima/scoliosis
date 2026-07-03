@@ -431,13 +431,25 @@
     left: 26px;
     width: 2px;
     height: auto;
-    background: repeating-linear-gradient(180deg, var(--accent-lime) 0 8px, transparent 8px 15px);
+    background: repeating-linear-gradient(180deg, rgba(23, 50, 92, 0.14) 0 8px, transparent 8px 15px);
+  }
+
+  .step-list::after {
+    top: 32px;
+    bottom: 32px;
+    left: 26px;
+    width: 2px;
+    height: auto;
+    background: var(--accent-lime);
+    transform: scaleY(var(--steps-progress));
+    transform-origin: center top;
   }
 
   .step-list li {
     min-height: 0;
     margin-bottom: 18px;
     padding: 24px 20px 24px 58px;
+    transform: translateX(10px) scale(0.98);
   }
 
   .step-list li::before {
