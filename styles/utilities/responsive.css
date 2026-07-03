@@ -225,10 +225,6 @@
     padding: 118px 0 64px;
   }
 
-  .hero-copy {
-    top: 96px;
-  }
-
   .hero-visual {
     width: 100vw;
     min-height: clamp(430px, 112vw, 540px);
