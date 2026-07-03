@@ -3,7 +3,7 @@
   z-index: 24;
   width: 100vw;
   max-width: none;
-  margin-top: clamp(-260px, -20vh, -150px);
+  margin-top: 0;
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
   padding: clamp(54px, 5.8vw, 86px) clamp(24px, 4.8vw, 72px) clamp(82px, 7.6vw, 118px);

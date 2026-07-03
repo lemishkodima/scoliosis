@@ -8,6 +8,7 @@ export const selectors = {
   languageToggle: "[data-language-toggle]",
   currentLanguage: "[data-current-lang]",
   logoStage: "[data-logo-stage]",
+  mobileFloatingCta: ".mobile-floating-cta",
   pageLoader: "[data-page-loader]",
   status: "[data-form-status]",
   visual: "[data-hero-visual]",
