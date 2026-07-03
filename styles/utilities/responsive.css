@@ -304,8 +304,8 @@
   }
 
   .hero-video {
-    object-position: center 50%;
-    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(0.84);
+    object-position: center 48%;
+    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1.02);
   }
 
   .hero-3d-note {
