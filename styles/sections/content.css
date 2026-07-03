@@ -169,18 +169,19 @@ h2 {
 
 .benefit-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .benefit-card {
   position: relative;
-  min-height: 290px;
+  min-height: 260px;
+  overflow: hidden;
   padding: 26px;
-  border: 1px solid rgba(23, 50, 92, 0.1);
+  border: 1px solid rgba(23, 50, 92, 0.08);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 251, 255, 0.78));
-  box-shadow: 0 20px 60px rgba(23, 50, 92, 0.07);
+  background: #f1f3f7;
+  box-shadow: 0 18px 44px rgba(23, 50, 92, 0.06);
   transform: none;
   opacity: 1;
   transition:
@@ -190,39 +191,96 @@ h2 {
 }
 
 .benefit-card::before {
-  display: none;
-  content: none;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(23, 50, 92, 0.18);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, var(--accent-lime) 0 4px, transparent 5px),
+    rgba(212, 251, 17, 0.58);
+  content: "";
+  box-shadow: 0 12px 26px rgba(23, 50, 92, 0.1);
+}
+
+.benefit-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.benefit-card:nth-child(1) {
+  border-color: rgba(212, 251, 17, 0.62);
+  background: var(--accent-lime);
+  box-shadow: 0 24px 70px rgba(23, 50, 92, 0.1);
+}
+
+.benefit-card:nth-child(1)::before,
+.benefit-card:nth-child(5)::before {
+  background:
+    radial-gradient(circle at center, var(--navy) 0 4px, transparent 5px),
+    rgba(255, 255, 255, 0.22);
+  border-color: rgba(23, 50, 92, 0.16);
 }
 
 .benefit-card:nth-child(2) {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(239, 243, 251, 0.78));
+  background: #eef1f6;
   border-color: rgba(23, 50, 92, 0.08);
-  box-shadow: 0 26px 72px rgba(23, 50, 92, 0.11);
+  box-shadow: 0 18px 48px rgba(23, 50, 92, 0.07);
 }
 
+.benefit-card:nth-child(1) .icon,
 .benefit-card:nth-child(2) .icon {
   color: var(--navy);
 }
 
+.benefit-card:nth-child(1) h3,
+.benefit-card:nth-child(1) p,
 .benefit-card:nth-child(2) h3,
 .benefit-card:nth-child(2) p {
   color: var(--navy);
 }
 
 .benefit-card:nth-child(3) {
-  background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow:
-    0 28px 78px rgba(23, 50, 92, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  background: #eef1f6;
 }
 
-.benefit-card:nth-child(3) .icon {
+.benefit-card:nth-child(4) {
+  border-color: rgba(23, 50, 92, 0.08);
+  background: #eef1f6;
+}
+
+.benefit-card:nth-child(4)::after {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 0;
+  height: 84%;
+  background:
+    linear-gradient(180deg, rgba(238, 241, 246, 0.26), rgba(238, 241, 246, 0.9)),
+    url("../../assets/images/IMG_8683.webp") center bottom / cover;
+  content: "";
+  filter: grayscale(1) saturate(0) contrast(0.96);
+  opacity: 0.28;
+}
+
+.benefit-card:nth-child(4)::before {
+  z-index: 2;
+}
+
+.benefit-card:nth-child(5) {
+  background: var(--blue);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 28px 78px rgba(23, 50, 92, 0.16);
+}
+
+.benefit-card:nth-child(5) .icon {
   color: var(--white);
 }
 
-.benefit-card:nth-child(3) h3,
-.benefit-card:nth-child(3) p {
+.benefit-card:nth-child(5) h3,
+.benefit-card:nth-child(5) p {
   color: var(--white);
 }
 
