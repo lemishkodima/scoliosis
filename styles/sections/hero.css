@@ -4,7 +4,8 @@
 }
 
 .site-hero {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1;
   width: 100%;
 }
@@ -21,6 +22,11 @@
   gap: 0;
   text-align: center;
   overflow: hidden;
+}
+
+.hero.site-hero {
+  position: sticky;
+  top: 0;
 }
 
 .hero::before {
