@@ -304,7 +304,8 @@
   }
 
   .hero-video {
-    object-position: center 51%;
+    object-position: center 50%;
+    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(0.84);
   }
 
   .hero-3d-note {
@@ -441,7 +442,17 @@
   .steps,
   .therapy-gallery,
   .apply {
+    position: relative;
+    top: auto;
+    min-height: auto;
     padding: 72px 0;
+  }
+
+  .intro,
+  .mission,
+  .opens {
+    position: relative;
+    top: auto;
   }
 
   .gallery-mosaic {
@@ -465,49 +476,69 @@
     line-height: 1.06;
   }
 
+  .steps {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 58px 0 76px;
+  }
+
+  .steps .section-heading {
+    width: min(100% - 22px, 1180px);
+    margin-bottom: 26px;
+    overflow: hidden;
+  }
+
   .step-list {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0;
-    padding-left: 34px;
-  }
-
-  .step-list::before {
-    top: 32px;
-    bottom: 32px;
-    left: 26px;
-    width: 2px;
-    height: auto;
-    background: repeating-linear-gradient(180deg, rgba(23, 50, 92, 0.14) 0 8px, transparent 8px 15px);
-  }
-
-  .step-list::after {
-    top: 32px;
-    bottom: 32px;
-    left: 26px;
-    width: 2px;
-    height: auto;
-    background: var(--accent-lime);
-    transform: scaleY(var(--steps-progress));
-    transform-origin: center top;
-  }
-
-  .step-list li {
     min-height: 0;
-    margin-bottom: 18px;
-    padding: 24px 20px 24px 58px;
-    transform: translateX(10px) scale(0.98);
+    padding: 0 0 42px;
+    border-top-color: rgba(23, 50, 92, 0.08);
+    border-bottom-color: rgba(23, 50, 92, 0.08);
+    background:
+      linear-gradient(90deg, rgba(23, 50, 92, 0.08) 1px, transparent 1px) 0 0 / 25% 100%,
+      #f7f9ff;
   }
 
-  .step-list li::before {
-    top: 24px;
-    left: -32px;
-    width: 44px;
-    height: 44px;
-    font-size: 0.92rem;
+  .step-list::before,
+  .step-list::after {
+    display: none;
+    content: none;
+  }
+
+  .step-list li,
+  .step-list li:nth-child(1),
+  .step-list li:nth-child(2),
+  .step-list li:nth-child(3) {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 38px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 20px;
+    transform: none;
+  }
+
+  .step-list li:nth-child(2) {
+    margin-left: 10%;
+  }
+
+  .step-list li:nth-child(3) {
+    width: 80%;
+    margin-left: 20%;
   }
 
   .step-list span {
     position: static;
-    margin-bottom: 18px;
+    margin: 0;
+    font-size: 0.78rem;
+  }
+
+  .step-list strong {
+    font-size: 0.78rem;
   }
 
   .footer-brand-group {

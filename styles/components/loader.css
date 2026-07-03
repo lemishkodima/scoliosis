@@ -322,6 +322,7 @@
     flex-direction: row;
     gap: 14px;
     text-align: left;
+    translate: 0 0;
   }
 
   .loader-brand-name {
@@ -371,49 +372,46 @@
   }
 
   .page-loader.is-revealing .loader-brand-name {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    animation: loaderBrandIntoLogoMobile 320ms var(--ease-premium) both;
+    animation: loaderBrandIntoLogoMobile 620ms var(--ease-premium) both;
   }
 
   .page-loader.is-revealing .loader-logo-orbit {
-    position: fixed;
-    top: 50%;
-    left: 50%;
     z-index: 3;
-    animation: loaderLogoHoldCenterMobile 980ms var(--ease-premium) both;
+    animation: none;
   }
 }
 
 @keyframes loaderCoreGatherMobile {
   0% {
+    gap: 14px;
     opacity: 1;
-    transform: none;
+    transform: translateX(0);
   }
 
   72% {
+    gap: 0;
     opacity: 1;
-    transform: none;
+    transform: translateX(16px);
   }
 
   100% {
+    gap: 0;
     opacity: 0;
-    transform: none;
+    transform: translateX(16px);
   }
 }
 
 @keyframes loaderLogoHoldCenterMobile {
   0% {
-    transform: translate(-50%, -50%);
+    transform: none;
   }
 
   42% {
-    transform: translate(-50%, -50%);
+    transform: none;
   }
 
   100% {
-    transform: translate(-50%, -50%);
+    transform: none;
   }
 }
 
@@ -423,7 +421,7 @@
     max-width: min(58vw, 230px);
     padding-right: 0;
     padding-left: 0;
-    transform: translate(-28%, -50%) scale(1);
+    transform: translateX(0) scale(1);
     clip-path: inset(0 0 0 0);
   }
 
@@ -432,7 +430,7 @@
     max-width: 0;
     padding-right: 0;
     padding-left: 0;
-    transform: translate(-50%, -50%) scale(0.16);
+    transform: translateX(-10px) scale(0.18);
     clip-path: inset(0 48% 0 48%);
   }
 
@@ -441,7 +439,7 @@
     max-width: 0;
     padding-right: 0;
     padding-left: 0;
-    transform: translate(-50%, -50%) scale(0.12);
+    transform: translateX(-14px) scale(0.12);
     clip-path: inset(0 50% 0 50%);
   }
 }
