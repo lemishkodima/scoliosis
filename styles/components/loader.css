@@ -327,6 +327,7 @@
   .loader-brand-name {
     align-items: start;
     width: auto;
+    max-width: min(58vw, 230px);
     gap: 3px;
     padding: 7px 0 18px;
   }
@@ -353,64 +354,95 @@
   }
 
   .page-loader.is-revealing .loader-core {
-    animation: loaderCoreGatherMobile 720ms var(--ease-premium) both;
+    animation: loaderCoreGatherMobile 980ms var(--ease-premium) both;
+  }
+
+  .page-loader.is-revealing .loader-blocks span {
+    animation-delay: calc(520ms + (var(--loader-distance, 0) * 20ms));
+  }
+
+  .page-loader.is-loader-open .loader-blocks::before {
+    display: none;
+    animation: none;
   }
 
   .page-loader.is-revealing .loader-brand-line span {
-    animation: loaderLetterIntoLogoMobile 560ms calc(var(--i) * 5ms) var(--ease-premium) both;
+    animation: loaderLetterIntoLogoMobile 300ms calc(var(--i) * 2ms) var(--ease-premium) both;
   }
 
   .page-loader.is-revealing .loader-brand-name {
-    animation: loaderBrandIntoLogoMobile 680ms var(--ease-premium) both;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    animation: loaderBrandIntoLogoMobile 320ms var(--ease-premium) both;
   }
 
   .page-loader.is-revealing .loader-logo-orbit {
-    animation: loaderLogoHoldCenterMobile 720ms var(--ease-premium) both;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    animation: loaderLogoHoldCenterMobile 980ms var(--ease-premium) both;
   }
 }
 
 @keyframes loaderCoreGatherMobile {
   0% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: none;
   }
 
   72% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: none;
   }
 
   100% {
     opacity: 0;
-    transform: translateY(0) scale(0.94);
+    transform: none;
   }
 }
 
 @keyframes loaderLogoHoldCenterMobile {
   0% {
-    transform: translateY(0) scale(1);
+    transform: translate(-50%, -50%);
   }
 
-  62% {
-    transform: translateY(0) scale(1.04);
+  42% {
+    transform: translate(-50%, -50%);
   }
 
   100% {
-    transform: translateY(0) scale(0.92);
+    transform: translate(-50%, -50%);
   }
 }
 
 @keyframes loaderBrandIntoLogoMobile {
   0% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    max-width: min(58vw, 230px);
+    padding-right: 0;
+    padding-left: 0;
+    transform: translate(-28%, -50%) scale(1);
     clip-path: inset(0 0 0 0);
+  }
+
+  72% {
+    opacity: 0;
+    max-width: 0;
+    padding-right: 0;
+    padding-left: 0;
+    transform: translate(-50%, -50%) scale(0.16);
+    clip-path: inset(0 48% 0 48%);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(clamp(-92px, -18vw, -68px)) scale(0.16);
-    clip-path: inset(0 40% 0 40%);
+    max-width: 0;
+    padding-right: 0;
+    padding-left: 0;
+    transform: translate(-50%, -50%) scale(0.12);
+    clip-path: inset(0 50% 0 50%);
   }
 }
 
@@ -422,6 +454,6 @@
 
   100% {
     opacity: 0;
-    transform: translateY(clamp(-88px, -17vw, -64px)) rotateX(-38deg) scale(0.18);
+    transform: translateX(-22px) rotateX(-32deg) scale(0.18);
   }
 }
