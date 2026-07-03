@@ -759,16 +759,6 @@ h2 {
   will-change: contents, opacity, transform;
 }
 
-.open-lines span.is-scrambling {
-  color: var(--navy);
-  opacity: 0.84;
-  text-shadow: none;
-}
-
-.open-lines span.is-scrambled {
-  animation: openLineLock 240ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
-}
-
 .step-list {
   position: relative;
   display: grid;
@@ -893,14 +883,16 @@ h2 {
 }
 
 .step-list span {
-  position: static;
+  position: relative;
+  z-index: 2;
   display: block;
   margin: 0;
   color: var(--white);
+  flex: 0 0 auto;
   font-size: 0.86rem;
   font-weight: 900;
   line-height: 1;
-  opacity: var(--step-copy, 0);
+  opacity: 1;
   transition: opacity 100ms linear;
 }
 

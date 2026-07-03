@@ -408,20 +408,6 @@
   }
 }
 
-@keyframes openLineLock {
-  from {
-    opacity: 0.72;
-    transform: translateY(8px) scale(0.992);
-    filter: blur(2px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
 @keyframes mobileCtaPulse {
   0%,
   100% {

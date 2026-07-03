@@ -7,7 +7,7 @@ import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260703-hero-
 import { initLanguageSwitcher } from "./features/i18n.js?v=20260703-benefits-community-copy-1";
 import { initPageLoader } from "./features/loader.js?v=20260703-loader-dot-video-edge-1";
 import { initMembershipForm } from "./features/form.js?v=20260701-hero-overlay-balance-1";
-import { initReveal } from "./features/reveal.js?v=20260703-open-lines-reveal-1";
+import { initReveal } from "./features/reveal.js?v=20260703-steps-numbers-static-open-lines-1";
 import { initSmoothScroll } from "./features/smooth-scroll.js?v=20260703-mobile-anchor-scroll-1";
 import { initStepsProgress } from "./features/steps-progress.js?v=20260703-loader-dot-video-edge-1";
 
