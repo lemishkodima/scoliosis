@@ -25,15 +25,24 @@ export function initStepsProgress({ prefersReducedMotion }) {
     list.style.setProperty("--steps-progress", progress.toFixed(3));
 
     cards.forEach((card, index) => {
+      const start = index * segment;
+      const localProgress = clamp((progress - start) / segment);
+      const textProgress = clamp((localProgress - 0.18) / 0.42);
+
+      card.style.setProperty("--step-fill", localProgress.toFixed(3));
+      card.style.setProperty("--step-copy", textProgress.toFixed(3));
       card.classList.toggle("is-active", index === activeIndex);
       card.classList.toggle("is-complete", index < activeIndex);
     });
   }
 
   function measureProgress() {
-    const rect = section.getBoundingClientRect();
-    const scrollDistance = Math.max(section.offsetHeight - window.innerHeight, 1);
-    return clamp(-rect.top / scrollDistance);
+    const start = section.offsetTop - window.innerHeight * 0.62;
+    const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
+    const naturalEnd = section.offsetTop + section.offsetHeight - window.innerHeight * 0.38;
+    const end = Math.min(naturalEnd, maxScroll);
+    const scrollDistance = Math.max(end - start, 1);
+    return clamp((window.scrollY - start) / scrollDistance);
   }
 
   function update() {
@@ -51,6 +60,8 @@ export function initStepsProgress({ prefersReducedMotion }) {
   if (!prefersReducedMotion) {
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
+    window.addEventListener("load", requestUpdate, { once: true });
+    window.addEventListener("pageshow", requestUpdate);
   }
 
   return {

@@ -14,6 +14,14 @@ export function initHeroVideoLoopFade({ prefersReducedMotion }) {
 
   const fadeWindowSeconds = 0.85;
   let isFading = false;
+  let interactionBound = false;
+
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.playsInline = true;
+  heroVideo.setAttribute("muted", "");
+  heroVideo.setAttribute("playsinline", "");
+  heroVideo.setAttribute("webkit-playsinline", "");
 
   function setFading(nextState) {
     if (isFading === nextState) return;
@@ -28,11 +36,34 @@ export function initHeroVideoLoopFade({ prefersReducedMotion }) {
     setFading(remaining <= fadeWindowSeconds && heroVideo.currentTime > 0.35);
   }
 
+  function attemptPlay() {
+    const playRequest = heroVideo.play();
+    if (playRequest?.catch) {
+      playRequest.catch(() => {
+        if (interactionBound) return;
+        interactionBound = true;
+        const unlock = () => {
+          heroVideo.play().catch(() => {});
+          window.removeEventListener("touchstart", unlock);
+          window.removeEventListener("pointerdown", unlock);
+        };
+        window.addEventListener("touchstart", unlock, { once: true, passive: true });
+        window.addEventListener("pointerdown", unlock, { once: true, passive: true });
+      });
+    }
+  }
+
   heroVideo.addEventListener("timeupdate", updateFadeState);
   heroVideo.addEventListener("seeking", () => setFading(false));
   heroVideo.addEventListener("seeked", updateFadeState);
   heroVideo.addEventListener("playing", updateFadeState);
   heroVideo.addEventListener("ended", () => setFading(false));
+  window.addEventListener("pageshow", attemptPlay);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) attemptPlay();
+  });
+
+  attemptPlay();
 
   return {
     getState() {

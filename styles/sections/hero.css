@@ -343,17 +343,17 @@ h1 {
 
 .hero-video-stage::before {
   background:
-    repeating-linear-gradient(112deg, transparent 0 73%, rgba(255, 255, 255, 0.68) 73.3% 73.7%, transparent 74% 100%),
-    linear-gradient(90deg, rgba(247, 249, 255, 0.94), rgba(247, 249, 255, 0.22) 22%, rgba(247, 249, 255, 0.16) 78%, rgba(239, 243, 251, 0.94)),
-    linear-gradient(180deg, rgba(247, 249, 255, 0.98), rgba(247, 249, 255, 0.3) 21%, rgba(247, 249, 255, 0.24) 68%, rgba(247, 249, 255, 0.86) 88%, rgba(247, 249, 255, 0.98));
+    repeating-linear-gradient(112deg, transparent 0 73%, rgba(255, 255, 255, 0.42) 73.3% 73.7%, transparent 74% 100%),
+    linear-gradient(90deg, rgba(247, 249, 255, 0.72), rgba(247, 249, 255, 0.1) 24%, rgba(247, 249, 255, 0.08) 76%, rgba(239, 243, 251, 0.72)),
+    linear-gradient(180deg, rgba(247, 249, 255, 0.84), rgba(247, 249, 255, 0.12) 23%, rgba(247, 249, 255, 0.08) 68%, rgba(247, 249, 255, 0.62) 88%, rgba(247, 249, 255, 0.88));
 }
 
 .hero-video-stage::after {
   background:
-    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0) 0 32%, rgba(255, 255, 255, 0.18) 58%, rgba(247, 249, 255, 0.66) 100%),
-    linear-gradient(180deg, rgba(23, 50, 92, 0.02), rgba(255, 255, 255, 0.36));
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0) 0 36%, rgba(255, 255, 255, 0.08) 62%, rgba(247, 249, 255, 0.38) 100%),
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.16));
   mix-blend-mode: screen;
-  opacity: 0.44;
+  opacity: 0.28;
 }
 
 .hero-depth-plane {
@@ -364,17 +364,17 @@ h1 {
 }
 
 .hero-depth-plane-back {
-  background: linear-gradient(90deg, rgba(23, 50, 92, 0.035), transparent 24%, transparent 76%, rgba(23, 50, 92, 0.025));
-  opacity: 0.42;
+  background: linear-gradient(90deg, rgba(23, 50, 92, 0.012), transparent 24%, transparent 76%, rgba(23, 50, 92, 0.01));
+  opacity: 0.2;
   transform: translate3d(0, calc(var(--hero-video-y, 0px) * -0.24), 0);
 }
 
 .hero-depth-plane-front {
   z-index: 3;
   background:
-    radial-gradient(ellipse at 50% 56%, transparent 0 35%, rgba(255, 255, 255, 0.18) 58%, rgba(247, 249, 255, 0.78) 96%),
-    linear-gradient(180deg, rgba(247, 249, 255, 0.18), transparent 30%, rgba(247, 249, 255, 0.34) 74%, rgba(247, 249, 255, 0.94));
-  opacity: 0.86;
+    radial-gradient(ellipse at 50% 56%, transparent 0 40%, rgba(255, 255, 255, 0.1) 62%, rgba(247, 249, 255, 0.54) 96%),
+    linear-gradient(180deg, rgba(247, 249, 255, 0.08), transparent 32%, rgba(247, 249, 255, 0.16) 74%, rgba(247, 249, 255, 0.72));
+  opacity: 0.62;
 }
 
 .hero-video-sweep {
@@ -398,7 +398,7 @@ h1 {
   height: 100%;
   object-fit: cover;
   object-position: center 48%;
-  filter: saturate(0.92) contrast(0.98) brightness(1.04);
+  filter: saturate(1.02) contrast(1.03) brightness(1.08);
   opacity: 1;
   transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1.02);
   transition:
