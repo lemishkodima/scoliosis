@@ -29,12 +29,50 @@ function hasScrollableParent(target, deltaY) {
   return false;
 }
 
+function getAnchorDestination(event) {
+  const link = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null;
+  if (!link) return null;
+
+  const hash = link.getAttribute("href");
+  if (!hash || hash === "#") return null;
+
+  const destination = document.querySelector(hash);
+  if (!destination) return null;
+
+  return { destination, hash };
+}
+
+function getScrollOffset() {
+  return Number.parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+}
+
+function getTargetTop(destination) {
+  return destination.getBoundingClientRect().top + window.scrollY - getScrollOffset();
+}
+
+function updateHash(hash) {
+  if (window.location.hash === hash) return;
+  history.pushState(null, "", hash);
+}
+
 export function initSmoothScroll({ prefersReducedMotion }) {
   const isFinePointer = window.matchMedia("(min-width: 981px) and (hover: hover) and (pointer: fine)").matches;
 
   if (prefersReducedMotion || !isFinePointer) {
+    function onNativeAnchorClick(event) {
+      const anchor = getAnchorDestination(event);
+      if (!anchor) return;
+
+      event.preventDefault();
+      const top = clamp(getTargetTop(anchor.destination), 0, getMaxScroll());
+      window.scrollTo({ top, left: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      updateHash(anchor.hash);
+    }
+
+    document.addEventListener("click", onNativeAnchorClick);
+
     return {
-      scrollTo: (value) => window.scrollTo({ top: value, behavior: "smooth" }),
+      scrollTo: (value) => window.scrollTo({ top: value, behavior: prefersReducedMotion ? "auto" : "smooth" }),
       getState: () => ({
         enabled: false,
         finePointer: isFinePointer,
@@ -98,20 +136,13 @@ export function initSmoothScroll({ prefersReducedMotion }) {
   }
 
   function onAnchorClick(event) {
-    const link = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null;
-    if (!link) return;
-
-    const hash = link.getAttribute("href");
-    if (!hash || hash === "#") return;
-
-    const destination = document.querySelector(hash);
-    if (!destination) return;
+    const anchor = getAnchorDestination(event);
+    if (!anchor) return;
 
     event.preventDefault();
-    const offset = Number.parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
-    const top = destination.getBoundingClientRect().top + window.scrollY - offset;
+    const top = getTargetTop(anchor.destination);
     scrollToTarget(top);
-    history.pushState(null, "", hash);
+    updateHash(anchor.hash);
   }
 
   window.addEventListener("wheel", onWheel, { passive: false });
