@@ -1,6 +1,46 @@
+:root {
+  --stack-header-offset: 76px;
+}
+
+.intro,
+.benefits,
+.mission,
+.audience,
+.therapy-gallery,
+.opens,
+.steps,
+.apply {
+  position: sticky;
+  top: var(--stack-header-offset);
+  isolation: isolate;
+}
+
+.benefits,
+.audience,
+.therapy-gallery,
+.opens,
+.steps,
+.apply {
+  background: #f7f9ff;
+}
+
+.benefits::before,
+.audience::before,
+.therapy-gallery::before,
+.opens::before,
+.steps::before,
+.apply::before {
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: inherit;
+  content: "";
+  pointer-events: none;
+}
+
 .intro {
-  position: relative;
-  z-index: 24;
+  position: sticky;
+  z-index: 30;
   width: 100vw;
   max-width: none;
   margin-top: 0;
@@ -129,12 +169,15 @@ h2 {
 
 .benefits,
 .steps {
-  position: relative;
-  z-index: 22;
   padding: 96px 0;
 }
 
+.benefits {
+  z-index: 31;
+}
+
 .steps {
+  z-index: 37;
   min-height: 190svh;
   padding: 0;
   --steps-progress: 0;
@@ -147,14 +190,6 @@ h2 {
   align-content: center;
   min-height: calc(100svh - clamp(84px, 11vh, 126px));
   padding: clamp(62px, 8vh, 96px) 0 clamp(72px, 10vh, 118px);
-}
-
-.benefits::before {
-  position: absolute;
-  inset: 0 calc(50% - 50vw);
-  z-index: -1;
-  background: #f7f9ff;
-  content: "";
 }
 
 .section-heading {
@@ -206,19 +241,8 @@ h2 {
 }
 
 .benefit-card::before {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  z-index: 1;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(23, 50, 92, 0.18);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at center, var(--accent-lime) 0 4px, transparent 5px),
-    rgba(212, 251, 17, 0.58);
-  content: "";
-  box-shadow: 0 12px 26px rgba(23, 50, 92, 0.1);
+  display: none;
+  content: none;
 }
 
 .benefit-card > * {
@@ -234,10 +258,8 @@ h2 {
 
 .benefit-card:nth-child(1)::before,
 .benefit-card:nth-child(5)::before {
-  background:
-    radial-gradient(circle at center, var(--navy) 0 4px, transparent 5px),
-    rgba(255, 255, 255, 0.22);
-  border-color: rgba(23, 50, 92, 0.16);
+  display: none;
+  content: none;
 }
 
 .benefit-card:nth-child(2) {
@@ -274,14 +296,15 @@ h2 {
   height: 84%;
   background:
     linear-gradient(180deg, rgba(238, 241, 246, 0.26), rgba(238, 241, 246, 0.9)),
-    url("../../assets/images/IMG_8683.webp") center bottom / cover;
+    url("../../assets/images/hrebet.webp") center bottom / cover;
   content: "";
   filter: grayscale(1) saturate(0) contrast(0.96);
   opacity: 0.28;
 }
 
 .benefit-card:nth-child(4)::before {
-  z-index: 2;
+  display: none;
+  content: none;
 }
 
 .benefit-card:nth-child(5) {
@@ -436,6 +459,7 @@ h2 {
 }
 
 .mission {
+  z-index: 32;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.75fr);
   min-height: 680px;
@@ -484,6 +508,7 @@ h2 {
 }
 
 .audience {
+  z-index: 33;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(32px, 6vw, 80px);
@@ -539,6 +564,7 @@ h2 {
 }
 
 .therapy-gallery {
+  z-index: 34;
   display: grid;
   grid-template-columns: minmax(0, 0.58fr) minmax(0, 1fr);
   gap: clamp(34px, 5.5vw, 86px);
@@ -640,15 +666,11 @@ h2 {
 }
 
 .opens {
-  position: relative;
+  z-index: 35;
   padding: 90px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: transparent;
-}
-
-.opens::before {
-  display: none;
+  background: #f7f9ff;
 }
 
 .open-lines {
@@ -851,6 +873,7 @@ h2 {
 }
 
 .apply {
+  z-index: 38;
   display: grid;
   grid-template-columns: minmax(0, 0.72fr) minmax(420px, 0.82fr);
   gap: clamp(32px, 6vw, 76px);

@@ -113,6 +113,10 @@
 }
 
 @media (max-width: 680px) {
+  :root {
+    --stack-header-offset: 72px;
+  }
+
   .scroll-reveal {
     clip-path: none;
     transform: none;
