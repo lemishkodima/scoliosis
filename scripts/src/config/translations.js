@@ -46,7 +46,7 @@ export const translations = {
     "benefits.title": "Разом ми створюємо професійне середовище",
     "benefits.text":
       "У ньому знання, співпраця та доказова медицина працюють на благо пацієнтів. Наші члени отримують:",
-    "benefits.educationTitle": "Професійна спільнота",
+    "benefits.educationTitle": "Професійну спільноту",
     "benefits.educationText":
       "Доступ до професійної спільноти фахівців з України та світу.",
     "benefits.communityTitle": "Освітні заходи",
@@ -181,7 +181,7 @@ export const translations = {
     "benefits.title": "Together we create a professional environment",
     "benefits.text":
       "In it, knowledge, cooperation and evidence-based medicine work for the benefit of patients. Our members receive:",
-    "benefits.educationTitle": "Professional community",
+    "benefits.educationTitle": "A professional community",
     "benefits.educationText": "Access to a professional community of specialists from Ukraine and around the world.",
     "benefits.communityTitle": "Educational events",
     "benefits.communityText": "Participation in conferences, webinars, masterclasses and other educational events.",
@@ -306,7 +306,7 @@ Object.assign(translations, {
     "benefits.title": "Razem tworzymy profesjonalne środowisko",
     "benefits.text":
       "W nim wiedza, współpraca i medycyna oparta na dowodach służą dobru pacjentów. Nasi członkowie otrzymują:",
-    "benefits.educationTitle": "Społeczność zawodowa",
+    "benefits.educationTitle": "Profesjonalną społeczność",
     "benefits.educationText": "Dostęp do profesjonalnej społeczności specjalistów z Ukrainy i świata.",
     "benefits.communityTitle": "Wydarzenia edukacyjne",
     "benefits.communityText": "Udział w konferencjach, webinarach, masterclassach i innych wydarzeniach edukacyjnych.",
@@ -426,7 +426,7 @@ Object.assign(translations, {
     "benefits.title": "Gemeinsam schaffen wir ein professionelles Umfeld",
     "benefits.text":
       "Darin wirken Wissen, Zusammenarbeit und evidenzbasierte Medizin zum Wohl der Patienten. Unsere Mitglieder erhalten:",
-    "benefits.educationTitle": "Fachgemeinschaft",
+    "benefits.educationTitle": "Eine Fachgemeinschaft",
     "benefits.educationText": "Zugang zu einer Fachgemeinschaft von Spezialisten aus der Ukraine und der Welt.",
     "benefits.communityTitle": "Bildungsveranstaltungen",
     "benefits.communityText": "Teilnahme an Konferenzen, Webinaren, Masterclasses und weiteren Bildungsformaten.",
@@ -546,7 +546,7 @@ Object.assign(translations, {
     "benefits.title": "Ensemble, nous créons un environnement professionnel",
     "benefits.text":
       "Dans cet environnement, le savoir, la coopération et la médecine fondée sur les preuves servent les patients. Nos membres bénéficient de :",
-    "benefits.educationTitle": "Communauté professionnelle",
+    "benefits.educationTitle": "Une communauté professionnelle",
     "benefits.educationText": "Accès à une communauté professionnelle de spécialistes d'Ukraine et du monde.",
     "benefits.communityTitle": "Événements éducatifs",
     "benefits.communityText": "Participation à des conférences, webinaires, masterclasses et autres événements éducatifs.",
@@ -666,7 +666,7 @@ Object.assign(translations, {
     "benefits.title": "Juntos creamos un entorno profesional",
     "benefits.text":
       "En él, el conocimiento, la cooperación y la medicina basada en evidencia trabajan en beneficio de los pacientes. Nuestros miembros reciben:",
-    "benefits.educationTitle": "Comunidad profesional",
+    "benefits.educationTitle": "Una comunidad profesional",
     "benefits.educationText": "Acceso a una comunidad profesional de especialistas de Ucrania y del mundo.",
     "benefits.communityTitle": "Eventos educativos",
     "benefits.communityText": "Participación en conferencias, webinars, masterclasses y otros eventos educativos.",
