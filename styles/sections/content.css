@@ -842,7 +842,7 @@ h2 {
   inset: 0;
   z-index: 0;
   display: block;
-  background: #2634f5;
+  background: #40459b;
   content: "";
   transform: scaleX(var(--step-fill, 0));
   transform-origin: left center;
