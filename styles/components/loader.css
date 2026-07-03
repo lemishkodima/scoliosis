@@ -308,11 +308,11 @@
 }
 
 .page-loader.is-revealing .loader-logo-orbit {
-  animation: loaderLogoToCenter 720ms var(--ease-premium) both;
+  animation: loaderLogoCenterDot 760ms var(--ease-premium) both;
 }
 
 .page-loader.is-revealing .loader-logo-orbit img {
-  animation: loaderLogoCompress 620ms var(--ease-premium) both;
+  animation: none;
   filter:
     drop-shadow(0 18px 24px rgba(23, 50, 92, 0.16))
     drop-shadow(0 0 16px rgba(162, 180, 226, 0.28));
@@ -378,7 +378,7 @@
 
   .page-loader.is-revealing .loader-logo-orbit {
     z-index: 3;
-    animation: none;
+    animation: loaderLogoCenterDotMobile 760ms var(--ease-premium) both;
   }
 }
 
@@ -413,6 +413,27 @@
 
   100% {
     transform: none;
+  }
+}
+
+@keyframes loaderLogoCenterDotMobile {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter:
+      drop-shadow(0 18px 24px rgba(23, 50, 92, 0.16))
+      drop-shadow(0 0 16px rgba(162, 180, 226, 0.28));
+  }
+
+  58% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(0) scale(0.04);
+    filter: blur(4px);
   }
 }
 

@@ -286,11 +286,11 @@ h1 {
   transform: none;
   mask-image:
     linear-gradient(180deg, transparent 0, #000 12%, #000 70%, transparent 100%),
-    linear-gradient(90deg, transparent 0, #000 13%, #000 87%, transparent 100%);
+    linear-gradient(90deg, #000 0, #000 100%);
   mask-composite: intersect;
   -webkit-mask-image:
     linear-gradient(180deg, transparent 0, #000 12%, #000 70%, transparent 100%),
-    linear-gradient(90deg, transparent 0, #000 13%, #000 87%, transparent 100%);
+    linear-gradient(90deg, #000 0, #000 100%);
   -webkit-mask-composite: source-in;
   animation: videoHeroReveal 1100ms 180ms var(--ease-soft) both;
 }
