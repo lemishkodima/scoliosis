@@ -183,10 +183,10 @@ h2 {
   z-index: 37;
   width: 100vw;
   max-width: none;
-  min-height: max(760px, calc(160svh - var(--stack-header-offset)));
+  min-height: max(1040px, calc(230svh - var(--stack-header-offset)));
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
-  padding: clamp(78px, 8vw, 118px) 0 clamp(96px, 9vw, 138px);
+  padding: clamp(78px, 8vw, 118px) 0 clamp(180px, 18vw, 280px);
   overflow: hidden;
   --steps-progress: 0;
 }
@@ -295,7 +295,15 @@ h2 {
 }
 
 .benefit-card:nth-child(3) {
-  background: #eef1f6;
+  border-color: rgba(212, 251, 17, 0.62);
+  background: var(--accent-lime);
+  box-shadow: 0 24px 70px rgba(23, 50, 92, 0.1);
+}
+
+.benefit-card:nth-child(3) .icon,
+.benefit-card:nth-child(3) h3,
+.benefit-card:nth-child(3) p {
+  color: var(--navy);
 }
 
 .benefit-card:nth-child(4) {

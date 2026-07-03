@@ -28,10 +28,14 @@
   .hero-dock {
     position: relative;
     top: auto;
-    width: min(620px, calc(100% - 22px));
+    width: 100svw;
+    max-width: none;
     margin-top: auto;
+    margin-right: calc(50% - 50svw);
     margin-bottom: 0;
+    margin-left: calc(50% - 50svw);
     padding-top: clamp(6px, 1.2vh, 12px);
+    border-radius: 0;
   }
 
   .intro {
@@ -41,7 +45,7 @@
   .hero-visual {
     position: absolute;
     inset: 0 calc(50% - 50vw);
-    width: 100vw;
+    width: 100svw;
     height: 100%;
     min-height: 100%;
     margin-top: 0;
@@ -239,8 +243,8 @@
   .intro.section-shell {
     width: 100vw;
     max-width: none;
-    margin-right: calc(50% - 50vw);
-    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50svw);
+    margin-left: calc(50% - 50svw);
   }
 
   .hero {
@@ -265,10 +269,14 @@
   .hero-dock {
     position: relative;
     top: auto;
-    width: min(100% - 18px, 520px);
+    width: 100vw;
+    max-width: none;
     margin-top: auto;
+    margin-right: calc(50% - 50vw);
     margin-bottom: 0;
+    margin-left: calc(50% - 50vw);
     padding: 8px 10px 0;
+    border-radius: 0;
   }
 
   .hero-dock .hero-actions {
@@ -301,6 +309,12 @@
     height: 100%;
     min-height: 0;
     max-width: none;
+  }
+
+  .hero-video-visual {
+    inset: clamp(260px, 36vh, 380px) calc(50% - 50vw) 0;
+    height: auto;
+    min-height: 0;
   }
 
   .hero-video {
@@ -479,10 +493,10 @@
   .steps {
     width: 100vw;
     max-width: none;
-    min-height: max(720px, 170svh);
+    min-height: max(940px, 230svh);
     margin-right: 0;
     margin-left: 50%;
-    padding: 58px 0 76px;
+    padding: 58px 0 150px;
     transform: translateX(-50%);
   }
 

@@ -156,12 +156,15 @@ h1 {
   z-index: 16;
   display: grid;
   justify-items: center;
-  width: min(720px, calc(100% - 32px));
+  width: 100svw;
+  max-width: none;
   margin-top: auto;
+  margin-right: calc(50% - 50svw);
   margin-bottom: 0;
+  margin-left: calc(50% - 50svw);
   padding: clamp(10px, 1.8vh, 18px) clamp(16px, 3vw, 28px) 0;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0;
   background: #f7f9ff;
   box-shadow: none;
   backdrop-filter: none;
@@ -193,6 +196,14 @@ h1 {
 
 .hero-dock .primary-button {
   position: relative;
+}
+
+.hero-dock .hero-actions {
+  width: min(720px, calc(100% - 32px));
+}
+
+.hero-dock .hero-lead-under {
+  width: min(610px, calc(100% - 32px));
 }
 
 .hero-dock .primary-button::before {
@@ -257,6 +268,9 @@ h1 {
   isolation: isolate;
   perspective: none;
   transform-style: flat;
+  inset: clamp(230px, 27vh, 330px) calc(50% - 50vw) 0;
+  height: auto;
+  min-height: 0;
 }
 
 .hero-video-stage {
@@ -298,7 +312,6 @@ h1 {
   }
 
   .hero-dock {
-    width: min(660px, calc(100% - 32px));
     padding-top: 8px;
   }
 
