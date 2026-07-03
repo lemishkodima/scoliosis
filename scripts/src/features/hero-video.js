@@ -1,6 +1,31 @@
 export function initHeroVideoLoopFade({ prefersReducedMotion }) {
   const heroVideo = document.querySelector(".hero-video");
   const heroVideoStage = heroVideo?.closest(".hero-video-stage");
+  const root = document.documentElement;
+  const isTouchViewport = window.matchMedia("(max-width: 980px), (hover: none), (pointer: coarse)").matches;
+
+  function lockMobileHeroViewportHeight() {
+    if (!isTouchViewport) return;
+    const height = Math.round(window.innerHeight || window.visualViewport?.height || 0);
+    if (height > 0) root.style.setProperty("--stable-hero-height", `${height}px`);
+  }
+
+  lockMobileHeroViewportHeight();
+
+  if (isTouchViewport) {
+    let lastWidth = Math.round(window.innerWidth || 0);
+    const updateOnWidthChange = () => {
+      const nextWidth = Math.round(window.innerWidth || 0);
+      if (Math.abs(nextWidth - lastWidth) < 24) return;
+      lastWidth = nextWidth;
+      lockMobileHeroViewportHeight();
+    };
+
+    window.addEventListener("orientationchange", () => window.setTimeout(lockMobileHeroViewportHeight, 260));
+    window.visualViewport?.addEventListener("resize", updateOnWidthChange, { passive: true });
+    window.addEventListener("resize", updateOnWidthChange, { passive: true });
+  }
+
   if (!heroVideo || !heroVideoStage || prefersReducedMotion) {
     return {
       getState: () => ({

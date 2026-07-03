@@ -19,8 +19,7 @@
   }
 
   .hero {
-    min-height: 100svh;
-    min-height: 100dvh;
+    min-height: var(--stable-hero-height, 100svh);
     padding-top: clamp(94px, 11vh, 126px);
     padding-bottom: clamp(16px, 2.6vh, 28px);
   }
@@ -248,8 +247,7 @@
   }
 
   .hero {
-    min-height: 100svh;
-    min-height: 100dvh;
+    min-height: var(--stable-hero-height, 100svh);
     padding: clamp(88px, 10.5vh, 112px) 0 clamp(12px, 2vh, 22px);
   }
 
@@ -328,7 +326,14 @@
 
   .hero-video {
     object-position: center 48%;
-    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1.02);
+    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1);
+    transition:
+      opacity 680ms ease,
+      filter 680ms ease;
+  }
+
+  .hero-video-stage.is-loop-fading .hero-video {
+    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1);
   }
 
   .hero-3d-note {

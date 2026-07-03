@@ -55,6 +55,21 @@ function updateHash(hash) {
   history.pushState(null, "", hash);
 }
 
+function clearHash() {
+  if (!window.location.hash) return;
+  history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+}
+
+function isApplyAnchor(hash) {
+  return hash === "#membership-form" || hash === "#apply";
+}
+
+function scrollToAnchor(destination, behavior = "auto") {
+  const top = clamp(getTargetTop(destination), 0, getMaxScroll());
+  window.scrollTo({ top, left: 0, behavior });
+  return top;
+}
+
 export function initSmoothScroll({ prefersReducedMotion }) {
   const isFinePointer = window.matchMedia("(min-width: 981px) and (hover: hover) and (pointer: fine)").matches;
 
@@ -64,8 +79,26 @@ export function initSmoothScroll({ prefersReducedMotion }) {
       if (!anchor) return;
 
       event.preventDefault();
-      const top = clamp(getTargetTop(anchor.destination), 0, getMaxScroll());
-      window.scrollTo({ top, left: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      const shouldStabilize = isApplyAnchor(anchor.hash);
+      const behavior = prefersReducedMotion || shouldStabilize ? "auto" : "smooth";
+
+      scrollToAnchor(anchor.destination, behavior);
+
+      if (shouldStabilize) {
+        clearHash();
+
+        const settle = () => {
+          const nextTop = clamp(getTargetTop(anchor.destination), 0, getMaxScroll());
+          if (Math.abs(window.scrollY - nextTop) > 2) {
+            window.scrollTo({ top: nextTop, left: 0, behavior: "auto" });
+          }
+        };
+
+        window.requestAnimationFrame(settle);
+        window.setTimeout(settle, 220);
+        return;
+      }
+
       updateHash(anchor.hash);
     }
 

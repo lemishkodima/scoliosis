@@ -26,7 +26,6 @@ body.is-hero-background-hidden .site-hero {
   flex-direction: column;
   align-items: center;
   min-height: 100svh;
-  min-height: 100dvh;
   padding: clamp(92px, 9.2vh, 126px) 0 clamp(24px, 3.4vh, 42px);
   gap: 0;
   text-align: center;
@@ -330,6 +329,23 @@ h1 {
   }
 }
 
+@media (max-width: 980px) {
+  .hero {
+    min-height: var(--stable-hero-height, 100svh);
+  }
+
+  .hero-video {
+    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1);
+    transition:
+      opacity 680ms ease,
+      filter 680ms ease;
+  }
+
+  .hero-video-stage.is-loop-fading .hero-video {
+    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1);
+  }
+}
+
 .hero-video-stage.is-loop-fading .hero-video {
   opacity: 0.08;
   filter: saturate(0.82) contrast(0.94) brightness(1.12) blur(2px);
@@ -413,6 +429,20 @@ h1 {
     opacity 680ms ease,
     filter 680ms ease,
     transform 680ms ease;
+}
+
+@media (max-width: 980px), (hover: none), (pointer: coarse) {
+  .hero {
+    min-height: var(--stable-hero-height, 100svh);
+  }
+
+  .hero-video,
+  .hero-video-stage.is-loop-fading .hero-video {
+    transform: translate3d(0, var(--hero-video-y, 0px), 0) scale(1);
+    transition:
+      opacity 680ms ease,
+      filter 680ms ease;
+  }
 }
 
 .hero-canvas {

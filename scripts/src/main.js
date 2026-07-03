@@ -3,12 +3,12 @@ import { getMotionPreference } from "./core/dom.js?v=20260703-hero-viewport-fit-
 import { initCursor } from "./features/cursor.js?v=20260701-hero-overlay-balance-1";
 import { initHeader } from "./features/header.js?v=20260703-mobile-polish-1";
 import { initHeroInteractions } from "./features/hero-interactions.js?v=20260701-hero-overlay-balance-1";
-import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260703-hero-video-autoplay-steps-1";
+import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260703-safari-hero-anchor-1";
 import { initLanguageSwitcher } from "./features/i18n.js?v=20260703-benefits-community-copy-1";
 import { initPageLoader } from "./features/loader.js?v=20260703-loader-dot-video-edge-1";
 import { initMembershipForm } from "./features/form.js?v=20260701-hero-overlay-balance-1";
 import { initReveal } from "./features/reveal.js?v=20260703-steps-numbers-static-open-lines-1";
-import { initSmoothScroll } from "./features/smooth-scroll.js?v=20260703-mobile-anchor-scroll-1";
+import { initSmoothScroll } from "./features/smooth-scroll.js?v=20260703-safari-hero-anchor-1";
 import { initStepsProgress } from "./features/steps-progress.js?v=20260703-loader-dot-video-edge-1";
 
 if ("scrollRestoration" in window.history) {
