@@ -571,9 +571,8 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(32px, 6vw, 80px);
-  align-items: start;
-  min-height: calc(132svh - var(--stack-header-offset));
-  padding: clamp(78px, 8vh, 104px) 0 clamp(220px, 24vh, 340px);
+  align-items: center;
+  padding: 112px 0;
 }
 
 .audience-copy {
