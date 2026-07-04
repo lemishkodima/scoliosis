@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#17325C" />
     <title>Українська асоціація сколіозу - членство для спеціалістів</title>
     <link rel="icon" href="assets/images/logo-mark-transparent.webp" />
-    <link rel="stylesheet" href="styles/main.css?v=20260703-open-lines-reveal-1" />
+    <link rel="stylesheet" href="styles/main.css?v=20260704-member-type-select-1" />
   </head>
   <body class="is-loading">
     <div class="depth-backdrop" data-depth-backdrop aria-hidden="true">
@@ -466,6 +466,25 @@
             <span data-i18n="form.phone">Телефон</span>
             <input name="phone" type="tel" autocomplete="tel" required />
           </label>
+          <label>
+            <span data-i18n="form.category">Хто подає заявку?</span>
+            <select name="memberType" required data-member-type-select>
+              <option value="" data-i18n="form.choose">Оберіть варіант</option>
+              <option value="patient" data-i18n="form.optionPatient">Пацієнт зі сколіозом</option>
+              <option value="doctor" data-i18n="form.optionDoctor">Лікар, який працює з пацієнтами зі сколіозом</option>
+              <option value="therapist" data-i18n="form.optionTherapist">Фізичний або ерготерапевт</option>
+              <option value="orthotist" data-i18n="form.optionOrthotist">Ортезист-протезист</option>
+              <option value="psychologist" data-i18n="form.optionPsychologist">Психолог або психотерапевт</option>
+              <option value="researcher" data-i18n="form.optionResearcher">Науковець, викладач, дослідник або студент медичної/реабілітаційної спеціальності</option>
+              <option value="healthcare" data-i18n="form.optionHealthcare">Представник закладу охорони здоров'я</option>
+              <option value="supporter" data-i18n="form.optionSupporter">Прихильник розвитку доказового лікування сколіозу в Україні</option>
+              <option value="other" data-i18n="form.optionOther">Інше</option>
+            </select>
+          </label>
+          <label class="member-type-other" data-member-type-other aria-hidden="true">
+            <span data-i18n="form.memberTypeOther">Свій варіант</span>
+            <input name="memberTypeOther" autocomplete="organization-title" data-member-type-other-input />
+          </label>
           <input class="honeypot" name="website" tabindex="-1" autocomplete="off" />
           <button class="primary-button form-submit" type="submit" data-i18n="cta.short">
             Подати заявку
@@ -511,6 +530,6 @@
       </div>
     </footer>
 
-    <script type="module" src="scripts/main.js?v=20260704-google-script-submit-1"></script>
+    <script type="module" src="scripts/main.js?v=20260704-member-type-select-1"></script>
   </body>
 </html>

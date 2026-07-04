@@ -10,6 +10,7 @@ function getFormPayload(target) {
     email: String(data.get("email") || "").trim(),
     phone: String(data.get("phone") || "").trim(),
     memberType: String(data.get("memberType") || "").trim(),
+    memberTypeOther: String(data.get("memberTypeOther") || "").trim(),
     language: getCurrentLanguage(),
   };
 }
@@ -49,6 +50,27 @@ export function initMembershipForm() {
 
   let lastPayload = null;
   let submitCount = 0;
+  const memberTypeSelect = form.querySelector("[data-member-type-select]");
+  const memberTypeOther = form.querySelector("[data-member-type-other]");
+  const memberTypeOtherInput = form.querySelector("[data-member-type-other-input]");
+
+  function syncMemberTypeOther() {
+    const isOther = memberTypeSelect?.value === "other";
+
+    memberTypeOther?.classList.toggle("is-visible", isOther);
+    memberTypeOther?.setAttribute("aria-hidden", String(!isOther));
+
+    if (memberTypeOtherInput) {
+      memberTypeOtherInput.required = isOther;
+      if (!isOther) {
+        memberTypeOtherInput.value = "";
+        memberTypeOtherInput.classList.remove("is-invalid");
+      }
+    }
+  }
+
+  memberTypeSelect?.addEventListener("change", syncMemberTypeOther);
+  syncMemberTypeOther();
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -85,6 +107,7 @@ export function initMembershipForm() {
     submitButton.disabled = false;
     submitButton.textContent = t("cta.short");
     form.reset();
+    syncMemberTypeOther();
   });
 
   return {
