@@ -1,6 +1,5 @@
 export const selectors = {
   canvas: "[data-hero-canvas]",
-  cursor: "[data-cursor]",
   form: "[data-membership-form]",
   header: "[data-header]",
   languageButton: "[data-lang]",

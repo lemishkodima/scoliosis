@@ -1,6 +1,5 @@
 import { exposeDebugApi } from "./core/debug.js?v=20260701-hero-overlay-balance-1";
-import { getMotionPreference } from "./core/dom.js?v=20260703-hero-viewport-fit-1";
-import { initCursor } from "./features/cursor.js?v=20260701-hero-overlay-balance-1";
+import { getMotionPreference } from "./core/dom.js?v=20260704-native-pointer-cursor-1";
 import { initHeader } from "./features/header.js?v=20260703-mobile-polish-1";
 import { initHeroInteractions } from "./features/hero-interactions.js?v=20260701-hero-overlay-balance-1";
 import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260703-safari-hero-anchor-1";
@@ -33,7 +32,6 @@ if (shouldResetScroll) {
 const prefersReducedMotion = getMotionPreference();
 
 const systems = {
-  cursor: initCursor({ prefersReducedMotion }),
   form: initMembershipForm(),
   header: initHeader(),
   heroInteractions: initHeroInteractions({ prefersReducedMotion }),

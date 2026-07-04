@@ -54,6 +54,26 @@ body.has-smooth-scroll {
   overscroll-behavior-y: none;
 }
 
+a,
+button,
+select,
+summary,
+label:has(input),
+[role="button"],
+[tabindex]:not([tabindex="-1"]) {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  cursor: text;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
 main {
   position: relative;
   isolation: isolate;

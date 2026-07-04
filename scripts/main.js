@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260704-native-scroll-1";
+import "./src/main.js?v=20260704-native-pointer-cursor-1";
