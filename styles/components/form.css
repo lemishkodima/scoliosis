@@ -34,6 +34,8 @@ textarea {
   border-radius: 8px;
   padding: 12px 14px;
   color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
   background: rgba(255, 255, 255, 0.84);
   transition:
     border-color 160ms ease,
