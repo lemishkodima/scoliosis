@@ -466,6 +466,27 @@
             <span data-i18n="form.phone">Телефон</span>
             <input name="phone" type="tel" autocomplete="tel" required />
           </label>
+          <label>
+            <span data-i18n="form.memberType">Категорія учасника</span>
+            <select name="memberType" required data-member-type-select>
+              <option value="" data-i18n="form.chooseMemberType">Оберіть категорію</option>
+              <option value="patient" data-i18n="form.optionPatient">Пацієнт зі сколіозом</option>
+              <option value="doctor" data-i18n="form.optionDoctor">Лікар</option>
+              <option value="therapist" data-i18n="form.optionTherapist">Фізичний або ерготерапевт</option>
+              <option value="orthotist" data-i18n="form.optionOrthotist">Ортезист-протезист</option>
+              <option value="psychologist" data-i18n="form.optionPsychologist">Психолог або психотерапевт</option>
+              <option value="researcher" data-i18n="form.optionResearcher">Науковець, викладач або студент</option>
+              <option value="healthcare" data-i18n="form.optionHealthcare">Представник закладу охорони здоровʼя</option>
+              <option value="supporter" data-i18n="form.optionSupporter">Прихильник доказового лікування сколіозу</option>
+              <option value="other" data-i18n="form.optionOther">Інше</option>
+            </select>
+          </label>
+          <div class="form-conditional" data-member-type-other aria-hidden="true">
+            <label>
+              <span data-i18n="form.memberTypeOther">Ваш варіант</span>
+              <input name="memberTypeOther" autocomplete="organization-title" disabled />
+            </label>
+          </div>
           <input class="honeypot" name="website" tabindex="-1" autocomplete="off" />
           <button class="primary-button form-submit" type="submit" data-i18n="cta.short">
             Подати заявку

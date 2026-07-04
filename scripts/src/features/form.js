@@ -11,6 +11,7 @@ function getFormPayload(target) {
     specialization: String(data.get("specialization") || "").trim(),
     workplace: String(data.get("workplace") || "").trim(),
     memberType: String(data.get("memberType") || "").trim(),
+    memberTypeOther: String(data.get("memberTypeOther") || "").trim(),
     experience: String(data.get("experience") || "").trim(),
     message: String(data.get("message") || "").trim(),
     consent: data.get("consent") === "on",
@@ -44,6 +45,28 @@ export function initMembershipForm() {
 
   let lastPayload = null;
   let submitCount = 0;
+  const memberTypeSelect = form.querySelector("[data-member-type-select]");
+  const memberTypeOther = form.querySelector("[data-member-type-other]");
+  const memberTypeOtherInput = memberTypeOther?.querySelector("input");
+
+  function syncMemberTypeOther() {
+    const isOther = memberTypeSelect?.value === "other";
+    memberTypeOther?.classList.toggle("is-open", isOther);
+    memberTypeOther?.setAttribute("aria-hidden", String(!isOther));
+
+    if (!memberTypeOtherInput) return;
+    memberTypeOtherInput.disabled = !isOther;
+    memberTypeOtherInput.required = isOther;
+    memberTypeOtherInput.tabIndex = isOther ? 0 : -1;
+
+    if (!isOther) {
+      memberTypeOtherInput.value = "";
+      memberTypeOtherInput.classList.remove("is-invalid");
+    }
+  }
+
+  memberTypeSelect?.addEventListener("change", syncMemberTypeOther);
+  syncMemberTypeOther();
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -72,6 +95,7 @@ export function initMembershipForm() {
     submitButton.disabled = false;
     submitButton.textContent = t("cta.short");
     form.reset();
+    syncMemberTypeOther();
   });
 
   return {
