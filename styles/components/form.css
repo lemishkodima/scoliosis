@@ -57,28 +57,6 @@ textarea {
   resize: vertical;
 }
 
-.form-conditional {
-  max-height: 0;
-  margin-top: -18px;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-8px);
-  transition:
-    max-height 320ms var(--ease-soft),
-    margin-top 320ms var(--ease-soft),
-    opacity 220ms ease,
-    transform 320ms var(--ease-soft);
-}
-
-.form-conditional.is-open {
-  max-height: 120px;
-  margin-top: 0;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
 input.is-invalid,
 select.is-invalid,
 textarea.is-invalid {
