@@ -1,9 +1,6 @@
 import { qs, selectors } from "../core/dom.js";
 import { getCurrentLanguage, t } from "./i18n.js";
 
-const GOOGLE_APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwfJRkcoxqIVXbawOjT6iVvgOGgb3cnvv92q5aDtNAjt6ZdaNjH4mKMngGimqAa53Q8/exec";
-
 function getFormPayload(target) {
   const data = new FormData(target);
   return {
@@ -20,19 +17,8 @@ function getFormPayload(target) {
     consent: data.get("consent") === "on",
     language: getCurrentLanguage(),
     submittedAt: new Date().toISOString(),
-    source: "scoliosis.ua",
+    source: "scoliosis.ua prototype",
   };
-}
-
-async function sendLead(payload) {
-  await fetch(GOOGLE_APPS_SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8",
-    },
-    body: JSON.stringify(payload),
-  });
 }
 
 function validateForm(target) {
@@ -100,21 +86,16 @@ export function initMembershipForm() {
     submitButton.disabled = true;
     submitButton.textContent = t("cta.loading");
 
-    try {
-      await sendLead(payload);
-      lastPayload = payload;
-      submitCount += 1;
-      statusNode.textContent = t("form.success");
-      form.reset();
-      syncMemberTypeOther();
-    } catch (error) {
-      console.error("Membership form submit failed", error);
-      statusNode.classList.add("is-error");
-      statusNode.textContent = t("form.submitError");
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = t("cta.short");
-    }
+    await new Promise((resolve) => setTimeout(resolve, 680));
+    console.info("Prototype membership payload for /api/membership/apply", payload);
+
+    lastPayload = payload;
+    submitCount += 1;
+    statusNode.textContent = t("form.success");
+    submitButton.disabled = false;
+    submitButton.textContent = t("cta.short");
+    form.reset();
+    syncMemberTypeOther();
   });
 
   return {

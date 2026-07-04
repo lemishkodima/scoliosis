@@ -141,8 +141,8 @@ export const translations = {
     "form.message": "Додатковий коментар",
     "form.consent": "Погоджуюся на обробку персональних даних для розгляду заявки.",
     "form.error": "Будь ласка, заповніть обовʼязкові поля перед відправкою.",
-    "form.submitError": "Не вдалося відправити заявку. Перевірте інтернет і спробуйте ще раз.",
-    "form.success": "Дякуємо! Заявку відправлено, ми отримали ваші дані.",
+    "form.success":
+      "Заявку підготовлено. У наступному етапі цей payload буде відправлятися в Google Sheets, email і Telegram.",
   },
   en: {
     "meta.title": "Ukrainian Scoliosis Association - membership for specialists",
@@ -283,8 +283,8 @@ export const translations = {
     "form.message": "Additional comment",
     "form.consent": "I agree to the processing of personal data for reviewing my application.",
     "form.error": "Please complete the required fields before submitting.",
-    "form.submitError": "Could not submit the application. Please check your connection and try again.",
-    "form.success": "Thank you! Your application has been sent.",
+    "form.success":
+      "Application payload prepared. In the next stage it will be sent to Google Sheets, email and Telegram.",
   },
 };
 
@@ -416,8 +416,7 @@ Object.assign(translations, {
     "form.message": "Dodatkowy komentarz",
     "form.consent": "Wyrażam zgodę na przetwarzanie danych osobowych w celu rozpatrzenia zgłoszenia.",
     "form.error": "Uzupełnij wymagane pola przed wysłaniem.",
-    "form.submitError": "Nie udało się wysłać zgłoszenia. Sprawdź internet i spróbuj ponownie.",
-    "form.success": "Dziękujemy! Zgłoszenie zostało wysłane.",
+    "form.success": "Zgłoszenie przygotowane. W kolejnym etapie trafi do Google Sheets, emaila i Telegrama.",
   },
   de: {
     "meta.title": "Ukrainische Skoliose-Vereinigung - Mitgliedschaft für Fachleute",
@@ -546,8 +545,7 @@ Object.assign(translations, {
     "form.message": "Zusätzlicher Kommentar",
     "form.consent": "Ich stimme der Verarbeitung personenbezogener Daten zur Prüfung meines Antrags zu.",
     "form.error": "Bitte füllen Sie die Pflichtfelder vor dem Absenden aus.",
-    "form.submitError": "Der Antrag konnte nicht gesendet werden. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
-    "form.success": "Vielen Dank! Ihr Antrag wurde gesendet.",
+    "form.success": "Antrag vorbereitet. Im nächsten Schritt wird er an Google Sheets, E-Mail und Telegram gesendet.",
   },
   fr: {
     "meta.title": "Association ukrainienne de la scoliose - adhésion pour spécialistes",
@@ -676,8 +674,7 @@ Object.assign(translations, {
     "form.message": "Commentaire supplémentaire",
     "form.consent": "J'accepte le traitement des données personnelles pour l'examen de ma candidature.",
     "form.error": "Veuillez remplir les champs obligatoires avant l'envoi.",
-    "form.submitError": "Impossible d'envoyer la candidature. Vérifiez votre connexion et réessayez.",
-    "form.success": "Merci ! Votre candidature a été envoyée.",
+    "form.success": "Candidature préparée. À l'étape suivante, elle sera envoyée vers Google Sheets, email et Telegram.",
   },
   es: {
     "meta.title": "Asociación Ucraniana de Escoliosis - membresía para especialistas",
@@ -806,7 +803,6 @@ Object.assign(translations, {
     "form.message": "Comentario adicional",
     "form.consent": "Acepto el tratamiento de datos personales para revisar mi solicitud.",
     "form.error": "Completa los campos obligatorios antes de enviar.",
-    "form.submitError": "No se pudo enviar la solicitud. Comprueba tu conexión e inténtalo de nuevo.",
-    "form.success": "¡Gracias! Tu solicitud ha sido enviada.",
+    "form.success": "Solicitud preparada. En la siguiente etapa se enviará a Google Sheets, email y Telegram.",
   },
 });
