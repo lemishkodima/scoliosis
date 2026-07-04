@@ -1,23 +1,28 @@
 import { qs, selectors } from "../core/dom.js";
 import { getCurrentLanguage, t } from "./i18n.js";
 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfJRkcoxqIVXbawOjT6iVvgOGgb3cnvv92q5aDtNAjt6ZdaNjH4mKMngGimqAa53Q8/exec";
+
 function getFormPayload(target) {
   const data = new FormData(target);
   return {
     fullName: String(data.get("fullName") || "").trim(),
     email: String(data.get("email") || "").trim(),
     phone: String(data.get("phone") || "").trim(),
-    city: String(data.get("city") || "").trim(),
-    specialization: String(data.get("specialization") || "").trim(),
-    workplace: String(data.get("workplace") || "").trim(),
     memberType: String(data.get("memberType") || "").trim(),
-    experience: String(data.get("experience") || "").trim(),
-    message: String(data.get("message") || "").trim(),
-    consent: data.get("consent") === "on",
     language: getCurrentLanguage(),
-    submittedAt: new Date().toISOString(),
-    source: "scoliosis.ua prototype",
   };
+}
+
+function submitLead(payload) {
+  return fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify(payload),
+  });
 }
 
 function validateForm(target) {
@@ -63,8 +68,16 @@ export function initMembershipForm() {
     submitButton.disabled = true;
     submitButton.textContent = t("cta.loading");
 
-    await new Promise((resolve) => setTimeout(resolve, 680));
-    console.info("Prototype membership payload for /api/membership/apply", payload);
+    try {
+      await submitLead(payload);
+    } catch (error) {
+      console.error("Membership form submission failed", error);
+      statusNode.classList.add("is-error");
+      statusNode.textContent = t("form.error");
+      submitButton.disabled = false;
+      submitButton.textContent = t("cta.short");
+      return;
+    }
 
     lastPayload = payload;
     submitCount += 1;

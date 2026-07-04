@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260703-safari-hero-anchor-1";
+import "./src/main.js?v=20260704-google-script-submit-1";
