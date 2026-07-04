@@ -1,7 +1,7 @@
 import { qs, selectors } from "../core/dom.js";
 import { getCurrentLanguage, t } from "./i18n.js";
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfJRkcoxqIVXbawOjT6iVvgOGgb3cnvv92q5aDtNAjt6ZdaNjH4mKMngGimqAa53Q8/exec";
+const MEMBERSHIP_ENDPOINT = "/api/membership/apply";
 
 function getFormPayload(target) {
   const data = new FormData(target);
@@ -16,13 +16,20 @@ function getFormPayload(target) {
 }
 
 function submitLead(payload) {
-  return fetch(GOOGLE_SCRIPT_URL, {
+  return fetch(MEMBERSHIP_ENDPOINT, {
     method: "POST",
-    mode: "no-cors",
     headers: {
-      "Content-Type": "text/plain;charset=utf-8",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(payload),
+  }).then(async (response) => {
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok || data.ok === false) {
+      throw new Error(data.error || "Membership form submission failed");
+    }
+
+    return data;
   });
 }
 
