@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260704-vercel-secret-proxy-1";
+import "./src/main.js?v=20260704-participant-category-label-1";

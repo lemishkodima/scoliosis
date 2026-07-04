@@ -1,4 +1,4 @@
-import { translations } from "../config/translations.js?v=20260704-member-type-select-1";
+import { translations } from "../config/translations.js?v=20260704-participant-category-label-1";
 import { qs, qsa, selectors } from "../core/dom.js";
 
 let currentLanguage = localStorage.getItem("scoliosis-language") || "uk";
