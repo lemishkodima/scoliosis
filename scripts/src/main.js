@@ -8,7 +8,7 @@ import { initLanguageSwitcher } from "./features/i18n.js?v=20260704-participant-
 import { initPageLoader } from "./features/loader.js?v=20260703-loader-dot-video-edge-1";
 import { initMembershipForm } from "./features/form.js?v=20260704-vercel-secret-proxy-1";
 import { initReveal } from "./features/reveal.js?v=20260703-steps-numbers-static-open-lines-1";
-import { initSmoothScroll } from "./features/smooth-scroll.js?v=20260703-safari-hero-anchor-1";
+import { initSmoothScroll } from "./features/smooth-scroll.js?v=20260704-native-scroll-1";
 import { initStepsProgress } from "./features/steps-progress.js?v=20260703-loader-dot-video-edge-1";
 
 if ("scrollRestoration" in window.history) {
