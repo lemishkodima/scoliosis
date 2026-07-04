@@ -34,9 +34,23 @@ async function forwardToGoogleAppsScript(payload) {
     body: JSON.stringify(forwardedPayload),
   });
 
+  const responseText = await googleResponse.text();
+
   if (!googleResponse.ok) {
-    const responseText = await googleResponse.text();
     throw new Error(`Google Apps Script request failed: ${googleResponse.status} ${responseText}`);
+  }
+
+  try {
+    const parsedResponse = JSON.parse(responseText);
+    if (parsedResponse && parsedResponse.ok === false) {
+      throw new Error(`Google Apps Script returned an error: ${parsedResponse.error || responseText}`);
+    }
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return;
+    }
+
+    throw error;
   }
 }
 
