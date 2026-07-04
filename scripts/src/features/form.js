@@ -1,7 +1,8 @@
 import { qs, selectors } from "../core/dom.js";
 import { getCurrentLanguage, t } from "./i18n.js";
 
-const MEMBERSHIP_ENDPOINT = "/api/membership";
+const GOOGLE_APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwfJRkcoxqIVXbawOjT6iVvgOGgb3cnvv92q5aDtNAjt6ZdaNjH4mKMngGimqAa53Q8/exec";
 
 function getFormPayload(target) {
   const data = new FormData(target);
@@ -24,17 +25,14 @@ function getFormPayload(target) {
 }
 
 async function sendLead(payload) {
-  const response = await fetch(MEMBERSHIP_ENDPOINT, {
+  await fetch(GOOGLE_APPS_SCRIPT_URL, {
     method: "POST",
+    mode: "no-cors",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "text/plain;charset=utf-8",
     },
     body: JSON.stringify(payload),
   });
-
-  if (!response.ok) {
-    throw new Error(`Membership endpoint failed with ${response.status}`);
-  }
 }
 
 function validateForm(target) {
