@@ -2,7 +2,12 @@
   --stack-header-offset: 76px;
 }
 
-.intro,
+.intro {
+  position: sticky;
+  top: var(--stack-header-offset);
+  isolation: isolate;
+}
+
 .benefits,
 .mission,
 .audience,
@@ -10,8 +15,7 @@
 .opens,
 .steps,
 .apply {
-  position: sticky;
-  top: var(--stack-header-offset);
+  position: relative;
   isolation: isolate;
 }
 
@@ -672,8 +676,7 @@ h2 {
 }
 
 .gallery-copy {
-  position: sticky;
-  top: 118px;
+  position: relative;
 }
 
 .gallery-copy p:not(.section-kicker) {
@@ -961,7 +964,5 @@ h2 {
 }
 
 .apply-copy {
-  position: sticky;
-  top: 120px;
+  position: relative;
 }
-  min-width: 0;
