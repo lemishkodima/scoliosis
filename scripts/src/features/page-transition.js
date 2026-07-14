@@ -63,6 +63,7 @@ export function initPageTransitions({ prefersReducedMotion }) {
     document.body.classList.add("is-page-transitioning");
 
     window.setTimeout(() => {
+      document.documentElement.classList.remove("is-transition-boot");
       entryOverlay.classList.add("is-transition-opening");
     }, ENTRY_OPEN_DELAY);
 
@@ -71,6 +72,8 @@ export function initPageTransitions({ prefersReducedMotion }) {
       document.body.classList.remove("is-page-transitioning");
       window.setTimeout(() => entryOverlay.remove(), 220);
     }, ENTRY_REMOVE_DELAY);
+  } else {
+    document.documentElement.classList.remove("is-transition-boot");
   }
 
   document.addEventListener("click", (event) => {

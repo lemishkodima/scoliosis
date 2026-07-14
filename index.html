@@ -10,8 +10,13 @@
     />
     <meta name="theme-color" content="#17325C" />
     <title data-i18n-title="meta.title">Українська асоціація сколіозу - членство для спеціалістів</title>
+    <script>
+      if (sessionStorage.getItem("scoliosis-page-transition") === "1") {
+        document.documentElement.classList.add("is-transition-boot");
+      }
+    </script>
     <link rel="icon" href="assets/images/logo-mark-transparent.webp" />
-    <link rel="stylesheet" href="styles/main.css?v=20260714-mobile-curtain-1" />
+    <link rel="stylesheet" href="styles/main.css?v=20260714-transition-no-flicker-1" />
   </head>
   <body class="is-loading">
     <div class="depth-backdrop" data-depth-backdrop aria-hidden="true">
@@ -516,6 +521,6 @@
       </div>
     </footer>
 
-    <script type="module" src="scripts/main.js?v=20260714-transition-blinds-1"></script>
+    <script type="module" src="scripts/main.js?v=20260714-transition-no-flicker-1"></script>
   </body>
 </html>

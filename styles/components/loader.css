@@ -14,6 +14,15 @@
     background 520ms ease;
 }
 
+html.is-transition-boot body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 155;
+  background: var(--panel-dark);
+  content: "";
+  pointer-events: none;
+}
+
 .page-loader.is-revealing {
   background: transparent;
   pointer-events: none;
@@ -31,7 +40,9 @@
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transform: scale(1.012);
+  contain: paint;
+  transform: translate3d(0, 0, 0) scale(1.012);
+  backface-visibility: hidden;
   transition:
     opacity 160ms ease,
     visibility 160ms ease,
@@ -41,13 +52,13 @@
 .page-transition.is-transition-active {
   visibility: visible;
   opacity: 1;
-  transform: scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .page-transition.is-transition-entry {
   visibility: visible;
   opacity: 1;
-  transform: scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .page-transition.is-transition-entry .loader-blocks span {
@@ -121,7 +132,8 @@
   height: calc(54vh + var(--loader-panel-depth, 0vh));
   background: var(--panel-dark);
   box-shadow: none;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
   will-change: transform, opacity;
 }
 

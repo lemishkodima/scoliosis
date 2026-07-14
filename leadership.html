@@ -9,8 +9,13 @@
     />
     <meta name="theme-color" content="#17325C" />
     <title>Структура керівництва - Українська асоціація сколіозу</title>
+    <script>
+      if (sessionStorage.getItem("scoliosis-page-transition") === "1") {
+        document.documentElement.classList.add("is-transition-boot");
+      }
+    </script>
     <link rel="icon" href="assets/images/logo-mark-transparent.webp" />
-    <link rel="stylesheet" href="styles/main.css?v=20260714-mobile-curtain-1" />
+    <link rel="stylesheet" href="styles/main.css?v=20260714-transition-no-flicker-1" />
   </head>
   <body class="page-body">
     <header class="site-header" data-header>
@@ -103,6 +108,6 @@
       </div>
     </footer>
 
-    <script type="module" src="scripts/main.js?v=20260714-transition-blinds-1"></script>
+    <script type="module" src="scripts/main.js?v=20260714-transition-no-flicker-1"></script>
   </body>
 </html>
