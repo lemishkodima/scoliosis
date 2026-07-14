@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260714-transition-no-flicker-1";
+import "./src/main.js?v=20260714-single-blinds-1";

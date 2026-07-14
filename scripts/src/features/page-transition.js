@@ -1,16 +1,10 @@
-const TRANSITION_DURATION = 720;
-const ENTRY_OPEN_DELAY = 140;
-const ENTRY_REMOVE_DELAY = 900;
+const TRANSITION_DURATION = 620;
+const ENTRY_OPEN_DELAY = 40;
+const ENTRY_REMOVE_DELAY = 760;
 const TRANSITION_STORAGE_KEY = "scoliosis-page-transition";
 
 function createLoaderBlocks() {
   return Array.from({ length: 24 }, () => "<span></span>").join("");
-}
-
-function createBrandLetters(text, startIndex) {
-  return Array.from(text)
-    .map((letter, index) => `<span style="--i: ${startIndex + index}">${letter}</span>`)
-    .join("");
 }
 
 function createTransitionOverlay() {
@@ -20,17 +14,6 @@ function createTransitionOverlay() {
   overlay.innerHTML = `
     <div class="loader-grid" aria-hidden="true"></div>
     <div class="loader-blocks" aria-hidden="true">${createLoaderBlocks()}</div>
-    <span class="loader-cross" aria-hidden="true"></span>
-    <div class="loader-core">
-      <span class="loader-logo-orbit" aria-hidden="true">
-        <img src="assets/images/logo-mark.webp" alt="" width="512" height="512" />
-      </span>
-      <span class="loader-brand-name" aria-label="Ukrainian Scoliosis Association">
-        <span class="loader-brand-line" aria-hidden="true">${createBrandLetters("UKRAINIAN", 0)}</span>
-        <span class="loader-brand-line" aria-hidden="true">${createBrandLetters("SCOLIOSIS", 9)}</span>
-        <span class="loader-brand-line" aria-hidden="true">${createBrandLetters("ASSOCIATION", 18)}</span>
-      </span>
-    </div>
   `;
   return overlay;
 }
