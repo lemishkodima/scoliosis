@@ -8,7 +8,7 @@ import { initPageLoader } from "./features/loader.js?v=20260714-transition-no-fl
 import { initMembershipForm } from "./features/form.js?v=20260704-vercel-secret-proxy-1";
 import { initEventsPage } from "./features/events.js?v=20260714-pages-events-1";
 import { initPageTransitions } from "./features/page-transition.js?v=20260714-clean-logo-1";
-import { initReveal } from "./features/reveal.js?v=20260703-steps-numbers-static-open-lines-1";
+import { initReveal } from "./features/reveal.js?v=20260714-mobile-media-reveal-3";
 import { initSmoothScroll } from "./features/smooth-scroll.js?v=20260704-native-scroll-1";
 import { initStepsProgress } from "./features/steps-progress.js?v=20260703-loader-dot-video-edge-1";
 

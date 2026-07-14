@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260714-clean-logo-1";
+import "./src/main.js?v=20260714-mobile-media-reveal-3";
