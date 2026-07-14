@@ -4,8 +4,9 @@
   left: 0;
   z-index: 80;
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) auto minmax(260px, 1fr);
+  grid-template-columns: minmax(230px, max-content) minmax(0, 1fr) minmax(180px, max-content);
   align-items: center;
+  column-gap: clamp(16px, 2.2vw, 34px);
   width: 100%;
   min-height: 96px;
   padding: 20px clamp(28px, 4vw, 76px);
@@ -121,21 +122,32 @@
 
 .site-nav {
   display: flex;
+  flex-wrap: wrap;
   justify-self: center;
   justify-content: center;
-  gap: clamp(16px, 2vw, 34px);
+  gap: clamp(10px, 1.3vw, 22px);
+  row-gap: 2px;
+  width: 100%;
+  min-width: 0;
   color: rgba(23, 50, 92, 0.74);
-  font-size: 0.94rem;
+  font-size: clamp(0.78rem, 0.82vw, 0.9rem);
   font-weight: 650;
+  line-height: 1.1;
 }
 
 .site-nav a {
   position: relative;
   padding: 10px 0;
+  white-space: nowrap;
 }
 
 .site-nav a:hover {
   color: var(--blue);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--navy);
+  font-weight: 850;
 }
 
 .site-nav a::after {
@@ -158,11 +170,17 @@
   transform: scaleX(1);
 }
 
+.site-nav a[aria-current="page"]::after {
+  opacity: 0.72;
+  transform: scaleX(1);
+}
+
 .header-actions {
   display: inline-flex;
   align-items: center;
   justify-self: end;
   gap: 12px;
+  min-width: 0;
 }
 
 .language-switch {

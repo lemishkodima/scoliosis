@@ -1,4 +1,4 @@
-import { translations } from "../config/translations.js?v=20260704-participant-category-label-1";
+import { translations } from "../config/translations.js?v=20260714-pages-nav-2";
 import { qs, qsa, selectors } from "../core/dom.js";
 
 let currentLanguage = localStorage.getItem("scoliosis-language") || "uk";
@@ -15,7 +15,11 @@ export function applyLanguage(language = currentLanguage) {
   currentLanguage = translations[language] ? language : "uk";
   localStorage.setItem("scoliosis-language", currentLanguage);
   document.documentElement.lang = currentLanguage;
-  document.title = t("meta.title");
+
+  const titleNode = qs("[data-i18n-title]");
+  if (titleNode) {
+    document.title = t(titleNode.dataset.i18nTitle);
+  }
 
   qsa("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
@@ -59,6 +63,18 @@ export function initLanguageSwitcher() {
   const languageButtons = qsa(selectors.languageButton);
   const languageSwitch = qs(selectors.languageSwitch);
   const languageToggle = qs(selectors.languageToggle);
+
+  if (languageButtons.length === 0) {
+    return {
+      getState() {
+        return {
+          activeLanguage: document.documentElement.lang || "uk",
+          buttonCount: 0,
+          isOpen: false,
+        };
+      },
+    };
+  }
 
   languageButtons.forEach((button) => {
     button.addEventListener("click", () => {
