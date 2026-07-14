@@ -15,7 +15,7 @@ function createTransitionOverlay() {
     <div class="loader-grid" aria-hidden="true"></div>
     <div class="loader-blocks" aria-hidden="true">${createLoaderBlocks()}</div>
     <span class="page-transition-logo" aria-hidden="true">
-      <img src="assets/images/logo-mark.webp" alt="" width="512" height="512" />
+      <img src="assets/images/logo-mark-transparent.webp" alt="" width="512" height="512" />
     </span>
   `;
   return overlay;

@@ -79,7 +79,7 @@ html.is-transition-boot body::before {
   height: clamp(78px, 8vw, 116px);
   opacity: 0;
   transform: translate3d(0, 10px, 0) scale(0.84);
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
 }
 
 .page-transition-logo img {
@@ -492,13 +492,11 @@ html.is-transition-boot body::before {
   0% {
     opacity: 0;
     transform: translate3d(0, 10px, 0) scale(0.84);
-    filter: blur(3px);
   }
 
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
   }
 }
 
@@ -507,13 +505,11 @@ html.is-transition-boot body::before {
   38% {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
   }
 
   100% {
     opacity: 0;
     transform: translate3d(0, -6px, 0) scale(0.9);
-    filter: blur(2px);
   }
 }
 

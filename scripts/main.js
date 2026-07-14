@@ -1,1 +1,1 @@
-import "./src/main.js?v=20260714-logo-curtain-1";
+import "./src/main.js?v=20260714-clean-logo-1";
