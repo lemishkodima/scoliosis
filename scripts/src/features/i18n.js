@@ -1,4 +1,4 @@
-import { translations } from "../config/translations.js?v=20260714-pages-nav-2";
+import { translations } from "../config/translations.js?v=20260714-nav-motion-1";
 import { qs, qsa, selectors } from "../core/dom.js";
 
 let currentLanguage = localStorage.getItem("scoliosis-language") || "uk";
@@ -65,10 +65,13 @@ export function initLanguageSwitcher() {
   const languageToggle = qs(selectors.languageToggle);
 
   if (languageButtons.length === 0) {
+    currentLanguage = "uk";
+    document.documentElement.lang = "uk";
+
     return {
       getState() {
         return {
-          activeLanguage: document.documentElement.lang || "uk",
+          activeLanguage: currentLanguage,
           buttonCount: 0,
           isOpen: false,
         };

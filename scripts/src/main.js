@@ -3,7 +3,7 @@ import { getMotionPreference } from "./core/dom.js?v=20260704-native-pointer-cur
 import { initHeader } from "./features/header.js?v=20260703-mobile-polish-1";
 import { initHeroInteractions } from "./features/hero-interactions.js?v=20260701-hero-overlay-balance-1";
 import { initHeroVideoLoopFade } from "./features/hero-video.js?v=20260703-safari-hero-anchor-1";
-import { initLanguageSwitcher } from "./features/i18n.js?v=20260714-pages-nav-2";
+import { initLanguageSwitcher } from "./features/i18n.js?v=20260714-nav-motion-1";
 import { initPageLoader } from "./features/loader.js?v=20260703-loader-dot-video-edge-1";
 import { initMembershipForm } from "./features/form.js?v=20260704-vercel-secret-proxy-1";
 import { initEventsPage } from "./features/events.js?v=20260714-pages-events-1";
@@ -34,11 +34,11 @@ const prefersReducedMotion = getMotionPreference();
 
 const systems = {
   events: initEventsPage(),
+  language: initLanguageSwitcher(),
   form: initMembershipForm(),
   header: initHeader(),
   heroInteractions: initHeroInteractions({ prefersReducedMotion }),
   heroVideo: initHeroVideoLoopFade({ prefersReducedMotion }),
-  language: initLanguageSwitcher(),
   loader: initPageLoader({ prefersReducedMotion }),
   reveal: initReveal({ prefersReducedMotion }),
   smoothScroll: initSmoothScroll({ prefersReducedMotion }),

@@ -4,7 +4,7 @@
   left: 0;
   z-index: 80;
   display: grid;
-  grid-template-columns: minmax(230px, max-content) minmax(0, 1fr) minmax(180px, max-content);
+  grid-template-columns: minmax(230px, max-content) minmax(0, 1fr);
   align-items: center;
   column-gap: clamp(16px, 2.2vw, 34px);
   width: 100%;
@@ -123,8 +123,8 @@
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-self: center;
-  justify-content: center;
+  justify-self: end;
+  justify-content: flex-end;
   gap: clamp(10px, 1.3vw, 22px);
   row-gap: 2px;
   width: 100%;
