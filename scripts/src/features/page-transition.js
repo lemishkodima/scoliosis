@@ -1,4 +1,7 @@
 const TRANSITION_DURATION = 720;
+const ENTRY_OPEN_DELAY = 140;
+const ENTRY_REMOVE_DELAY = 900;
+const TRANSITION_STORAGE_KEY = "scoliosis-page-transition";
 
 function createLoaderBlocks() {
   return Array.from({ length: 24 }, () => "<span></span>").join("");
@@ -50,6 +53,26 @@ function shouldSkipTransition(link, url) {
 export function initPageTransitions({ prefersReducedMotion }) {
   let isTransitioning = false;
 
+  const shouldPlayEntryTransition = sessionStorage.getItem(TRANSITION_STORAGE_KEY) === "1";
+  sessionStorage.removeItem(TRANSITION_STORAGE_KEY);
+
+  if (shouldPlayEntryTransition && !prefersReducedMotion) {
+    const entryOverlay = createTransitionOverlay();
+    entryOverlay.classList.add("is-transition-active", "is-transition-entry");
+    document.body.append(entryOverlay);
+    document.body.classList.add("is-page-transitioning");
+
+    window.setTimeout(() => {
+      entryOverlay.classList.add("is-transition-opening");
+    }, ENTRY_OPEN_DELAY);
+
+    window.setTimeout(() => {
+      entryOverlay.classList.add("is-hidden");
+      document.body.classList.remove("is-page-transitioning");
+      window.setTimeout(() => entryOverlay.remove(), 220);
+    }, ENTRY_REMOVE_DELAY);
+  }
+
   document.addEventListener("click", (event) => {
     if (isTransitioning || isModifiedClick(event)) return;
 
@@ -63,10 +86,12 @@ export function initPageTransitions({ prefersReducedMotion }) {
     isTransitioning = true;
 
     if (prefersReducedMotion) {
+      sessionStorage.setItem(TRANSITION_STORAGE_KEY, "1");
       window.location.href = url.href;
       return;
     }
 
+    sessionStorage.setItem(TRANSITION_STORAGE_KEY, "1");
     const overlay = createTransitionOverlay();
     document.body.append(overlay);
     document.body.classList.add("is-page-transitioning");
