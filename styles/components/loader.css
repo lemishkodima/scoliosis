@@ -70,6 +70,40 @@ html.is-transition-boot body::before {
   animation: loaderBlockOpen 620ms calc(90ms + (var(--loader-distance, 0) * 14ms)) cubic-bezier(0.72, 0, 0.14, 1) both;
 }
 
+.page-transition-logo {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: clamp(78px, 8vw, 116px);
+  height: clamp(78px, 8vw, 116px);
+  opacity: 0;
+  transform: translate3d(0, 10px, 0) scale(0.84);
+  will-change: transform, opacity, filter;
+}
+
+.page-transition-logo img {
+  width: clamp(72px, 7.2vw, 106px);
+  height: clamp(72px, 7.2vw, 106px);
+  object-fit: contain;
+  filter:
+    drop-shadow(0 20px 28px rgba(23, 50, 92, 0.14))
+    drop-shadow(0 0 18px rgba(162, 180, 226, 0.34));
+}
+
+.page-transition.is-transition-active:not(.is-transition-entry) .page-transition-logo {
+  animation: transitionLogoReveal 380ms 180ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.page-transition.is-transition-entry .page-transition-logo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.page-transition.is-transition-entry.is-transition-opening .page-transition-logo {
+  animation: transitionLogoRelease 420ms 80ms cubic-bezier(0.72, 0, 0.14, 1) both;
+}
+
 .page-transition .loader-blocks span {
   transform: translateY(var(--loader-exit-y, 0));
 }
@@ -437,7 +471,8 @@ html.is-transition-boot body::before {
 
 @media (prefers-reduced-motion: reduce) {
   .page-transition,
-  .page-transition .loader-blocks span {
+  .page-transition .loader-blocks span,
+  .page-transition-logo {
     animation: none;
     transition: none;
   }
@@ -450,6 +485,35 @@ html.is-transition-boot body::before {
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes transitionLogoReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.84);
+    filter: blur(3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes transitionLogoRelease {
+  0%,
+  38% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0) scale(0.9);
+    filter: blur(2px);
   }
 }
 
