@@ -78,17 +78,14 @@ html.is-transition-boot body::before {
   width: clamp(78px, 8vw, 116px);
   height: clamp(78px, 8vw, 116px);
   opacity: 0;
-  transform: translate3d(0, 10px, 0) scale(0.84);
-  will-change: transform, opacity;
+  transform: translateY(10px) scale(0.84);
 }
 
 .page-transition-logo img {
+  display: block;
   width: clamp(72px, 7.2vw, 106px);
   height: clamp(72px, 7.2vw, 106px);
   object-fit: contain;
-  filter:
-    drop-shadow(0 20px 28px rgba(23, 50, 92, 0.14))
-    drop-shadow(0 0 18px rgba(162, 180, 226, 0.34));
 }
 
 .page-transition.is-transition-active:not(.is-transition-entry) .page-transition-logo {
@@ -97,7 +94,7 @@ html.is-transition-boot body::before {
 
 .page-transition.is-transition-entry .page-transition-logo {
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
+  transform: translateY(0) scale(1);
 }
 
 .page-transition.is-transition-entry.is-transition-opening .page-transition-logo {
@@ -289,7 +286,6 @@ html.is-transition-boot body::before {
   place-items: center;
   width: clamp(78px, 8vw, 116px);
   height: clamp(78px, 8vw, 116px);
-  perspective: 520px;
 }
 
 .loader-logo-orbit::before,
@@ -303,9 +299,7 @@ html.is-transition-boot body::before {
   width: clamp(72px, 7.2vw, 106px);
   height: clamp(72px, 7.2vw, 106px);
   object-fit: contain;
-  filter:
-    drop-shadow(0 20px 28px rgba(23, 50, 92, 0.14))
-    drop-shadow(0 0 18px rgba(162, 180, 226, 0.34));
+  filter: none;
   animation: loaderLogoFloat 1800ms 720ms cubic-bezier(0.2, 0.78, 0.24, 1) both;
 }
 
@@ -400,9 +394,7 @@ html.is-transition-boot body::before {
 
 .page-loader.is-revealing .loader-logo-orbit img {
   animation: none;
-  filter:
-    drop-shadow(0 18px 24px rgba(23, 50, 92, 0.16))
-    drop-shadow(0 0 16px rgba(162, 180, 226, 0.28));
+  filter: none;
 }
 
 @media (max-width: 680px) {
@@ -491,12 +483,12 @@ html.is-transition-boot body::before {
 @keyframes transitionLogoReveal {
   0% {
     opacity: 0;
-    transform: translate3d(0, 10px, 0) scale(0.84);
+    transform: translateY(10px) scale(0.84);
   }
 
   100% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -504,12 +496,12 @@ html.is-transition-boot body::before {
   0%,
   38% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translateY(0) scale(1);
   }
 
   100% {
     opacity: 0;
-    transform: translate3d(0, -6px, 0) scale(0.9);
+    transform: translateY(-6px) scale(0.9);
   }
 }
 
@@ -551,9 +543,6 @@ html.is-transition-boot body::before {
   0% {
     opacity: 1;
     transform: translateX(0) scale(1);
-    filter:
-      drop-shadow(0 18px 24px rgba(23, 50, 92, 0.16))
-      drop-shadow(0 0 16px rgba(162, 180, 226, 0.28));
   }
 
   58% {
@@ -564,7 +553,6 @@ html.is-transition-boot body::before {
   100% {
     opacity: 0;
     transform: translateX(0) scale(0.04);
-    filter: blur(4px);
   }
 }
 
