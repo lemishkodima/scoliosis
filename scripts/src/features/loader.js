@@ -1,27 +1,10 @@
 import { qs, selectors } from "../core/dom.js";
 
-const TRANSITION_STORAGE_KEY = "scoliosis-page-transition";
-
 export function initPageLoader({ prefersReducedMotion }) {
   const pageLoader = qs(selectors.pageLoader);
   if (!pageLoader) {
     return {
       getState: () => ({ mounted: false, reason: "missing-loader-node" }),
-    };
-  }
-
-  if (sessionStorage.getItem(TRANSITION_STORAGE_KEY) === "1") {
-    pageLoader.remove();
-    document.body.classList.remove("is-loading");
-    document.body.classList.add("is-hero-ready");
-
-    return {
-      getState: () => ({
-        mounted: false,
-        hidden: true,
-        phase: "skipped-for-internal-transition",
-        reducedMotion: prefersReducedMotion,
-      }),
     };
   }
 

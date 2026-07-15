@@ -21,7 +21,6 @@
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
   padding: clamp(130px, 14vw, 176px) 0 clamp(72px, 9vw, 120px);
-  animation: pageEnter 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .page-hero {
@@ -272,18 +271,6 @@
   transform: scale(1.035);
 }
 
-@keyframes pageEnter {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 680px) {
   .is-mobile-media-reveal {
     opacity: 0;
@@ -321,7 +308,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .page-main,
   .page-panel,
   .person-card,
   .person-card img,

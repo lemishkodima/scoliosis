@@ -70,8 +70,7 @@ export function initReveal({ prefersReducedMotion }) {
       });
     };
 
-    const initialRevealDelay = document.body.classList.contains("is-page-transitioning") ? 480 : 80;
-    window.setTimeout(revealVisibleMobileMedia, initialRevealDelay);
+    window.setTimeout(revealVisibleMobileMedia, 80);
   }
 
   return {

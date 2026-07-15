@@ -14,28 +14,6 @@
     background 520ms ease;
 }
 
-html.is-transition-boot body::before {
-  position: fixed;
-  inset: 0;
-  z-index: 155;
-  background: var(--panel-dark);
-  content: "";
-  pointer-events: none;
-}
-
-html.is-transition-boot body::after {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 156;
-  width: clamp(72px, 7.2vw, 106px);
-  aspect-ratio: 1;
-  background: url("../../assets/images/logo-mark-cutout.png") center / contain no-repeat;
-  content: "";
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-}
-
 .page-loader.is-revealing {
   background: transparent;
   pointer-events: none;
@@ -46,80 +24,6 @@ html.is-transition-boot body::after {
   opacity: 0;
   transform: scale(1.025);
   pointer-events: none;
-}
-
-.page-transition {
-  z-index: 160;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  background: transparent;
-  contain: paint;
-  transform: translate3d(0, 0, 0) scale(1.012);
-  backface-visibility: hidden;
-  transition:
-    opacity 160ms ease,
-    visibility 160ms ease,
-    transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.page-transition.is-transition-active {
-  visibility: visible;
-  opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-}
-
-.page-transition.is-transition-entry {
-  visibility: visible;
-  opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-}
-
-.page-transition.is-transition-entry .loader-blocks span {
-  transform: translateY(0);
-}
-
-.page-transition.is-transition-entry.is-transition-opening .loader-blocks span {
-  animation: loaderBlockOpen 620ms calc(90ms + (var(--loader-distance, 0) * 14ms)) cubic-bezier(0.72, 0, 0.14, 1) both;
-}
-
-.page-transition-logo {
-  position: relative;
-  z-index: 3;
-  display: grid;
-  place-items: center;
-  width: clamp(78px, 8vw, 116px);
-  height: clamp(78px, 8vw, 116px);
-  opacity: 0;
-  transform: translateY(10px) scale(0.84);
-}
-
-.page-transition-logo img {
-  display: block;
-  width: clamp(72px, 7.2vw, 106px);
-  height: clamp(72px, 7.2vw, 106px);
-  object-fit: contain;
-}
-
-.page-transition.is-transition-active:not(.is-transition-entry) .page-transition-logo {
-  animation: transitionLogoReveal 380ms 180ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-
-.page-transition.is-transition-entry .page-transition-logo {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.page-transition.is-transition-entry.is-transition-opening .page-transition-logo {
-  animation: transitionLogoRelease 420ms 80ms cubic-bezier(0.72, 0, 0.14, 1) both;
-}
-
-.page-transition .loader-blocks span {
-  transform: translateY(var(--loader-exit-y, 0));
-}
-
-.page-transition.is-transition-active .loader-blocks span {
-  animation: transitionBlockClose 460ms calc(var(--loader-distance, 0) * 16ms) cubic-bezier(0.68, 0, 0.18, 1) both;
 }
 
 .loader-grid {
@@ -471,50 +375,6 @@ html.is-transition-boot body::after {
   .page-loader.is-revealing .loader-logo-orbit {
     z-index: 3;
     animation: loaderLogoCenterDotMobile 760ms var(--ease-premium) both;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .page-transition,
-  .page-transition .loader-blocks span,
-  .page-transition-logo {
-    animation: none;
-    transition: none;
-  }
-}
-
-@keyframes transitionBlockClose {
-  0% {
-    transform: translateY(var(--loader-exit-y, 0));
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes transitionLogoReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(10px) scale(0.84);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes transitionLogoRelease {
-  0%,
-  38% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(-6px) scale(0.9);
   }
 }
 
