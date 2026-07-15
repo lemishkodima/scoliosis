@@ -16,10 +16,40 @@ const REVEAL_SELECTOR = [
 const MOBILE_MEDIA_REVEAL_SELECTOR = ".people-grid .person-card figure, .leadership-card figure";
 
 export function initReveal({ prefersReducedMotion }) {
-  const mobileMediaItems = window.matchMedia("(max-width: 680px)").matches
-    ? qsa(MOBILE_MEDIA_REVEAL_SELECTOR)
-    : [];
+  const mobileMediaItems = qsa(MOBILE_MEDIA_REVEAL_SELECTOR);
   const items = [...qsa(REVEAL_SELECTOR), ...mobileMediaItems];
+  const mobileMediaSet = new Set(mobileMediaItems);
+  const pendingMediaReveals = new WeakSet();
+
+  function revealMobileMedia(item) {
+    if (item.classList.contains("is-visible") || pendingMediaReveals.has(item)) return;
+
+    const image = item.querySelector("img");
+    const reveal = () => item.classList.add("is-visible");
+    pendingMediaReveals.add(item);
+
+    if (!image) {
+      reveal();
+      return;
+    }
+
+    const revealAfterDecode = () => {
+      if (typeof image.decode !== "function") {
+        reveal();
+        return;
+      }
+
+      image.decode().catch(() => {}).finally(reveal);
+    };
+
+    if (image.complete) {
+      revealAfterDecode();
+      return;
+    }
+
+    image.addEventListener("load", revealAfterDecode, { once: true });
+    image.addEventListener("error", reveal, { once: true });
+  }
 
   mobileMediaItems.forEach((item) => item.classList.add("is-mobile-media-reveal"));
 
@@ -41,7 +71,11 @@ export function initReveal({ prefersReducedMotion }) {
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
+        if (mobileMediaSet.has(entry.target)) {
+          revealMobileMedia(entry.target);
+        } else {
+          entry.target.classList.add("is-visible");
+        }
         observer.unobserve(entry.target);
       });
     },
@@ -65,7 +99,7 @@ export function initReveal({ prefersReducedMotion }) {
         const bounds = item.getBoundingClientRect();
         if (bounds.top >= revealBoundary || bounds.bottom <= 0) return;
 
-        item.classList.add("is-visible");
+        revealMobileMedia(item);
         observer.unobserve(item);
       });
     };
