@@ -23,6 +23,19 @@ html.is-transition-boot body::before {
   pointer-events: none;
 }
 
+html.is-transition-boot body::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 156;
+  width: clamp(72px, 7.2vw, 106px);
+  aspect-ratio: 1;
+  background: url("../../assets/images/logo-mark-cutout.png") center / contain no-repeat;
+  content: "";
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
 .page-loader.is-revealing {
   background: transparent;
   pointer-events: none;

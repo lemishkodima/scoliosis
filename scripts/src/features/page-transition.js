@@ -47,9 +47,9 @@ export function initPageTransitions({ prefersReducedMotion }) {
     entryOverlay.classList.add("is-transition-active", "is-transition-entry");
     document.body.append(entryOverlay);
     document.body.classList.add("is-page-transitioning");
+    document.documentElement.classList.remove("is-transition-boot");
 
     window.setTimeout(() => {
-      document.documentElement.classList.remove("is-transition-boot");
       entryOverlay.classList.add("is-transition-opening");
     }, ENTRY_OPEN_DELAY);
 
